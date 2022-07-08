@@ -1,0 +1,108 @@
+---
+layout: shop-template
+title: Академия | Библиотека
+---
+
+<section class="the-title">
+    <div class="the-title__container container__1200px">
+        <main>
+            <h1>Библиотека</h1>
+            <div class="the-title__select the-title__select--long">
+                <button class="active" type="button" data-select-item="stats">Статьи</button>
+                <button type="button" data-select-item="monografs">Монографии</button>
+                <button type="button" data-select-item="posts">Публикации</button>
+                <button type="button" data-select-item="books">Книги</button>
+            </div>
+            <div class="select-box select-box--select select-box--library">
+                <div class="options-container">
+                    <div class="option">
+                        <input type="radio" class="radio" id="stats" data-select-item="article-1" name="category"/>
+                        <label for="stats">Статьи</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="radio" id="monografs" data-select-item="article-1" name="category"/>
+                        <label for="monografs">Монографии</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="radio" id="posts" data-select-item="article-1" name="category"/>
+                        <label for="posts">Публикации</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="radio" id="books" data-select-item="article-1" name="category"/>
+                        <label for="books">Книги</label>
+                    </div>
+                </div>
+                <div class="select-box-current">Категории</div>
+                <svg class="select-box-arrow"><use xlink:href="./assets/images/svg/sprite.svg#selectArrow"></use></svg>
+            </div>
+        </main>
+    </div>
+</section>
+
+<section class="library">
+    <div class="library__container container__1200px">
+        <div class="tabs-panel">
+            <ul>
+                <a href="#" class="active">Все статьи</a>
+                <a href="#">Методология мышления</a>
+                <a href="#">Информационная псевдодебильность</a>
+                <a href="#">Системно-поведенческая психотерапия</a>
+                <a href="#">Будущее и технологии</a>
+            </ul>
+        </div>
+        <div class="library__table">
+            <article>
+                <div class="lozad" data-background-image="./assets/images/library-1.png" data-background-image-set="./assets/images/library-1@2x.png"></div>
+                <span>Методология мышления</span>
+                <h4>Перестаньте развивать мозг</h4>
+                <p>Разнообразный и богатый опыт говорит нам, что понимание сути ресурсосберегающих технологий требует определения и уточнения модели развития. Есть над чем задуматься: ключевые особенности структуры проекта освещают чрезвычайно интересные особенности картины в целом, однако...</p>
+                <footer>
+                    <a href="#">
+                        <span>Читать полностью</span>
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                    </a>
+                    <time>24 мая 2021</time>
+                </footer>
+            </article>
+            <article>
+                <div class="lozad" data-background-image="./assets/images/library-2.png" data-background-image-set="./assets/images/library-2@2x.png"></div>
+                <span>Методология мышления</span>
+                <h4>Перестаньте развивать мозг</h4>
+                <p>Разнообразный и богатый опыт говорит нам, что понимание сути ресурсосберегающих технологий требует определения и уточнения модели развития. Есть над чем задуматься: ключевые особенности структуры проекта освещают чрезвычайно интересные особенности картины в целом, однако...</p>
+                <footer>
+                    <a href="#">
+                        <span>Читать полностью</span>
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                    </a>
+                    <time>24 мая 2021</time>
+                </footer>
+            </article>
+            <article>
+                <div class="lozad" data-background-image="./assets/images/library-3.png" data-background-image-set="./assets/images/library-3@2x.png"></div>
+                <span>Методология мышления</span>
+                <h4>Перестаньте развивать мозг</h4>
+                <p>Разнообразный и богатый опыт говорит нам, что понимание сути ресурсосберегающих технологий требует определения и уточнения модели развития. Есть над чем задуматься: ключевые особенности структуры проекта освещают чрезвычайно интересные особенности картины в целом, однако...</p>
+                <footer>
+                    <a href="#">
+                        <span>Читать полностью</span>
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                    </a>
+                    <time>24 мая 2021</time>
+                </footer>
+            </article>
+            <div class="library__table-pagination">
+                <div class="arrows">
+                    <button disabled type="button" class="arrows-item arrows-item--prev reviews__slider--prev">
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#sliderArrowPrev"></use></svg>
+                    </button> 
+                    <button type="button" class="arrows-item arrows-item--next reviews__slider--next">
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#sliderArrowNext"></use></svg>
+                    </button>
+                </div>
+                <div class="library__table-pagination-number">
+                    <em>1</em> <span>из</span> <em>24</em>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

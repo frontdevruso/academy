@@ -1,0 +1,123 @@
+.cards-services {
+    margin: 0 0 5.5em 0;
+
+    @media (max-width: 575px) { margin: 0 0 2.5em 0 }
+
+    &--dark {
+        .cards-services__table-item {
+            box-shadow: none;
+            h3 { color: $corbeau }
+
+            &:hover { box-shadow: none }
+        }
+    }
+
+    &__table {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px;
+
+        @media (max-width: 1440px) { grid-gap: 15px }
+        @media (max-width: 1300px) { 
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 30px;
+            max-width: 1000px;
+
+            margin-right: auto;
+            margin-left: auto;
+        }
+        @media (max-width: 620px) { 
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 20px;
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+
+            background-blend-mode: soft-light, normal;
+            box-shadow: 0px 15px 15px -12px rgba(221, 233, 229, 0.75);
+            border-radius: 5px;
+
+            background-color: #F9FCFB;
+            transition: .6s;
+            padding: 36px 40px;
+
+            & > * { transition: .6s }
+
+            @media (max-width: 1440px) { padding: 20px 30px }
+            @media (max-width: 620px) { padding: 40px 45px }
+            @media (max-width: 450px) { padding: 25px 30px }
+
+            &-icon {
+                stroke: $skyblue;
+                stroke-dasharray: 375;
+                stroke-dashoffset: 375;
+
+                margin: 0 0 48px auto;
+
+                width: 80px;
+                height: 80px;
+
+                @media (max-width: 620px) { margin: 0 0 10px auto }
+
+                @media (max-width: 450px) { 
+                    width: 56px;
+                    height: 56px;
+                }
+
+                &.show {
+                    animation: drawIcon 3.5s linear;
+                    animation-fill-mode: forwards;
+                }
+            }
+
+            &-arrow {
+                width: 43px;
+                height: 8px;
+
+                margin-top: auto;
+                fill: $skyblue;
+            }
+
+            h3 {
+                line-height: 100%;
+                margin-bottom: 10px;
+                
+                @media (max-width: 450px) { font-size: 20px }
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 143%;
+
+                color: $pewter;
+                margin-bottom: 50px;
+
+                @media (max-width: 620px) { 
+                    font-size: 18px;
+                    margin-bottom: 30px;
+                }
+
+                @media (max-width: 450px) { font-size: 16px }
+            }
+
+            &:hover {
+                box-shadow: 0px 15px 15px -12px rgba(71, 201, 181, 0.75);
+                background-image: url('./../images/texture-1.png');
+                background-color: $skyblue;
+
+                h3 { color: white }
+                p { color: white }
+
+                .cards-services__table-item-icon { stroke: white }
+                .cards-services__table-item-arrow { fill: white }
+            }
+        }
+    }
+}
+
+@keyframes drawIcon {
+    100%{ stroke-dashoffset: 0 }
+}

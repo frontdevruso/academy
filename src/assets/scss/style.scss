@@ -1,0 +1,79 @@
+@import "vars";
+@import "mixins";
+
+html { scroll-behavior: smooth }
+
+body {
+    font-weight: 400;
+    font-size: 20px;
+    
+    min-width: 320px;
+    overflow: auto;
+
+    color: $corbeau;
+    font-family: 'Noah', sans-serif;
+
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    &.--dark {
+        background-color: rgb(15, 24, 38);
+        background-image: url(./../images/texture-1.png);
+
+        .page { color: white }
+    }
+}
+
+.b-hidden {
+    overflow: hidden;
+}
+
+@import 'fonts';
+@import 'global';
+
+@import "./limbs/header.scss";
+@import "./limbs/footer.scss";
+
+@import "./blocks/education-programs.scss";
+@import "./blocks/cards-services.scss";
+@import "./blocks/reviews.scss";
+@import "./blocks/arrows.scss";
+@import "./blocks/enroll.scss";
+@import "./blocks/social-networks.scss";
+@import "./blocks/preview-services.scss";
+@import "./blocks/preview-about.scss";
+@import "./blocks/preview-education.scss";
+@import "./blocks/pagination-dots.scss";
+@import "./blocks/main-slider.scss";
+@import "./blocks/progress-bar.scss";
+@import "./blocks/burger.scss";
+@import "./blocks/achievements.scss";
+@import "./blocks/additional-degree.scss";
+@import "./blocks/desktop-menu.scss";
+@import "./blocks/mobile-menu.scss";
+@import "./blocks/preview.scss";
+@import "./blocks/teachers.scss";
+@import "./blocks/certificates.scss";
+@import "./blocks/course-price.scss";
+@import "./blocks/article-quotes.scss";
+@import "./blocks/client-hook.scss";
+@import "./blocks/the-title.scss";
+@import "./blocks/products.scss";
+@import "./blocks/professional-path.scss";
+@import "./blocks/select-box.scss";
+@import "./blocks/library.scss";
+@import "./blocks/loading-screen.scss";
+@import "./blocks/article.scss";
+@import "./blocks/contacts.scss";
+@import "./blocks/reviews-add.scss";
+@import "./blocks/specialists.scss";
+@import "./blocks/cabinet.scss";
+@import "./blocks/interests.scss";
+@import "./blocks/modal.scss";
+@import "./blocks/the-results.scss";
+@import "./blocks/accordion.scss";
+@import "./blocks/reasons.scss";
+@import "./blocks/timer.scss";
+@import "./blocks/counter.scss";
+@import "./blocks/purchases-history.scss";

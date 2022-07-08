@@ -1,0 +1,112 @@
+.teachers {
+    padding-top: 100px;
+    
+    h2 {
+        line-height: 120%;
+        margin-bottom: 40px;
+        @media (max-width: 575px) { margin-bottom: 20px }
+    }
+
+    &__slider {
+        overflow: initial !important;
+        .g-pagination { bottom: 20px !important }
+
+        display: flex;
+
+        ul {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+
+            display: flex;
+            overflow: initial;
+    
+            li {
+                background-color: #F9FCFB;
+                border-radius: 5px;
+    
+                position: relative;
+                box-sizing: border-box;
+                overflow: hidden;
+    
+                padding: 52px 35px 35px 35px;
+                width: 440px;
+                min-height: 100%;
+
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                @media (max-width: 575px) {
+                    width: 330px;
+                    padding: 30px 33px;
+                }
+
+                &:not(:last-child) { margin-right: 20px }
+                &::after {
+                    content: "";
+                    display: block; 
+    
+                    width: 100%;
+                    height: 100%;
+                    background-image: url('./../images/teachers-blur.png');
+                    background-repeat: no-repeat;
+    
+                    position: absolute;
+                    top: 50px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+    
+                img {
+                    max-width: 223px;
+                    margin-bottom: 50px;
+    
+                    width: 100%;
+                    height: fit-content;
+    
+                    border-radius: 100%;
+                    position: relative;
+                    z-index: 5;
+
+                    @media (max-width: 575px) {
+                        max-width: 160px;
+                        margin-bottom: 20px;
+                    }
+                }
+    
+                main {
+                    display: flex;
+                    flex-direction: column;
+                    width: auto;
+                    max-width: 100%;
+    
+                    h5 {
+                        font-weight: 500;
+                        font-size: 24px;
+                        line-height: 120%;
+    
+                        margin-bottom: 10px;
+                    }
+    
+                    span {
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 150%;
+    
+                        margin-bottom: 15px;
+                        @media (max-width: 575px) { margin-bottom: 10px }
+                    }
+    
+                    p {
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 160%;
+    
+                        color: #5E6766;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,93 @@
+.additional-degree {
+    background-color: $skyblue;
+    color: white;
+
+    padding: 100px 0;
+    @media (max-width: 768px) {
+        padding: 50px 0 70px;
+    }
+
+    &__container {
+        display: flex;
+        @media (max-width: 992px) {
+            flex-direction: column;
+        }
+    }
+
+    &__ill {
+        display: none;
+        @media (max-width: 992px) {
+            display: flex;
+            transform: rotate(-15deg);
+            padding: 50px 0 0;
+            max-width: 600px;
+
+            width: 100%;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            padding: 70px 0 0;
+        }
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        max-width: 50%;
+
+        background-image: url('./../images/svg/brackets.svg');
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        
+        @media (max-width: 992px) {
+            max-width: none;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            line-height: 120%;
+            max-width: 400px;
+
+            @media (max-width: 992px) {
+                max-width: none;
+            }
+        }
+
+        img {
+            width: 318px;
+            height: 121px;
+            transform: rotate(-15deg);
+
+            margin-top: auto;
+
+            @media (max-width: 992px) {
+                display: none;
+            }
+        }
+    }
+
+    p {
+        width: 100%;
+        max-width: 100%;
+
+        margin-left: 50px;
+
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 170%;
+
+        @media (max-width: 992px) {
+            margin-left: 0;
+        }
+
+        @media (max-width: 575px) {
+            font-size: 16px;
+        }
+    }
+}

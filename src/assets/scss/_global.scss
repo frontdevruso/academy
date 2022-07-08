@@ -1,0 +1,333 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+select {
+    outline: none;
+    border: none;
+
+    &:focus { outline: none }
+}
+
+h1, h2, h3, h4, h5, h6 { margin: 0 }
+
+h1 {
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 100%;
+}
+
+h2 {
+    font-size: 48px;
+    line-height: 120%;
+
+    @media (max-width: 575px) { font-size: 34px }
+}
+
+h3 { font-size: 36px }
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+input { padding: 0 }
+
+input:not([type=checkbox]):not([type=radio]), textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+input:focus, textarea:focus, button:focus { outline: none }
+
+.none { display: none !important }
+.a-hide { opacity: 0 }
+
+.page { 
+    position: relative;
+    overflow: hidden;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-top: var(--header-height);
+    transition: .6s ease opacity;
+    opacity: 0;
+
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100% - var(--header-height));
+    height: fit-content;
+
+    &.hide { opacity: 0 }
+    &.show { opacity: 1 }
+}
+
+.container__1440px {
+    @include make-container(1440px);
+
+    padding: 0 30px;
+    width: calc(100% - 60px);
+
+    @media (max-width: 575px) {
+        padding: 0 25px;
+        width: calc(100% - 50px);
+    }
+}
+
+.container__1200px {
+    @include make-container(1200px);
+
+    padding: 0 30px;
+    width: calc(100% - 60px);
+
+    @media (max-width: 575px) {
+        padding: 0 25px;
+        width: calc(100% - 50px);
+    }
+}
+
+.grey-bg {
+    background-color: #FAFBFC;
+}
+
+.g-input {
+    width: 100%;
+    position: relative;
+
+    border-bottom: 1px solid #E4E4EB;
+    background-color: transparent;
+    transition: .4s;
+
+    &:not(:first-child) { margin-top: 25px }
+
+    input {
+        border: none;
+        background-color: transparent;
+        padding: 15px 30px 10px 0;
+        box-sizing: border-box;
+
+        color: #1A1A1A;
+        width: 100%;
+    }
+
+    label {
+        transition: .4s;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+
+        font-size: 0.8em;
+        line-height: 160%;
+        color: #828A99;
+
+        text-overflow: clip;
+        cursor: text;
+        pointer-events: none;
+    }
+
+    &:focus-within { border-color: $skyblue }
+
+    input:focus + label {
+        font-size: 16px;
+        line-height: 1;
+
+        padding: 10px 10px 10px 0;
+        top: 0;left: 0;
+    }
+
+    &.input--filled {
+        label {
+            font-size: 16px;
+            line-height: 1;
+    
+            padding: 10px 10px 10px 0;
+            top: 0;left: 0;
+        }
+    }
+
+    &.g-input-error {
+        border-color: #E16565;
+        .g-input__hint {
+            transform: translateY(calc(100% + 10px));
+            z-index: 50;
+            opacity: 1;
+        }
+    }
+
+    input[data-validate-field='tel'] {
+        &::placeholder {
+            transition: .4s;
+            opacity: 0;
+            color: $corbeau;
+        }
+        
+        &:focus {
+            &::placeholder { opacity: 1 }
+        }
+    }
+
+    &__hint {
+        position: absolute;
+        right: -50px;
+        bottom: 0;
+        
+        background-color: white;
+
+        padding: 10px 15px;
+        border-radius: 5px;
+
+        border: 1px solid #E5E5E5;
+        box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+
+        z-index: 0;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: .6s ease;
+
+        @media (max-width: 575px) { right: 10px }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+
+            width: 8px;
+            height: 8px;
+
+            background-color: white;
+            border: 1px solid #E5E5E5;
+            border-right: none;
+            border-bottom: none;
+
+            transform: rotate(45deg) translateY(-8px);
+            
+        }
+    }
+}
+
+.g-blue-btn {
+    background-color: $skyblue;
+    color: white;
+
+    padding: 16px 64px;
+    border-radius: 5px;
+
+    transition: .6s ease;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 160%;
+
+    height: fit-content;
+
+    &:hover { background-color: #3C77FF }
+}
+
+.g-arrow-btn {
+    background-color: $skyblue;
+    border-radius: 5px;
+
+    padding: 16px 25px;
+    display: flex;
+    align-items: center;
+
+    width: fit-content;
+    height: fit-content;
+    transition: .6s;
+
+    & > * { transition: .6s }
+    
+    span {
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+    }
+
+    svg {
+        width: 20px;
+        height: 10px;
+
+        margin: 2px 0 0 44px;
+        fill: white;
+    }
+
+    &:hover { background-color: $lightishblue }
+}
+
+.password-input {
+    position: relative;
+    
+    &.active {
+        .password-input__icon {
+            &-hidden { opacity: 1 }
+            &-shown { opacity: 0 }
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        right: 0;
+
+        transform: translateY(-50%);
+
+        padding: 0;
+        background-color: transparent;
+
+        display: flex;
+        width: 18px;
+        height: 18px;
+        
+        svg {
+            width: 100%;
+            height: 100%;
+
+            fill: transparent;
+
+            position: absolute;
+            top: 0;bottom: 0;
+            right: 0;left: 0;
+
+            transition: .6s ease;
+        }
+
+        &-hidden { opacity: 0 }
+    }
+}
+
+.lozad--disabled {
+    opacity: 0;
+    transition: .4s;
+}
+
+.loaded { opacity: 1 }
+
+@keyframes linkArrowAnimation {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(0) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+}
+
+@keyframes linkArrowDownAnimation {
+    0% { transform: translateY(0) }
+    25% { transform: translateY(2px) }
+    50% { transform: translateY(0) }
+    75% { transform: translateY(2px) }
+    100% { transform: translateY(0) }
+}

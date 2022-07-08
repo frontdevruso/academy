@@ -1,0 +1,29 @@
+<div class="modal modal--large modal--recovery">
+    <div class="modal__container">
+        <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+        <h2>Воccтановление пароля</h2>
+        <p>Введите данные указанные при регистрации имы отправим вам ссылку для создания нового пароля</p>
+        <div class="modal__panel">
+            <button type="button" class="active" data-tab-btn="1">По email</button>
+            <button type="button" data-tab-btn="2">По телефону</button>
+        </div>
+        <div class="modal__tabs">
+            <div class="modal__tabs-item contact-form active show" data-tab="1">
+                <div class="g-input">
+                    <input autocomplete="off" type="email" data-validate-field="mail" required>
+                    <label for="name">Email:</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Получить сообщение</button>
+            </div>
+            <div class="modal__tabs-item contact-form none" data-tab="2">
+                <div class="g-input">
+                    <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="+_ (___) __-__-___" required>
+                    <label for="name">Номер телефона</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Получить сообщение</button>
+            </div>
+        </div>
+    </div>
+</div>

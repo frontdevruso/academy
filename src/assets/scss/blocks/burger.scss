@@ -1,0 +1,98 @@
+:root {
+    --lines-burger: 20px;
+}
+
+.burger {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    overflow: hidden;
+    transition: transform 0.5s;
+
+    padding: 0;
+
+    span {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: calc(50% + -3px);
+        width: calc(var(--lines-burger) - 6px);
+        height: 2px;
+        transform: translate(-50%, -50%);
+        transition: background 0.5s, transform 0.5s;
+        background-color: #939F9D;
+
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: var(--lines-burger);
+            height: 2px;
+
+            transform: translateY(-7px);
+            transition: transform 0.5s, width 0.5s;
+            transform-origin: 50% 50%;
+            background-color: #939F9D;
+        }
+
+        &:after {
+            left: 0;
+            transform: translateY(7px);
+            width: calc(var(--lines-burger) - 12px);
+        }
+
+        @media (max-width: 400px) { height: 2px }
+    }
+
+    svg {
+        width: calc(var(--lines-burger) + 4px);
+        height: calc(var(--lines-burger) + 4px);
+        fill: transparent;
+        stroke-width: 2px;
+    }
+
+    &.isOpen {
+        transform: rotate(180deg);
+
+        span { background: transparent }
+        span:before { transform: translateY(0) rotate(45deg) }
+        span:after {
+            width: var(--lines-burger);
+            transform: translateY(0) rotate(-45deg);
+        }
+
+        &:hover {
+            svg { fill: rgba(#fff, 0.1) }
+        }
+    }
+
+    &--mb {
+        display: none;
+        transform: scaleX(-1);
+        margin-left: auto;
+
+        span { transition: .2s }
+        @media (max-width: 650px) { display: flex }
+    }
+
+    &--pc {
+        margin-right: 30px;
+        transition: .6s ease;
+        margin-left: 0%;
+
+        @media (max-width: 650px) { display: none }
+
+        &.isOpen {
+            span::before { background-color: #1A1A1A }
+            span::after { background-color: #1A1A1A }
+        }
+    }
+
+    &--ml {
+        opacity: 1;
+        margin-left: calc(100% - 240px);
+    }
+}

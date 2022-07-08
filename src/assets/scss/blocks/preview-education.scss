@@ -1,0 +1,105 @@
+.preview-education {
+    padding: 130px 0 140px;
+    position: relative;
+    max-width: 1920px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width: 1300px) { padding: 100px 0 110px }
+    @media (max-width: 768px) { padding: 50px 0 60px }
+    @media (max-width: 575px) { padding: 50px 0 50px }
+    
+    &__container {
+        display: flex;
+        
+        @media (max-width: 768px) { flex-direction: column }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+
+        position: relative;
+        z-index: 5;
+
+        max-width: 1200px;
+        
+        @media (max-width: 1750px) { max-width: 55% }
+        @media (max-width: 1300px) { max-width: 100% }
+
+        h2 {
+            font-weight: 400;
+            line-height: 120%;
+            margin-bottom: 25px;
+
+            color: #173430;
+
+            @media (max-width: 575px) { margin-bottom: 15px }
+        }
+
+        main {
+            display: flex;
+
+            p {
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 170%;
+
+                color: #5E6766;
+                &:not(:last-child) { margin-right: 100px }
+
+                @media (max-width: 1750px) {
+                    &:not(:last-child) {
+                        margin-right: 0;
+                        margin-bottom: 50px;
+                    }
+                    
+                }
+                @media (max-width: 768px) {
+                    &:not(:last-child) { margin-bottom: 30px }
+                }
+                @media (max-width: 575px) {
+                    font-size: 16px;
+                    &:not(:last-child) { margin-bottom: 20px }
+                }
+            }
+
+            @media (max-width: 1750px) { flex-direction: column }
+        }
+    }
+
+    &__ill {
+        position: absolute;
+        right: -530px;
+        top: 50%;
+
+        transform: translateY(-50%);
+
+        width: 552px;
+        height: 533px;
+        
+        @media (max-width: 1750px) {
+            top: 80%;
+            right: 0;
+        }
+
+        @media (max-width: 1750px) { top: 50% }
+        @media (max-width: 1300px) {  display: none }
+
+        @media (max-width: 768px) {
+            position: initial;
+            right: initial;
+            top: initial;
+
+            transform: initial;
+            display: initial;
+
+            max-width: 552px;
+            width: 100%;
+            height: auto;
+
+            margin: 20px auto 0;
+        }
+    }
+}

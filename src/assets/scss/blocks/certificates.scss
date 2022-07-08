@@ -1,0 +1,108 @@
+.certificates {
+    background-color: #F9FCFB;
+    padding: 70px 0 80px;
+
+    @media (max-width: 400px) { padding: 50px 0 60px  }
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding-bottom: 20px;
+        margin-bottom: 60px;
+        border-bottom: 1px solid #DFEAE8;
+
+        h2 { line-height: 120%; padding-right: 15px }
+
+        @media (max-width: 768px) { margin-bottom: 30px }
+
+        @media (max-width: 575px) {
+            flex-direction: column;
+            h2 {
+                margin-bottom: 15px;
+                text-align: center;
+            }
+            .arrows {
+                width: 100%;
+                .arrows-item--next { margin-left: auto }
+                .arrows-item--prev { margin-right: auto }
+            }
+        }
+    }
+
+    &__slider {
+        overflow: hidden;
+        ul {
+            li {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                max-width: 440px;
+                user-select: none;
+
+                @media (max-width: 575px) { max-width: none; }
+
+                a {
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: 20px;
+
+                    background-position: 100% 50%;
+                    background-repeat: no-repeat;
+                    background-size: 100% auto;
+
+                    position: relative;
+
+                    display: flex;
+                    border-radius: 5px;
+                    overflow: hidden;
+
+                    img {
+                        max-width: 100%;
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    span {
+                        width: 100%;
+                        height: 100%;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        transition: .6s ease;
+                        opacity: 0;
+
+                        color: white;
+                        background-color: rgba(42, 47, 55, 0.7);
+
+                        position: absolute;
+                        top: 0;bottom: 0;
+                        right: 0;left: 0;
+
+                        z-index: 5;
+
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 180%;
+                    }
+
+                    &:hover {
+                        span { opacity: 1 }
+                    }
+                }
+
+                p {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 150%;
+
+                    max-width: 80%;
+                }
+            }
+        }
+    }
+}

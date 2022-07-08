@@ -1,0 +1,164 @@
+.course-price {
+    background-image: url('./../images/texture-1.png');
+    background-color: #0F1826;
+    color: white;
+
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+
+        padding: 150px 0;
+        position: relative;
+        z-index: 5;
+
+        width: 100%;
+        max-width: 555px;
+
+        @media (max-width: 992px) {
+            padding: 80px 0 130px;
+        }
+
+        @media (max-width: 400px) {
+            padding: 30px 0 200px;
+        }
+
+        h2 {
+            line-height: 120%;
+            margin-bottom: 30px;
+
+            @media (max-width: 400px) {
+                margin-bottom: 5px;
+            }
+        }
+
+        span {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 130%;
+
+            opacity: 0.8;
+            margin-bottom: 30px;
+            @media (max-width: 400px) {
+                font-size: 16px;
+                line-height: 150%;
+                margin-bottom: 20px;
+            }
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 170%;
+
+            @media (max-width: 768px) {
+                &:not(:last-child) { margin-bottom: 15px }
+            }
+        }
+    }
+
+    &__price {
+        width: 100%;
+        max-width: 240px;
+
+        margin-top: auto;
+        position: relative;
+        z-index: 5;
+
+        @media (max-width: 992px) {
+            max-width: 400px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+
+            margin-bottom: 60px;
+            
+            @media (max-width: 575px) {
+                margin-bottom: 30px;
+            }
+
+            span {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 140%;
+
+                opacity: 0.7;
+            }
+
+            em {
+                font-weight: 400;
+                font-size: 36px;
+                line-height: 160%;
+            }
+        }
+
+        a {
+            display: flex;
+            background-color: $skyblue;
+            
+            color: white;
+            width: 100%;
+
+            transition: .4s linear;
+            padding: 15px 15px 15px 30px;
+            box-sizing: border-box;
+
+            svg {
+                width: 24px;
+                height: 24px;
+
+                fill: white;
+
+                margin-bottom: auto;
+                margin-left: auto;
+            }
+
+            span {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 180%;
+
+                margin-top: 30px;
+            }
+            &:hover { background-color: #3C77FF }
+        }
+    }
+
+    &__ill {
+        position: absolute;
+        left: 50%;
+        top: -144px;
+
+        width: auto;
+        height: auto;
+
+        transform: translateX(-40%);
+
+        @media (max-width: 768px) {
+            width: 661px;
+            height: 661px;
+
+            transform: initial;
+            top: 50px;
+            left: 30px;
+        }
+    }
+}

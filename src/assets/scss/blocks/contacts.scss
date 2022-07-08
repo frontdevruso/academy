@@ -1,0 +1,87 @@
+.contacts {
+    padding: 100px 0 150px;
+
+    @media (max-width: 768px) { padding: 60px 0 100px }
+    @media (max-width: 400px) { padding: 30px 0 50px }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        margin-bottom: 60px;
+        @media (max-width: 575px) {
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 400px) {
+            font-size: 34px;
+            margin-bottom: 35px;
+        }
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @media (max-width: 1200px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 50px;
+            justify-content: initial;
+
+            max-width: 800px;
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            grid-gap: 25px;
+        }
+
+        li {
+            display: flex;
+            flex-direction: column;
+
+            em {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 140%;
+
+                margin-bottom: 10px;
+                color: rgba(26, 26, 26, 0.4);
+            
+                @media (max-width: 768px) { margin-bottom: 0 }
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+
+                    margin-right: 8px;
+                }
+
+                span {
+                    font-weight: 400;
+                    font-size: 30px;
+                    line-height: 180%;
+
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    display: inline-block;
+
+                    width: auto;
+                    white-space: nowrap;
+                    @media (max-width: 374px) { font-size: 24px }
+                }
+            }
+        }
+    }
+}

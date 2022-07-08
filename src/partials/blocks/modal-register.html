@@ -1,0 +1,88 @@
+<div class="modal modal--register">
+    <div class="modal__container">
+        <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+        <h2>Регистрация</h2>
+        <div class="modal__panel">
+            <button type="button" class="active" data-tab-btn="1">По email</button>
+            <button type="button" data-tab-btn="2">По телефону</button>
+        </div>
+        <div class="modal__tabs">
+            <div class="modal__tabs-item contact-form active show" data-tab="1">
+                <div class="g-input">
+                    <input autocomplete="off" type="text" data-validate-field="name" required>
+                    <label for="name">ФИО:</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="email" data-validate-field="mail" required>
+                    <label for="name">Email:</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="g-input password-input">
+                    <input autocomplete="off" type="password" data-validate-field="password" required>
+                    <label for="name">Пароль:</label>
+                    <div class="g-input__hint">Не меньше 7 символов</div>
+                    <button type="button" class="password-input__icon password-input__icon--show">
+                        <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                        <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                    </button>
+                </div>
+                <div class="g-input password-input">
+                    <input autocomplete="off" type="password" data-validate-field="confirm-password" required>
+                    <label for="name">Подтвердите пароль:</label>
+                    <div class="g-input__hint">Не меньше 7 символов</div>
+                    <button type="button" class="password-input__icon password-input__icon--show">
+                        <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                        <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                    </button>
+                </div>
+                <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Отправить заявку</button>
+                <div class="modal__policy contact-form__wrapper-form-policy">
+                    <input id="policyCheckboxRegEm" type="checkbox" data-validate-field="checkbox">
+                    <label for="policyCheckboxRegEm">
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#checkboxIcon"></use></svg>
+                        <p>Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности и даете свое согласие на обработку персональных данных</p>
+                    </label>
+                </div>
+            </div>
+            <div class="modal__tabs-item contact-form none" data-tab="2">
+                <div class="g-input">
+                    <input autocomplete="off" type="text" data-validate-field="name" required>
+                    <label for="name">ФИО:</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="+_ (___) __-__-___" required>
+                    <label for="name">Номер телефона:</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="g-input password-input">
+                    <input autocomplete="off" type="password" data-validate-field="password" required>
+                    <label for="name">Пароль:</label>
+                    <div class="g-input__hint">Не меньше 7 символов</div>
+                    <button type="button" class="password-input__icon password-input__icon--show">
+                        <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                        <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                    </button>
+                </div>
+                <div class="g-input password-input">
+                    <input autocomplete="off" type="password" data-validate-field="confirm-password" required>
+                    <label for="name">Подтвердите пароль:</label>
+                    <div class="g-input__hint">Не меньше 7 символов</div>
+                    <button type="button" class="password-input__icon password-input__icon--show">
+                        <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                        <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                    </button>
+                </div>
+                <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Зарегистрироваться</button>
+                <div class="modal__policy contact-form__wrapper-form-policy">
+                    <input id="policyCheckboxRegNum" type="checkbox" data-validate-field="checkbox">
+                    <label for="policyCheckboxRegNum">
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#checkboxIcon"></use></svg>
+                        <p>Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности и даете свое согласие на обработку персональных данных</p>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,203 @@
+.timer {
+    background-color: #0F1826;
+    position: relative;
+
+    color: white;
+    background-image: url('./../images/texture-1.png');
+
+    padding: 184px 0;
+
+    @media (max-width: 1200px) { 
+        padding: 120px 0;
+    }
+    
+    @media (max-width: 575px) { 
+        padding: 30px 0 70px 0;
+    }
+
+    &__container { 
+        display: flex;
+
+        @media (max-width: 1200px) { 
+            flex-direction: column;
+        }
+    }
+
+    .counter {
+        margin-left: -20px;
+    }
+
+    &__info {
+        width: 100%;
+        max-width: fit-content;
+
+        margin-right: 130px;
+        h2 { margin-bottom: 10px }
+
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 180%;
+
+            b {
+                font-weight: 400;
+                color: $skyblue;
+            }
+
+            &:not(:last-of-type) { margin-bottom: 40px }
+            @media (max-width: 575px) { 
+                &:not(:last-of-type) { margin-bottom: 20px }
+            }
+        }
+
+        @media (max-width: 1440px) { margin-right: 60px }
+        @media (max-width: 1200px) { margin: 0 0 60px 0 }
+        @media (max-width: 575px) { margin: 0 0 30px 0 }
+    }
+
+    &__slider {
+        width: 100%;
+        overflow: initial !important;
+
+        .swiper-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &-pagination {
+            bottom: 30px !important;
+
+            .swiper-pagination-bullet {
+                background-color: #FFFFFF;
+                opacity: 0.2;
+            }
+
+            .swiper-pagination-bullet-active {
+                background-color: $skyblue;
+                opacity: 1;
+            }
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+
+            width: 100%;
+            max-width: 480px;
+
+            box-sizing: border-box;
+            background-color: #131C29;
+            padding: 50px 60px;
+                                        
+            @media (max-width: 1440px) { padding: 30px 40px }
+
+            @media (max-width: 1200px) { 
+                padding: 50px 60px;
+                min-width: 480px;
+            }
+
+            @media (max-width: 575px) { 
+                padding: 30px;
+                min-width: 326px;
+                max-width: 326px;
+            }
+
+            header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                
+                & > span { padding-right: 15px }
+                & > * { margin-bottom: 30px }
+                
+                @media (max-width: 575px) { 
+                    h3 { font-size: 24px }
+                    & > span { font-size: 16px }
+                }
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+
+                margin-bottom: 50px;
+                                
+                @media (max-width: 575px) { margin-bottom: 30px }
+
+                li {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 180%;
+
+                    display: flex;
+                                                    
+                    @media (max-width: 575px) { font-size: 16px }
+
+                    &::before {
+                        content: "";
+                        display: block;
+
+                        max-width: 10px;
+                        width: 100%;
+                        height: 2px;
+
+                        background-color: white;
+                        opacity: 0.23;
+
+                        margin: 13px 20px 0 0;
+                    }
+                }
+            }
+
+            footer {
+                display: flex;
+                flex-direction: column;
+
+                margin-top: auto;
+            }
+
+            &-buy, &-credit {
+                width: 100%;
+                border-radius: 5px;
+                padding: 16px 0;
+
+                text-align: center;
+
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 160%;
+
+                transition: .6s ease;
+            }
+            
+            &-buy {
+                background-color: $skyblue;
+                margin-bottom: 10px;
+
+                &:hover {
+                    background-color: white;
+                    color: $skyblue;
+                }
+            }
+            
+            &-credit {
+                &:hover {
+                    background-color: white;
+                    color: $skyblue;
+                }
+            }
+
+            &--light {
+                background-color: $skyblue;
+
+                .timer__slider-item-buy {
+                    background-color: white;
+                    color: $skyblue;
+    
+                    &:hover { background-color: #eaeaea }
+                }
+            }
+        }
+    }
+}
