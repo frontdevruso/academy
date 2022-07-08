@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+    
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    
+    <!-- Favicons -->
+    
+    <title>Академия | Президент</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body class="--dark">
+    
+    <header class="header header--floating">
+        <div class="header__nav">
+            <main>
+                <a href="./index.html" class="header__nav-logo"><img src="./assets/images/svg/logo.svg" alt="logo"></a>
+                <form action="/" class="header__nav-search a-hide none">
+                    <svg><use xlink:href="./assets/images/svg/sprite.svg#searchIcon"></use></svg>
+                    <input type="text" placeholder="Поиск">
+    
+                    <ul class="a-hide none">
+                        <a href="#">
+                            <picture><img class="lozad" data-src="./assets/images/searching-books-1.png" alt="search-item"></picture>
+                            <main>
+                                <h5>Доктор, все идет из детства?</h5>
+                                <p>Секреты счастливой личной жизни от психотерапевта.</p>
+                            </main>
+                        </a>
+                        <a href="#">
+                            <picture><img class="lozad" data-src="./assets/images/searching-books-2.png" alt="search-item"></picture>
+                            <main>
+                                <h5>Доктор, все идет из детства?</h5>
+                                <p>Секреты счастливой личной жизни от психотерапевта.</p>
+                            </main>
+                        </a>
+                    </ul>
+                </form>
+                <button class="burger burger--pc" aria-label="Бургер меню">
+                    <span></span>
+                    <svg></svg>
+                </button>
+                <ul class="header__nav-links">
+                    <a href="#">Об академии</a>
+                    <a href="#">Онлайн школа</a>
+                    <a href="#">Список курсов</a>
+                    <a href="#">Авторский тест</a>
+                    <a href="#">Библиотека</a>
+                    <a href="#">Консультации нашей команды</a>
+                </ul>
+                <div class="header__nav-icons">
+                    <button type="button" class="search-btn"><svg><use xlink:href="./assets/images/svg/sprite.svg#searchIcon"></use></svg></button>
+                    <button type="button" class="profile-btn"><svg><use xlink:href="./assets/images/svg/sprite.svg#profileIcon"></use></svg></button>
+                </div>
+                <button class="burger burger--mb" aria-label="Бургер меню">
+                    <span></span>
+                    <svg></svg>
+                </button>
+            </main>
+            <a href="#" class="header__nav-consulting">
+                <span>Консультация</span>
+                <svg><use xlink:href="./assets/images/svg/sprite.svg#rigthTopArrow"></use></svg>
+            </a>
+        </div>
+    </header>
+    <aside class="desktop-menu">
+        <div class="desktop-menu__container">
+            <main>
+                <div class="desktop-menu__links">
+                    <ul>
+                        <a href="#"><span>Главная</span></a>
+                        <a href="#"><span>О президенте</span></a>
+                        <a href="#"><span>Об Академии</span></a>
+                        <a href="#"><span>Отзывы</span></a>
+                        <a href="#"><span>Контакты</span></a>
+                    </ul>
+                    <ul>
+                        <a href="#"><span>Онлайн тест на суицид</span> <em>Special</em></a>
+                        <a href="#"><span>Онлайн школа</span></a>
+                        <a href="#"><span>База знаний</span></a>
+                        <a href="#"><span>Блок: бросить курить</span></a>
+                    </ul>
+                </div>
+                <div class="desktop-menu__services">
+                    <h5>Список курсов</h5>
+                    <ul>
+                        <a href="#"><span>Быстрый старт на <br> ознакомительый период</span></a>
+                        <a href="#"><span>Вес воли</span></a>
+                        <a href="#"><span>Курс по процессам</span></a>
+                    </ul>
+                    <h5>Магазин</h5>
+                    <ul>
+                        <a href="#"><span>Книги</span></a>
+                        <a href="#"><span>Сувениры</span></a>
+                    </ul>
+                </div>
+                <div class="desktop-menu__contacts">
+                    <ul>
+                        <li>
+                            <span>Звонки по России:</span>
+                            <a href="tel:+79504438243">+7 950 443 82 43</a>
+                        </li>
+                        <li>
+                            <span>Звонки по Франции:</span>
+                            <a href="tel:+33781843020">+33 7 81 84 30 20</a>
+                        </li>
+                        <li>
+                            <span>E-mail:</span>
+                            <a href="mailto:permvagin@gmail.com">permvagin@gmail.com</a>
+                        </li>
+                        <li>
+                            <span>Skype:</span>
+                            <a href="#">typhon-out</a>
+                        </li>
+                    </ul>
+                    <div class="desktop-menu__contacts-social">
+                        <a href="#"><svg><use xlink:href="./assets/images/svg/sprite.svg#instagramIcon"></use></svg></a>
+                        <a href="#"><svg><use xlink:href="./assets/images/svg/sprite.svg#facebookIcon"></use></svg></a>
+                        <a href="#"><svg><use xlink:href="./assets/images/svg/sprite.svg#vkIcon"></use></svg></a>
+                        <a href="#"><svg><use xlink:href="./assets/images/svg/sprite.svg#youtubeIcon"></use></svg></a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </aside>
+    <aside class="mobile-menu">
+        <div class="mobile-menu__container">
+            <ul>
+                <a href="#">Об академии</a>
+                <a href="#">Онлайн школа</a>
+                <a href="#">Список курсов</a>
+                <a href="#">Авторский тест</a>
+                <a href="#">Библиотека</a>
+            </ul>
+            <div class="mobile-menu__btn">
+                <a href="#" class="g-arrow-btn">
+                    <span>Консультация</span>
+                    <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                </a>
+            </div>
+        </div>
+    </aside>    
+    <div id="page" class="page">
+    
+        
+        <section class="preview lozad" data-background-image="./assets/images/preview-president.png" data-background-image-set="./assets/images/preview-president@2x.png">
+            <div class="preview__container container__1440px">
+                <h1>О президенте</h1>
+                <p>Директор психологического центра, кандидат медицинских наук, врач-психотерапевт, стаж работы более 30 лет.</p>
+            </div>
+        </section>
+        
+        <section class="interests">
+            <div class="interests__container container__1440px">
+                <h2>Сферы интересов</h2>
+                <div class="interests__table">
+                    <div class="interests__table-item">Психотерапия (психокоррекция, психопрофилактика, психогигиена).</div>
+                    <div class="interests__table-item">Наркология (зависимость от психоактивных веществ).</div>
+                    <div class="interests__table-item">Аддиктология (зависимость от различных видов деятельности, азартных игр, еды, людей)</div>
+                    <div class="interests__table-item">Авиталогия (саморазрушающее поведение, суицидология).</div>
+                </div>
+                <div class="interests__years">
+                    <div class="interests__years-item">
+                        <h2>2001</h2>
+                        <p>2001 год — разработка оригинальной концепции авитальной активности, которая позволяет объяснить и предотвратить саморазрушающее поведение человека.</p>
+                    </div>
+                    <svg class="interests__years-arrow"><use xlink:href="./assets/images/svg/sprite.svg#yearsArrow"></use></svg>
+                    <div class="interests__years-item">
+                        <h2>2003</h2>
+                        <p>2003 год — разработка монистической концепции глубинного анализа (тифоанализа).</p>
+                        <p>Председатель Пермского тифоаналитического общества глубинной психологии.</p>
+                        <p>Более 30 лет занимаюсь практической деятельностью.</p>
+                    </div>
+                    <svg class="interests__years-arrow"><use xlink:href="./assets/images/svg/sprite.svg#yearsArrow"></use></svg>
+                    <div class="interests__years-item">
+                        <h2>2009</h2>
+                        <p>2001 год — разработка оригинальной концепции авитальной активности, которая позволяет объяснить и предотвратить саморазрушающее поведение человека.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="professional-path">
+            <div class="professional-path__container container__1440px">
+                <h2>Образование, профессиональный путь</h2>
+                <div class="professional-path__table">
+                    <div class="professional-path__table-item">
+                        <h2>1988</h2>
+                        <p>Окончил Пермскую Государственную Медицинскую Академию (ПГМА).</p>
+                    </div>
+                    <div class="professional-path__table-item">
+                        <h2>1990</h2>
+                        <p>Клиническая ординатура при кафедре психиатрии и медицинской психологии ПГМА.</p>
+                    </div>
+                    <div class="professional-path__table-item">
+                        <h2>1990-2004</h2>
+                        <p>Ассистент кафедры психиатрии и медицинской психологии ПГМА.</p>
+                    </div>
+                    <div class="professional-path__table-item">
+                        <h2>1994</h2>
+                        <p>Защита диссертации в Новосибирске под руководством профессора Ц.П.Короленко  на соискание ученой степени кандидата медицинских наук. Тема диссертации: "Особенности аддиктивного поведения у подростков, злоупотребляющих ингалянтами".</p>
+                    </div>
+                    <div class="professional-path__table-item">
+                        <h2>1994-2004</h2>
+                        <p>Практическая, теоретическая и преподавательская деятельность на базе городского психотерапевтического центра МУЗ 7 ГБ г. Пермь.</p>
+                    </div>
+                    <div class="professional-path__table-item">
+                        <h2>2004-2006</h2>
+                        <p>Доцент института психологии Пермского педагогического университета.</p>
+                    </div>
+                    <div class="professional-path__table-item">
+                        <h2>2006-2009</h2>
+                        <p>Доцент ПГМА.</p>
+                    </div>
+                    <div class="professional-path__table-item">
+                        <h2>2009</h2>
+                        <p>2009 – по настоящее время — директор "Психологического центра доктора Вагина" в г. Перми</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="achievements">
+            <div class="achievements__container container__1440px">
+                <div class="achievements__img"><img class="lozad lozad--disabled" data-src="./assets/images/about-doctor-2.png" data-srcset="./assets/images/about-doctor-2@2x.png" alt="doctor"></div>
+                <div class="achievements__bubbles">
+                    <!-- ITEM -->
+                    <div class="achievements__bubbles-item achievements__bubbles-item--1">
+                        <img src="./assets/images/bubble.png" alt="bubble">
+                        <main>
+                            <h2>50</h2>
+                            <p>научных статей</p>
+                        </main>
+                    </div>
+                    <!-- ITEM -->
+                    <div class="achievements__bubbles-item achievements__bubbles-item--2">
+                        <img src="./assets/images/bubble.png" alt="bubble">
+                        <main>
+                            <h2>30</h2>
+                            <p>лет психотерапевтической практики</p>
+                        </main>
+                    </div>
+                    <!-- ITEM -->
+                    <div class="achievements__bubbles-item achievements__bubbles-item--3">
+                        <img src="./assets/images/bubble.png" alt="bubble">
+                        <main>
+                            <h2>8</h2>
+                            <p>монографий собственного авторства</p>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="reviews reviews--dark">
+            <div class="reviews__container container__1440px">
+                <div class="reviews__heading">
+                    <h2>Отзывы</h2>
+                    <div class="arrows">
+                        <button type="button" class="arrows-item arrows-item--prev reviews__slider--prev">
+                            <svg><use xlink:href="./assets/images/svg/sprite.svg#sliderArrowPrev"></use></svg>
+                        </button> 
+                        <button type="button" class="arrows-item arrows-item--next reviews__slider--next">
+                            <svg><use xlink:href="./assets/images/svg/sprite.svg#sliderArrowNext"></use></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="reviews__slider">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <header>
+                                <img class="lozad lozad--disabled" data-placeholder-background="#EFF5F3" data-src="./assets/images/reviews-avatar-1.png" data-srcset="./assets/images/reviews-avatar-1@2x.png" alt="profile">
+                                <main>
+                                    <h5>Иванов Иван Иванович</h5>
+                                    <time>27 декабря 2021</time>
+                                </main>
+                            </header>
+                            <p>Юрий Робертович! Спасибо вам за вашу помощь в решении моих жизненных проблем. В 2003 году я попал в автокатастрофу, потерял бизнес, помимо травм, полученных при аварии, добавилась депрессия с суицидальной наклонностью... и только благодаря Юрию Робертовичу, его жесткому и правильному подходу, для вывода меня из тупикового...</p>
+                            <a href="#">
+                                <span>Читать полностью</span>
+                                <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <header>
+                                <img class="lozad lozad--disabled" data-placeholder-background="#EFF5F3" data-src="./assets/images/reviews-avatar-2.png" data-srcset="./assets/images/reviews-avatar-2@2x.png" alt="profile">
+                                <main>
+                                    <h5>Людмила Алексеевна</h5>
+                                    <time>03 января 2022</time>
+                                </main>
+                            </header>
+                            <p>Вам за вашу помощь в решении моих жизненных проблем. В 2003 году я попал в автокатастрофу, потерял бизнес, помимо травм, полученных при аварии, добавилась депрессия с суицидальной наклонностью... и только благодаря Юрию Робертовичу, его жесткому и правильному подходу, для вывода меня из тупикового...</p>
+                            <a href="#">
+                                <span>Читать полностью</span>
+                                <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <header>
+                                <img class="lozad lozad--disabled" data-placeholder-background="#EFF5F3" data-src="./assets/images/reviews-avatar-3.png" data-srcset="./assets/images/reviews-avatar-3@2x.png" alt="profile">
+                                <main>
+                                    <h5>Петр Афанасьевич</h5>
+                                    <time>14 января 2022</time>
+                                </main>
+                            </header>
+                            <p>Попал в автокатастрофу, потерял бизнес, помимо травм, полученных при аварии, добавилась депрессия с суицидальной наклонностью... и только благодаря Юрию Робертовичу, его жесткому и правильному подходу, для вывода меня из тупикового...</p>
+                            <a href="#">
+                                <span>Читать полностью</span>
+                                <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <header>
+                                <img class="lozad lozad--disabled" data-placeholder-background="#EFF5F3" data-src="./assets/images/reviews-avatar-1.png" data-srcset="./assets/images/reviews-avatar-1@2x.png" alt="profile">
+                                <main>
+                                    <h5>Иванов Иван Иванович</h5>
+                                    <time>27 декабря 2021</time>
+                                </main>
+                            </header>
+                            <p>Юрий Робертович! Спасибо вам за вашу помощь в решении моих жизненных проблем. В 2003 году я попал в автокатастрофу, потерял бизнес, помимо травм, полученных при аварии, добавилась депрессия с суицидальной наклонностью... и только благодаря Юрию Робертовичу, его жесткому и правильному подходу, для вывода меня из тупикового...</p>
+                            <a href="#">
+                                <span>Читать полностью</span>
+                                <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <header>
+                                <img class="lozad lozad--disabled" data-placeholder-background="#EFF5F3" data-src="./assets/images/reviews-avatar-2.png" data-srcset="./assets/images/reviews-avatar-2@2x.png" alt="profile">
+                                <main>
+                                    <h5>Людмила Алексеевна</h5>
+                                    <time>03 января 2022</time>
+                                </main>
+                            </header>
+                            <p>Вам за вашу помощь в решении моих жизненных проблем. В 2003 году я попал в автокатастрофу, потерял бизнес, помимо травм, полученных при аварии, добавилась депрессия с суицидальной наклонностью... и только благодаря Юрию Робертовичу, его жесткому и правильному подходу, для вывода меня из тупикового...</p>
+                            <a href="#">
+                                <span>Читать полностью</span>
+                                <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <header>
+                                <img class="lozad lozad--disabled" data-placeholder-background="#EFF5F3" data-src="./assets/images/reviews-avatar-3.png" data-srcset="./assets/images/reviews-avatar-3@2x.png" alt="profile">
+                                <main>
+                                    <h5>Петр Афанасьевич</h5>
+                                    <time>14 января 2022</time>
+                                </main>
+                            </header>
+                            <p>Попал в автокатастрофу, потерял бизнес, помимо травм, полученных при аварии, добавилась депрессия с суицидальной наклонностью... и только благодаря Юрию Робертовичу, его жесткому и правильному подходу, для вывода меня из тупикового...</p>
+                            <a href="#">
+                                <span>Читать полностью</span>
+                                <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cards-services cards-services--dark">
+            <div class="cards-services__container container__1440px">
+                <ul class="cards-services__table">
+                    <a class="cards-services__table-item" href="">
+                        <svg class="cards-services__table-item-icon"><use xlink:href="./assets/images/svg/sprite.svg#cardsServices-1"></use></svg>
+                        <h3>База знаний</h3>
+                        <p>Я собрал базу знаний из более чем 2000 научных статей в облости психологии.</p>
+                        <svg class="cards-services__table-item-arrow"><use xlink:href="./assets/images/svg/sprite.svg#cardsServices-arrow"></use></svg>
+                    </a>
+                    <a class="cards-services__table-item" href="">
+                        <svg class="cards-services__table-item-icon"><use xlink:href="./assets/images/svg/sprite.svg#cardsServices-2"></use></svg>
+                        <h3>Магазин</h3>
+                        <p>Купить монографии собственного авторства, а так же сувениры.</p>
+                        <svg class="cards-services__table-item-arrow"><use xlink:href="./assets/images/svg/sprite.svg#cardsServices-arrow"></use></svg>
+                    </a>
+                    <a class="cards-services__table-item" href="">
+                        <svg class="cards-services__table-item-icon"><use xlink:href="./assets/images/svg/sprite.svg#cardsServices-3"></use></svg>
+                        <h3>Список курсов</h3>
+                        <p>Я собрал базу знаний из более чем 2000 научных статей в облости психологии.</p>
+                        <svg class="cards-services__table-item-arrow"><use xlink:href="./assets/images/svg/sprite.svg#cardsServices-arrow"></use></svg>
+                    </a>
+                    <a class="cards-services__table-item" href="">
+                        <svg class="cards-services__table-item-icon"><use xlink:href="./assets/images/svg/sprite.svg#cardsServices-4"></use></svg>
+                        <h3>Авторский тест</h3>
+                        <p>Купить монографии собственного авторства, а так же сувениры.</p>
+                        <svg class="cards-services__table-item-arrow"><use xlink:href="./assets/images/svg/sprite.svg#cardsServices-arrow"></use></svg>
+                    </a>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="enroll lozad" data-background-image="./assets/images/enroll-bg.png" data-background-image-set="./assets/images/enroll-bg@2x.png">
+            <div class="enroll__container container__1440px">
+                <h2>Записаться на онлайн консультация врача</h2>
+                <p>Запишитесь на онлайн консультацию, мы договоримся об удобном для Вас времени и начнем работать.</p>
+                <a href="#" class="g-arrow-btn">
+                    <span>Узнать подробнее</span>
+                    <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                </a>
+            </div>
+        </section>
+        
+        <section class="social-networks">
+            <div class="social-networks__container container__1440px">
+                <div class="social-networks__info">
+                    <h2>Делюсь опытом в социальных сетях</h2>
+                    <p>Но высокое качество позиционных исследований является качественно новой ступенью новых предложений.</p>
+                    <ul>
+                        <a href="#"><svg><use xlink:href="./assets/images/svg/sprite.svg#instagramIcon"></use></svg></a>
+                        <a href="#"><svg><use xlink:href="./assets/images/svg/sprite.svg#facebookIcon"></use></svg></a>
+                        <a href="#"><svg><use xlink:href="./assets/images/svg/sprite.svg#vkIcon"></use></svg></a>
+                        <a href="#"><svg><use xlink:href="./assets/images/svg/sprite.svg#youtubeIcon"></use></svg></a>
+                    </ul>
+                </div>
+                <img class="lozad lozad--disabled" data-src="./assets/images/social-networks-1.png" data-srcset="./assets/images/social-networks-1@2x.png" alt="lozad">
+                <svg class="social-networks__direction"><use xlink:href="./assets/images/svg/sprite.svg#curvesArrow"></use></svg>
+            </div>
+        </section>
+    
+        <footer class="footer">
+            <div class="footer__container container__1440px">
+                <div class="footer__contacts">
+                    <h5>Связаться со мной</h5>
+                    <ul>
+                        <li>
+                            <span>Звонки по России:</span>
+                            <a href="tel:+79504438243">+7 950 443 82 43</a>
+                        </li>
+                        <li>
+                            <span>Звонки по Франции:</span>
+                            <a href="tel:+33781843020">+33 7 81 84 30 20</a>
+                        </li>
+                        <li>
+                            <span>E-mail:</span>
+                            <a href="mailto:permvagin@gmail.com">permvagin@gmail.com</a>
+                        </li>
+                        <li>
+                            <span>Skype:</span>
+                            <a href="#">typhon-out</a>
+                        </li>
+                    </ul>
+                    <a href="#" class="g-arrow-btn">
+                        <span>Консультация</span>
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                    </a>
+                </div>
+                <nav class="footer__links">
+                    <ul class="footer__links-nav">
+                        <a href="./index.html">Главная</a>
+                        <a href="./index.html">Об Академии</a>
+                        <a href="./index.html">Список курсов</a>
+                        <a href="./index.html">Авторский тест</a>
+                        <a href="./index.html">Онлайн школа</a>
+                        <a href="./index.html">Библиотека</a>
+                    </ul>
+        
+                    <ul class="footer__links-social">
+                        <a href="#"><svg><use xlink:href="./assets/images/svg/sprite.svg#instagramIcon"></use></svg></a>
+                        <a href="#"><svg><use xlink:href="./assets/images/svg/sprite.svg#facebookIcon"></use></svg></a>
+                        <a href="#"><svg><use xlink:href="./assets/images/svg/sprite.svg#vkIcon"></use></svg></a>
+                        <a href="#"><svg><use xlink:href="./assets/images/svg/sprite.svg#youtubeIcon"></use></svg></a>
+                    </ul>
+                </nav>
+                <div class="footer__copyright">
+                    <span class="footer__copyright-text">© 2022 Врач психотерапевт Вагин Юрий Робертович. Все права защищены.</span>
+                    <div class="footer__copyright-ruso">
+                        <span>Дизайн и разработка - </span>
+                        <a href="https://rusodot.ru">RUSO</a>
+                    </div>
+                </div>
+            </div>
+        </footer>        
+    </div>
+        
+    <div class="modal modal--large modal--help">
+        <div class="modal__container contact-form">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Помощь с выбором</h2>
+            <div class="g-input">
+                <input autocomplete="off" type="text" data-validate-field="name" required>
+                <label for="name">Имя</label>
+                <div class="g-input__hint">Заполните это поле</div>
+            </div>
+            <div class="g-input">
+                <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="+_ (___) __-__-___" required>
+                <label for="name">Номер телефона</label>
+                <div class="g-input__hint">Заполните это поле</div>
+            </div>
+            <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Отправить заявку</button>
+            <div class="modal__policy contact-form__wrapper-form-policy">
+                <input id="policyCheckbox" type="checkbox" data-validate-field="checkbox">
+                <label for="policyCheckbox">
+                    <svg><use xlink:href="./assets/images/svg/sprite.svg#checkboxIcon"></use></svg>
+                    <p>Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности и даете свое согласие на обработку персональных данных</p>
+                </label>
+            </div>
+        </div>
+    </div>    
+    <div class="modal modal--success-password">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <img class="modal__success" src="./assets/images/svg/success-icon.svg" alt="success-icon">
+            <h2>Готово!</h2>
+            <p>Вы успешно поменяли пароль</p>
+        </div>
+    </div>    
+    <div class="modal modal--success-register">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <img class="modal__success" src="./assets/images/svg/success-icon.svg" alt="success-icon">
+            <h2>Вы успешно зарегистрированы</h2>
+            <p>Перейдите по ссылке из сообщения отправленному на вашу почту</p>
+        </div>
+    </div>
+    <div class="modal modal--register">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Регистрация</h2>
+            <div class="modal__panel">
+                <button type="button" class="active" data-tab-btn="1">По email</button>
+                <button type="button" data-tab-btn="2">По телефону</button>
+            </div>
+            <div class="modal__tabs">
+                <div class="modal__tabs-item contact-form active show" data-tab="1">
+                    <div class="g-input">
+                        <input autocomplete="off" type="text" data-validate-field="name" required>
+                        <label for="name">ФИО:</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                    <div class="g-input">
+                        <input autocomplete="off" type="email" data-validate-field="mail" required>
+                        <label for="name">Email:</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                    <div class="g-input password-input">
+                        <input autocomplete="off" type="password" data-validate-field="password" required>
+                        <label for="name">Пароль:</label>
+                        <div class="g-input__hint">Не меньше 7 символов</div>
+                        <button type="button" class="password-input__icon password-input__icon--show">
+                            <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                            <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                        </button>
+                    </div>
+                    <div class="g-input password-input">
+                        <input autocomplete="off" type="password" data-validate-field="confirm-password" required>
+                        <label for="name">Подтвердите пароль:</label>
+                        <div class="g-input__hint">Не меньше 7 символов</div>
+                        <button type="button" class="password-input__icon password-input__icon--show">
+                            <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                            <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                        </button>
+                    </div>
+                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Отправить заявку</button>
+                    <div class="modal__policy contact-form__wrapper-form-policy">
+                        <input id="policyCheckboxRegEm" type="checkbox" data-validate-field="checkbox">
+                        <label for="policyCheckboxRegEm">
+                            <svg><use xlink:href="./assets/images/svg/sprite.svg#checkboxIcon"></use></svg>
+                            <p>Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности и даете свое согласие на обработку персональных данных</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal__tabs-item contact-form none" data-tab="2">
+                    <div class="g-input">
+                        <input autocomplete="off" type="text" data-validate-field="name" required>
+                        <label for="name">ФИО:</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                    <div class="g-input">
+                        <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="+_ (___) __-__-___" required>
+                        <label for="name">Номер телефона:</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                    <div class="g-input password-input">
+                        <input autocomplete="off" type="password" data-validate-field="password" required>
+                        <label for="name">Пароль:</label>
+                        <div class="g-input__hint">Не меньше 7 символов</div>
+                        <button type="button" class="password-input__icon password-input__icon--show">
+                            <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                            <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                        </button>
+                    </div>
+                    <div class="g-input password-input">
+                        <input autocomplete="off" type="password" data-validate-field="confirm-password" required>
+                        <label for="name">Подтвердите пароль:</label>
+                        <div class="g-input__hint">Не меньше 7 символов</div>
+                        <button type="button" class="password-input__icon password-input__icon--show">
+                            <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                            <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                        </button>
+                    </div>
+                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Зарегистрироваться</button>
+                    <div class="modal__policy contact-form__wrapper-form-policy">
+                        <input id="policyCheckboxRegNum" type="checkbox" data-validate-field="checkbox">
+                        <label for="policyCheckboxRegNum">
+                            <svg><use xlink:href="./assets/images/svg/sprite.svg#checkboxIcon"></use></svg>
+                            <p>Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности и даете свое согласие на обработку персональных данных</p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="modal modal--register-sms">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Регистрация</h2>
+            <p>Введите код из смс отправленный по номеру <b>+79139269313</b></p>
+            <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Зарегистрироваться</button>
+            <p>Отправить код повторно можно через 00:54</p>
+        </div>
+    </div>
+    <div class="modal modal--large modal--recovery">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Воccтановление пароля</h2>
+            <p>Введите данные указанные при регистрации имы отправим вам ссылку для создания нового пароля</p>
+            <div class="modal__panel">
+                <button type="button" class="active" data-tab-btn="1">По email</button>
+                <button type="button" data-tab-btn="2">По телефону</button>
+            </div>
+            <div class="modal__tabs">
+                <div class="modal__tabs-item contact-form active show" data-tab="1">
+                    <div class="g-input">
+                        <input autocomplete="off" type="email" data-validate-field="mail" required>
+                        <label for="name">Email:</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Получить сообщение</button>
+                </div>
+                <div class="modal__tabs-item contact-form none" data-tab="2">
+                    <div class="g-input">
+                        <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="+_ (___) __-__-___" required>
+                        <label for="name">Номер телефона</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Получить сообщение</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal--large modal--make-password">
+        <div class="modal__container contact-form">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Придумайте пароль</h2>
+            <div class="g-input password-input">
+                <input autocomplete="off" type="password" data-validate-field="password" required>
+                <label for="name">Пароль:</label>
+                <div class="g-input__hint">Не меньше 7 символов</div>
+                <button type="button" class="password-input__icon password-input__icon--show">
+                    <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                    <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                </button>
+            </div>
+            <div class="g-input password-input">
+                <input autocomplete="off" type="password" data-validate-field="confirm-password" required>
+                <label for="name">Подтвердите пароль:</label>
+                <div class="g-input__hint">Не меньше 7 символов</div>
+                <button type="button" class="password-input__icon password-input__icon--show">
+                    <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                    <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                </button>
+            </div>
+            <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Подтвердить</button>
+        </div>
+    </div>    
+    <div class="modal modal--login">
+        <div class="modal__container contact-form">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Войти</h2>
+            <span>Нет аккаунта? <button type="button" class="modal__register-link">Зарегистрируйтесь</button></span>
+            <div class="g-input">
+                <input autocomplete="off" type="text" data-validate-field="email-or-num" required>
+                <label for="name">Номер телефона или email:</label>
+                <div class="g-input__hint">Заполните это поле</div>
+            </div>
+            <div class="g-input password-input">
+                <input autocomplete="off" type="password" data-validate-field="password" required>
+                <label for="name">Пароль:</label>
+                <div class="g-input__hint">Не меньше 7 символов</div>
+                <button type="button" class="password-input__icon password-input__icon--show">
+                    <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                    <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                </button>
+            </div>
+            <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Подтвердить</button>
+            <button type="button" class="modal__forgot-link">Забыли пароль?</button>
+        </div>
+    </div>    
+    <div class="modal modal--consultation">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <div class="modal__info"> 
+                <h2>Записаться на онлайн консультацию</h2>
+                <p>Последовательность нашего взаимодействия: оставьте заявку, мы договоримся об удобном времени и начнем работать</p>
+                <ul class="modal__info-tab">
+                    <li>
+                        <h4>80 мин</h4>
+                        <span>Первичная консультация</span>
+                    </li>
+                    <li>
+                        <h4>50 мин</h4>
+                        <span>Первичная консультация</span>
+                    </h4>
+                </ul>
+                <ul class="modal__info-tab">
+                    <li>
+                        <h4>180 €/час</h4>
+                        <span>Первичная консультация</span>
+                    </li>
+                    <li>
+                        <h4>150 €/час</h4>
+                        <span>Первичная консультация</span>
+                    </li>
+                </ul>
+                <div class="modal__info-additional">
+                    <span>Стоимость разовой консультации:</span>
+                    <em>200 €</em>
+                </div>
+            </div>
+            <div class="modal__form contact-form">
+                <div class="g-input">
+                    <input autocomplete="off" type="text" data-validate-field="name" required>
+                    <label for="name">ФИО:</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="+_ (___) __-__-___" required>
+                    <label for="name">Номер телефона</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="email" data-validate-field="mail">
+                    <label for="name">Электронная почта (необязательно)</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Перейти к оплате</button>
+                <div class="modal__policy contact-form__wrapper-form-policy">
+                    <input id="policyCheckboxConsult" type="checkbox" data-validate-field="checkbox">
+                    <label for="policyCheckboxConsult">
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#checkboxIcon"></use></svg>
+                        <p>Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности и даете свое согласие на обработку персональных данных</p>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.4.2/imask.min.js" integrity="sha512-l0grYOI8XZga5TajPOiqLrQVCKrdh+k0QSEtS+cpJlNeI8Nu9GOhsVaFyFQuPQfYp02GnhsyHqkPR7P7BTKYAQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
