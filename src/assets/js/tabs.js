@@ -1,6 +1,5 @@
 function switchingTabs(allTabsBtns, allTabs, tabsContent) {
     if (tabsContent) {
-        console.log(allTabsBtns)
         allTabsBtns.forEach(function(btn) {
             btn.addEventListener('click', function() {
                 let serialNumber = this.getAttribute('data-tab-btn');
@@ -25,3 +24,4 @@ function switchingTabs(allTabsBtns, allTabs, tabsContent) {
 } 
 
 switchingTabs(document.querySelectorAll('.modal__panel button[data-tab-btn]'), document.querySelectorAll('.modal__tabs-item[data-tab]'), document.querySelector('.modal--register .modal__container'));
+switchingTabs(document.querySelectorAll('.cabinet__account main button[data-tab-btn]'), document.querySelectorAll('.cabinet__account main[data-tab]'), document.querySelector('.cabinet__account'));

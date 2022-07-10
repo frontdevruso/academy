@@ -1,5 +1,6 @@
 if (document.querySelector('.search-btn')) {
     const searchBtn = document.querySelector('.search-btn');
+    const closeSearchForm = document.querySelector('.header__nav-close');
 
     const headerLinks = document.querySelector('.header__nav-links');
     const headerConsulting = document.querySelector('.header__nav-consulting');
@@ -35,6 +36,14 @@ if (document.querySelector('.search-btn')) {
     }
 
     searchBtn.addEventListener('click', function() {
+        showHide(headerLinks);
+        showHide(headerConsulting);
+        showHide(burgerPc);
+        showHide(headerIcons);
+        showHide(searchInput)
+    });
+
+    closeSearchForm.addEventListener('click', function() {
         showHide(headerLinks);
         showHide(headerConsulting);
         showHide(burgerPc);

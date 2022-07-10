@@ -6,6 +6,9 @@
     padding-top: 60px;
     margin-top: auto;
 
+    position: relative;
+    z-index: 5;
+
     @media (max-width: 768px) { padding-top: 40px }
     @media (max-width: 500px) { padding-top: 20px }
 
@@ -45,7 +48,7 @@
             color: rgba(255, 255, 255, 0.7);
             font-weight: 400;
             font-size: 16px;
-            line-height: 180%;
+            line-height: 120%;
 
             margin-right: 40px;
             max-width: 200px;

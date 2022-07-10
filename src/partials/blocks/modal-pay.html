@@ -1,0 +1,39 @@
+<div class="modal modal--pay">
+    <div class="modal__container contact-form">
+        <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+        <div class="modal__info"> 
+            <h2>Оплата месячной подписки банковской картой</h2>
+            <div class="modal__info-additional">
+                <span>Сумма к оплате:</span>
+                <em>200 €</em>
+            </div>
+        </div>
+        <div class="modal__form contact-form">
+            <div class="g-input input--raised-label">
+                <input autocomplete="off" type="text" data-validate-field="credit-card-num" placeholder="0000 0000 0000 0000" required>
+                <label for="name">Номер карты:</label>
+                <div class="g-input__hint">Заполните это поле</div>
+            </div>
+            <div class="modal__form-wrapper">
+                <div class="g-input input--raised-label">
+                    <input autocomplete="off" type="text" data-validate-field="credit-card-data" placeholder="00 / 00" required>
+                    <label for="name">ММ/ГГ</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="g-input input--raised-label">
+                    <input autocomplete="off" type="text" data-validate-field="credit-card-cvv" placeholder="***" required>
+                    <label for="name">CVV</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+            </div>
+            <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Оплатить 200 €</button>
+            <p>Данные будут сохранены на защищенном платежном сервере QIWI, наш сайт не хранит данные вашей карты</p>
+            <div class="modal__form-icons">
+                <img src="./assets/images/svg/master-card.svg" alt="card">
+                <img src="./assets/images/svg/maestro.svg" alt="card">
+                <img src="./assets/images/svg/visa.svg" alt="card">
+                <img src="./assets/images/svg/mir.svg" alt="card">
+            </div>
+        </div>
+    </div>
+</div>

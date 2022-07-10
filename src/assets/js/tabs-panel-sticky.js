@@ -1,6 +1,7 @@
 if (document.querySelector('.tabs-panel')) {
     const tabsPanel = document.querySelector('.tabs-panel');
     const position = getPosition(tabsPanel).y
+    const headerPadding = document.querySelector('.header').clientHeight * 2;
 
     function getPosition(element) {
         var xPosition = 0;
@@ -16,7 +17,7 @@ if (document.querySelector('.tabs-panel')) {
     }
     
     const checkingTabPosition = () => {    
-        if (window.scrollY > (position - 135)) {
+        if (window.scrollY > (position - headerPadding)) {
             tabsPanel.classList.add('tabs-panel--floating');
         } else {
             tabsPanel.classList.remove('tabs-panel--floating');

@@ -7,7 +7,7 @@ function initializeSelect(selects) {
     });
 }
 
-initializeSelect(document.querySelectorAll('.the-title__select button'));
+initializeSelect(document.querySelectorAll('.the-title__select [data-select-item]'));
 
 
 // MOBILE

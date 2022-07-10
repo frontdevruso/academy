@@ -36,7 +36,7 @@
                 flex-shrink: initial;
                 transform: translateY(100px);
                 
-                height: 764px;
+                height: 765px;
                 width: 100%;
                 max-width: 575px;
 
@@ -220,7 +220,7 @@
             &:not(:last-child) { margin-right: 30px }
         }
 
-        h2 {
+        h1 {
             line-height: 110%;
             width: 100%;
 
@@ -230,7 +230,35 @@
             border-bottom: 1px solid #DEE8F5;
             max-width: none;
 
+            @media (max-width: 768px) { font-size: 48px }
             @media (max-width: 575px) { margin-bottom: 25px }
+            @media (max-width: 400px) { font-size: 34px }
+        }
+
+        
+        .education-programs__slider {
+            .swiper-wrapper { padding-right: 0 }
+            ul {
+                a {
+                    height: 570px;
+                    max-width: 400px;
+
+                    @media (max-width: 575px) { height: 450px }
+
+                    main {
+                        h3 {
+                            font-size: 28px;
+                            max-width: 250px;
+
+                            @media (max-width: 400px) { line-height: 110%; }
+                        }
+                        p { opacity: .8 }
+                        footer {
+                            span { font-size: 28px }
+                        }
+                    }
+                }
+            }
         }
     }
 }

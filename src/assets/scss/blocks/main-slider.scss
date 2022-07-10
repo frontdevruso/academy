@@ -3,7 +3,6 @@
     position: relative;
     overflow: hidden;
 
-    max-width: 1920px;
     width: 100%;
 
     @media (max-width: 768px) { height: 700px }
@@ -202,7 +201,13 @@
 
                 padding-bottom: 40px;
                 position: relative;
-                transition: .6s ease;
+                transition: .6s ease all, 1.2s ease opacity;
+
+                opacity: 0;
+
+                &.show {
+                    opacity: 1;
+                }
             
                 @media (max-width: 768px) { padding-bottom: 30px }
                 @media (max-width: 400px) { padding-bottom: 20px }

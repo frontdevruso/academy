@@ -19,3 +19,4 @@ function addClassOnEyeContactDelay(elements, timeout) {
 }
 
 addClassOnEyeContactDelay(document.querySelectorAll('.achievements__bubbles-item'), 500);
+addClassOnEyeContactDelay(document.querySelectorAll('.image-fade-in'), 200);

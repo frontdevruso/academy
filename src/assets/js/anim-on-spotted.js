@@ -19,3 +19,4 @@ function addClassOnEyeContact(elements, timeout) {
 }
 
 addClassOnEyeContact(document.querySelectorAll('.modal__tabs-item[data-tab]'), 0)
+addClassOnEyeContact(document.querySelectorAll('.cabinet__account main[data-tab]'), 0)

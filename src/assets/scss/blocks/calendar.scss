@@ -1,0 +1,99 @@
+.flatpickr-calendar {
+    font-family: 'Noah', sans-serif !important;
+    padding: 28px !important;   
+    box-sizing: content-box !important;
+
+    user-select: none;
+    
+    .flatpickr-month {
+        height: 66px !important;
+        
+        .flatpickr-current-month {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            border-radius: 5px;
+
+            .flatpickr-monthDropdown-months {
+                width: fit-content;
+                appearance: none;
+
+                text-align: center;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 1;
+
+                padding: 0 !important;
+            }
+        }
+
+        .numInputWrapper {
+            text-align: center;
+            &:hover { background-color: white !important }
+
+            input {
+                padding: 0 !important;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 16px;
+                text-align: center;
+
+                &:hover { background-color: white !important }
+            }
+            
+            .arrowUp, .arrowDown {
+                display: none !important; 
+            }
+        }
+    }
+
+    .flatpickr-prev-month, .flatpickr-next-month {
+        display: flex !important;
+        height: fit-content !important;
+        top: 28px !important;
+
+        border: 1px solid #CED3DE;
+        border-radius: 10px;
+        transition: .6s ease;
+
+        svg {
+            transition: .6s ease;
+        }
+
+        &:hover {
+            border-color: $skyblue;
+            svg { fill: $skyblue !important }
+        }
+    }
+
+    .flatpickr-next-month { right: 28px !important }
+    .flatpickr-prev-month { left: 28px !important }
+    .flatpickr-day { border-radius: 5px !important } 
+
+    &.hasTime {
+        .arrowDown, .arrowUp { transition: .6s ease }
+        .arrowUp {
+            &:hover {
+                border-color: $skyblue;
+                background-color: $skyblue;
+                &::after { border-bottom-color: white }
+            }
+        }
+        .arrowDown {
+            &:hover {
+                border-color: $skyblue;
+                background-color: $skyblue;
+                &::after { border-top-color: white }
+            }
+        }
+        .numInput {
+            &::selection { background-color: transparent }
+        }
+
+        .flatpickr-time {
+            border: 1px solid #e6e6e6;
+            border-radius: 5px;
+        }
+    }
+}

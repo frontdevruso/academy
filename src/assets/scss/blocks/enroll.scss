@@ -4,15 +4,16 @@
 
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-size: 1920px auto;
+    background-size: 100% auto;
 
-    max-width: 1920px;
+  
     margin-left: auto;
     margin-right: auto;
 
     display: flex;
     width: 100%;
 
+    @media (max-width: 1920px) { background-size: 1920px auto }
     @media (max-width: 768px) { background-size: 768px 100% }
 
     @media (max-width: 374px) { 

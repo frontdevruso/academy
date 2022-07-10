@@ -7,23 +7,44 @@ title: Академия | Кабиент
     <div class="cabinet__container container__1440px">
         <div class="cabinet__account">
             <picture><img class="lozad" data-src="./assets/images/reviews-avatar-1.png" data-srcset="./assets/images/reviews-avatar-1@2x.png" alt="avatar"></picture>
-            <main>
+            <main class="active show" data-tab="1">
                 <h2>Алексей Барков</h2>
                 <ul>
                     <li>
                         <em>Дата рождения:</em>
-                        <span>30 мая 1990</span>
+                        <span class="cabinet__account-birthday">30 мая 1990</span>
                     </li>
                     <li>
                         <em>Номер телефона:</em>
-                        <a href="tel:+79504438243">+7 950 443 82 43</a>
+                        <span class="cabinet__account-phone">+7 950 443 82 43</span>
                     </li>
                     <li>
                         <em>Электронная почта:</em>
-                        <span>Неизвестно</span>
+                        <span class="cabinet__account-email">Неизвестно</span>
                     </li>
                 </ul>
-                <button type="button">Редактировать</button>
+                <button data-tab-btn="2" type="button">Редактировать</button>
+            </main>
+            <main class="none" data-tab="2">
+                <h2>Алексей Барков</h2>
+                <form action="/">
+                    <div class="g-input cabinet-input-birthday input--raised-label">
+                        <input type="text" class="calendar calendar--cabinet" data-validate-field="date" placeholder="05 Июль 1984">
+                        <label for="name">Дата рождения:</label>
+                        <div class="g-input__hint">Укажите дату</div>
+                    </div>
+                    <div class="g-input cabinet-input-phone input--raised-label">
+                        <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="+_ (___) __-__-___" required>
+                        <label for="name">Номер телефона</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                    <div class="g-input cabinet-input-email input--raised-label">
+                        <input autocomplete="off" type="email" data-validate-field="mail" placeholder="email@email.com" required>
+                        <label for="name">Электронная почта:</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                </form>
+                <button data-tab-btn="1" type="button" class="cabinet-save-changes">Сохранить изменения</button>
             </main>
         </div>
         <div class="cabinet__status">

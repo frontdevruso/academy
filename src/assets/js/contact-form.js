@@ -11,12 +11,21 @@ document.addEventListener("DOMContentLoaded", () => {
             const formPassword = form.querySelector('[data-validate-field="password"]');
             const formPasswordConfirm = form.querySelector('[data-validate-field="confirm-password"]');
             
+            const formCreditCardNum = form.querySelector('[data-validate-field="credit-card-num"]');
+            const formCreditCardData = form.querySelector('[data-validate-field="credit-card-data"]');
+            const formCreditCardCvv = form.querySelector('[data-validate-field="credit-card-cvv"]');
+            
+            const formDate = form.querySelector('[data-validate-field="date"]');
+            const formTime = form.querySelector('[data-validate-field="time"]');
+            
+            const formSMSNumbers = form.querySelectorAll('[data-validate-field="sms-code"]');
             const formPolicyCheckbox = form.querySelector('.contact-form__wrapper-form-policy input');
         
             const formAllInput = form.querySelectorAll('[data-validate-field]');
             const contactFormSubmitBtn = form.querySelector('.contact-form-submit');
             
             let hasSelected = false;
+            let smsCodeValue = '0'.substring(1);
 
             let regx = /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u;
             
@@ -71,6 +80,50 @@ document.addEventListener("DOMContentLoaded", () => {
                             errCount++;
                         } else { formMailOrNum.parentElement.classList.remove('g-input-error') }
                     }
+
+                    if(formSMSNumbers) {
+                        formSMSNumbers.forEach(function(input) {
+                            if (input.value.length === 0) {
+                                input.parentElement.classList.add('g-input-error');
+                                errCount++;
+                            } else { input.parentElement.classList.remove('g-input-error') }
+                        })
+                    }
+
+                    if(formDate) {
+                        if (formDate.value.length === 0) {
+                            formDate.parentElement.classList.add('g-input-error');
+                            errCount++;
+                        } else { formDate.parentElement.classList.remove('g-input-error') }
+                    }
+
+                    if(formTime) {
+                        if (formTime.value.length === 0) {
+                            formTime.parentElement.classList.add('g-input-error');
+                            errCount++;
+                        } else { formTime.parentElement.classList.remove('g-input-error') }
+                    }
+
+                    if(formCreditCardNum) {
+                        if (formCreditCardNum.value.length < 19) {
+                            formCreditCardNum.parentElement.classList.add('g-input-error');
+                            errCount++;
+                        } else { formCreditCardNum.parentElement.classList.remove('g-input-error') }
+                    }
+
+                    if(formCreditCardData) {
+                        if (formCreditCardData.value.length < 5) {
+                            formCreditCardData.parentElement.classList.add('g-input-error');
+                            errCount++;
+                        } else { formCreditCardData.parentElement.classList.remove('g-input-error') }
+                    }
+
+                    if(formCreditCardCvv) {
+                        if (formCreditCardCvv.value.length < 3) {
+                            formCreditCardCvv.parentElement.classList.add('g-input-error');
+                            errCount++;
+                        } else { formCreditCardCvv.parentElement.classList.remove('g-input-error') }
+                    }
         
                     if(formPassword) {
                         if (formPassword.value.length === 0 || formPassword.value.length <= 7) {
@@ -119,8 +172,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     } 
         
                     if (errCount === 0) {
-                        // HERE YOU CAN ADD A AJAX REQUEST TO SEND DATA
-                        alert('ALL WORKS!');
+                        if (formSMSNumbers) {
+                            formSMSNumbers.forEach(function(input) { smsCodeValue += String(input.value) });
+                        } // TO GET REGISTER SMS CODE USE ===> smsCodeValue
+
+                        if (form.classList.contains('contact-form--login')) {
+                            // THIS CODE WILL SEND AJAX REQUEST FOR FORMS WHICH HAVE THE CLASS --login
+                            alert('DATA HAS SENDED!')
+                        } else {
+                            // CODE HERE WILL SEND AJAX REQUEST FOR ALL FORMS BY DEFAULT
+                            alert('SEND AJAX REQUEST FOR ALL FORMS BY DEFAULT');
+                        }
                     }
                 });
             }

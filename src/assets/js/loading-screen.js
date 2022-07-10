@@ -19,10 +19,10 @@ if (document.querySelector('.loading-screen')) {
                             document.querySelector('.page').classList.add('show');
                             document.querySelector('body').classList.remove('b-hidden');
                             loadingScreen.classList.add('none');
-                        }, 600);
-                    }, 1000);
-                }, 1400);
-            }, 1400);
+                        }, 100);
+                    }, 300);
+                }, 700);
+            }, 700);
         }, 100);
     });
 } 
