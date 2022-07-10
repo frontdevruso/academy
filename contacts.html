@@ -20,9 +20,17 @@
     <meta name="description" content="">
     
     <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     
     <title>Академия | Контакты</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body class="about-template">
     
@@ -50,32 +58,33 @@
                             </main>
                         </a>
                     </ul>
+                    <button type="button" class="header__nav-close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
                 </form>
                 <button class="burger burger--pc" aria-label="Бургер меню">
                     <span></span>
                     <svg></svg>
                 </button>
                 <ul class="header__nav-links">
-                    <a href="#">Об академии</a>
+                    <a href="./about.html">Об академии</a>
                     <a href="#">Онлайн школа</a>
-                    <a href="#">Список курсов</a>
+                    <a href="./list.html">Список курсов</a>
                     <a href="#">Авторский тест</a>
-                    <a href="#">Библиотека</a>
+                    <a href="./library.html">Библиотека</a>
                     <a href="#">Консультации нашей команды</a>
                 </ul>
                 <div class="header__nav-icons">
                     <button type="button" class="search-btn"><svg><use xlink:href="./assets/images/svg/sprite.svg#searchIcon"></use></svg></button>
-                    <button type="button" class="profile-btn"><svg><use xlink:href="./assets/images/svg/sprite.svg#profileIcon"></use></svg></button>
+                    <a href="./cabinet.html" type="button" class="profile-btn"><svg><use xlink:href="./assets/images/svg/sprite.svg#profileIcon"></use></svg></a>
                 </div>
                 <button class="burger burger--mb" aria-label="Бургер меню">
                     <span></span>
                     <svg></svg>
                 </button>
             </main>
-            <a href="#" class="header__nav-consulting">
+            <button type="button" class="header__nav-consulting btn-modal-consultation">
                 <span>Консультация</span>
                 <svg><use xlink:href="./assets/images/svg/sprite.svg#rigthTopArrow"></use></svg>
-            </a>
+            </button>
         </div>
     </header>
     <aside class="desktop-menu">
@@ -170,21 +179,21 @@
                         </a>
                     </li>
                     <li>
-                        <em>Звонки по России:</em>
+                        <em>Звонки по Франции:</em>
                         <a href="tel:+33781843020">
                             <svg><use xlink:href="./assets/images/svg/sprite.svg#phoneContactsIcon"></use></svg>
                             <span>+33 7 81 84 30 20</span>
                         </a>
                     </li>
                     <li>
-                        <em>Звонки по России:</em>
+                        <em>E-mail:</em>
                         <a href="mailto:permvagin@gmail.com">
                             <svg><use xlink:href="./assets/images/svg/sprite.svg#phoneContactsIcon"></use></svg>
                             <span>permvagin@gmail.com</span>
                         </a>
                     </li>
                     <li>
-                        <em>Звонки по России:</em>
+                        <em>Skype:</em>
                         <a href="#">
                             <svg><use xlink:href="./assets/images/svg/sprite.svg#skypeContactsIcon"></use></svg>
                             <span>typhon-out</span>
@@ -195,7 +204,7 @@
         </section>
         
         
-        <section class="enroll lozad" data-background-image="./assets/images/enroll-bg.png" data-background-image-set="./assets/images/enroll-bg@2x.png">
+        <section class="enroll image-fade-in lozad" data-background-image="./assets/images/enroll-bg.png" data-background-image-set="./assets/images/enroll-bg@2x.png">
             <div class="enroll__container container__1440px">
                 <h2>Записаться на онлайн консультация врача</h2>
                 <p>Запишитесь на онлайн консультацию, мы договоримся об удобном для Вас времени и начнем работать.</p>
@@ -278,10 +287,82 @@
         </footer>        
     </div>
 
+    <div class="modal modal--consultation">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <div class="modal__info"> 
+                <h2>Записаться на онлайн консультацию</h2>
+                <p>Последовательность нашего взаимодействия: оставьте заявку, мы договоримся об удобном времени и начнем работать</p>
+                <ul class="modal__info-tab">
+                    <li>
+                        <h4>80 мин</h4>
+                        <span>Первичная консультация</span>
+                    </li>
+                    <li>
+                        <h4>50 мин</h4>
+                        <span>Первичная консультация</span>
+                    </h4>
+                </ul>
+                <ul class="modal__info-tab">
+                    <li>
+                        <h4>180 €/час</h4>
+                        <span>Первичная консультация</span>
+                    </li>
+                    <li>
+                        <h4>150 €/час</h4>
+                        <span>Первичная консультация</span>
+                    </li>
+                </ul>
+                <div class="modal__info-additional">
+                    <span>Стоимость разовой консультации:</span>
+                    <em>200 €</em>
+                </div>
+            </div>
+            <div class="modal__form contact-form">
+                <div class="g-input">
+                    <input autocomplete="off" type="text" data-validate-field="name" required>
+                    <label for="name">ФИО:</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="+_ (___) __-__-___" required>
+                    <label for="name">Номер телефона</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="email" data-validate-field="mail">
+                    <label for="name">Электронная почта (необязательно)</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="modal__form-wrapper">
+                    <div class="g-input input--raised-label">
+                        <input type="text"  class="calendar calendar--consultation" data-validate-field="date" placeholder="2022-08-03">
+                        <label for="name">Дата:</label>
+                        <div class="g-input__hint">Укажите дату</div>
+                    </div>
+                    <div class="g-input input--raised-label">
+                        <input type="text" class="calendar calendar--timer" data-validate-field="time" placeholder="00:00">
+                        <label for="name">Выберите время</label>
+                        <div class="g-input__hint">Укажите время</div>
+                    </div>
+                </div>
+                <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Перейти к оплате</button>
+                <div class="modal__policy contact-form__wrapper-form-policy">
+                    <input id="policyCheckboxConsult" type="checkbox" data-validate-field="checkbox">
+                    <label for="policyCheckboxConsult">
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#checkboxIcon"></use></svg>
+                        <p>Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности и даете свое согласие на обработку персональных данных</p>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.4.2/imask.min.js" integrity="sha512-l0grYOI8XZga5TajPOiqLrQVCKrdh+k0QSEtS+cpJlNeI8Nu9GOhsVaFyFQuPQfYp02GnhsyHqkPR7P7BTKYAQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>
 </html>
