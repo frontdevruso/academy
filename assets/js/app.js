@@ -15,6 +15,18 @@ if (document.querySelectorAll('.accordion')) {
         });
     });
 }
+if (document.querySelector('.alike-articles__slider')) {
+    let alikeSlider = new Swiper(".alike-articles__slider", {
+        slidesPerView: "auto",
+        spaceBetween: 75,
+        grabCursor: true,
+    
+        navigation: {
+          nextEl: ".alike-articles__slider--next",
+          prevEl: ".alike-articles__slider--prev",
+        },
+    });
+}
 function addClassOnEyeContact(elements, timeout) {
     if (elements) {        
         const observer = new IntersectionObserver(entries => {
@@ -230,6 +242,13 @@ document.addEventListener("DOMContentLoaded", () => {
                             formSurname.parentElement.classList.add('g-input-error');
                             errCount++;
                         } else { formSurname.parentElement.classList.remove('g-input-error') }
+                    }
+        
+                    if(formMessage) {
+                        if (formMessage.value.length === 0) {
+                            formMessage.parentElement.classList.add('g-input-error');
+                            errCount++;
+                        } else { formMessage.parentElement.classList.remove('g-input-error') }
                     }
 
                     if(formMailOrNum) {
@@ -901,28 +920,7 @@ if (document.querySelector('.desktop-menu')) {
 }
 if (document.querySelectorAll('.modal')) {
     const allModal = document.querySelectorAll('.modal');
-
-    const allModalConsultationBtns = document.querySelectorAll('.btn-modal-consultation');
-    const allModalHelpBtns = document.querySelectorAll('.btn-modal-help');
-    const allModalLoginBtns = document.querySelectorAll('.btn-modal-login');
-    const allModalMakePasswordBtns = document.querySelectorAll('.btn-modal-make-password');
-    const allModalPayBtns = document.querySelectorAll('.btn-modal-pay');
-    const allModalRecoveryBtns = document.querySelectorAll('.btn-modal-recovery');
-    const allModalRegisterSmsBtns = document.querySelectorAll('.btn-modal-register-sms');
-    const allModalRegisterBtns = document.querySelectorAll('.btn-modal-register');
-    const allModalSuccessPasswordBtns = document.querySelectorAll('.btn-modal-success-password');
-    const allModalSuccessRegisterBtns = document.querySelectorAll('.btn-modal-success-register');
-
-    const modalConsultation = document.querySelector('.modal--consultation');
-    const modalHelp = document.querySelector('.modal--help');
-    const modalLogin = document.querySelector('.modal--login');
-    const modalMakePassword = document.querySelector('.modal--make-password');
-    const modalPay = document.querySelector('.modal--pay');
-    const modalRecovery = document.querySelector('.modal--recovery');
-    const modalRegisterSms = document.querySelector('.modal--register-sms');
-    const modalRegister = document.querySelector('.modal--register');
-    const modalSuccessPassword = document.querySelector('.modal--success-password');
-    const modalSuccessRegister = document.querySelector('.modal--success-register');
+    const allModalBtns = document.querySelectorAll('[data-modal-btn]');
 
     function timerInit(allCounters) {
         if (allCounters) {
@@ -947,81 +945,25 @@ if (document.querySelectorAll('.modal')) {
         }
     }
 
+    allModalBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            let btnModalTag = btn.getAttribute('data-modal-btn');
+            allModal.forEach(function(modal) {
+                if (modal.getAttribute('data-modal') === btnModalTag) {
+                    modal.classList.toggle('open');
+                    document.querySelector('body').classList.toggle('m-hidden');
+                    if (btnModalTag === 'register-sms') {
+                        timerInit(modal.querySelectorAll('.modal__timer'))
+                    }
+                }
+            });
+        });
+    })
+
     allModal.forEach(function(modal) {
         const closeBtn = modal.querySelector('.modal__close');
         closeBtn.addEventListener('click', function() {
             modal.classList.remove('open');
-            document.querySelector('body').classList.toggle('m-hidden');
-        });
-    });
-
-    allModalConsultationBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            modalConsultation.classList.toggle('open');
-            document.querySelector('body').classList.toggle('m-hidden');
-        });
-    });
-
-    allModalHelpBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            modalHelp.classList.toggle('open');
-            document.querySelector('body').classList.toggle('m-hidden');
-        });
-    });
-
-    allModalLoginBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            modalLogin.classList.toggle('open');
-            document.querySelector('body').classList.toggle('m-hidden');
-        });
-    });
-
-    allModalMakePasswordBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            modalMakePassword.classList.toggle('open');
-            document.querySelector('body').classList.toggle('m-hidden');
-        });
-    });
-
-    allModalPayBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            modalPay.classList.toggle('open');
-            document.querySelector('body').classList.toggle('m-hidden');
-        });
-    });
-
-    allModalRecoveryBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            modalRecovery.classList.toggle('open');
-            document.querySelector('body').classList.toggle('m-hidden');
-        });
-    });
-
-    allModalRegisterSmsBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            modalRegisterSms.classList.toggle('open');
-            document.querySelector('body').classList.toggle('m-hidden');
-            timerInit(modalRegisterSms.querySelectorAll('.modal__timer'))
-        });
-    });
-
-    allModalRegisterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            modalRegister.classList.toggle('open');
-            document.querySelector('body').classList.toggle('m-hidden');
-        });
-    });
-
-    allModalSuccessPasswordBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            modalSuccessPassword.classList.toggle('open');
-            document.querySelector('body').classList.toggle('m-hidden');
-        });
-    });
-
-    allModalSuccessRegisterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            modalSuccessRegister.classList.toggle('open');
             document.querySelector('body').classList.toggle('m-hidden');
         });
     });
@@ -1261,7 +1203,7 @@ if (document.querySelector('.tabs-panel')) {
     
         return { x: xPosition, y: yPosition };
     }
-    
+
     const checkingTabPosition = () => {    
         if (window.scrollY > (position - headerPadding)) {
             tabsPanel.classList.add('tabs-panel--floating');
@@ -1276,6 +1218,27 @@ if (document.querySelector('.tabs-panel')) {
         checkingTabPosition();
     });
 }
+
+// function detectCertainElement(elements, timeout) {
+//     if (elements) {
+//         const observer = new IntersectionObserver(entries => {
+//             entries.forEach(entry => {
+//                 if (entry.isIntersecting) {
+//                     setTimeout(function() {
+//                         console.log(entry.target)
+//                         document.querySelector('.tabs-panel').classList.add('tabs-panel--fx-bottom');
+//                     }, timeout);
+//                 }
+//             });
+//         }, { threshold: 0.5 });
+        
+//         if (elements.length) {
+//             elements.forEach(element => {
+//                 observer.observe(element);
+//             });
+//         }
+//     }
+// }
 function switchingTabs(allTabsBtns, allTabs, tabsContent) {
     if (tabsContent) {
         allTabsBtns.forEach(function(btn) {

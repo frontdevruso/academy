@@ -38,21 +38,27 @@
     
         
         <section class="modal-windows">
-            <a href="#" class="g-blue-btn btn-modal-consultation">modal-consultation</a>
-            <a href="#" class="g-blue-btn btn-modal-help">modal-help</a>
-            <a href="#" class="g-blue-btn btn-modal-login">modal-login</a>
-            <a href="#" class="g-blue-btn btn-modal-make-password">modal-make-password</a>
-            <a href="#" class="g-blue-btn btn-modal-pay">modal-pay</a>
-            <a href="#" class="g-blue-btn btn-modal-recovery">modal-recovery</a>
-            <a href="#" class="g-blue-btn btn-modal-register-sms">modal-register-sms</a>
-            <a href="#" class="g-blue-btn btn-modal-register">modal-register</a>
-            <a href="#" class="g-blue-btn btn-modal-success-password">modal-success-password</a>
-            <a href="#" class="g-blue-btn btn-modal-success-register">modal-success-register</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="consultation">modal-consultation</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="help">modal-help</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="login">modal-login</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="make-password">modal-make-password</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="pay">modal-pay</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="recovery">modal-recovery</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="register-sms">modal-register-sms</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="register">modal-register</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="success-password">modal-success-password</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="success-register">modal-success-register</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="book">modal-book</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="tariff">modal-tariff</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="restricted">modal-restricted</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="login-restricted">modal-login-restricted</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="review">modal-review</a>
+            <a href="#" class="g-blue-btn" data-modal-btn="specialist">modal-specialist</a>
         </section>
         
     </div>
 
-    <div class="modal modal--large modal--help">
+    <div class="modal modal--large modal--help" data-modal="help">
         <div class="modal__container contact-form">
             <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
             <h2>Помощь с выбором</h2>
@@ -76,7 +82,7 @@
             </div>
         </div>
     </div>    
-    <div class="modal modal--success-password">
+    <div class="modal modal--success-password" data-modal="success-password">
         <div class="modal__container">
             <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
             <img class="modal__success" src="./assets/images/svg/success-icon.svg" alt="success-icon">
@@ -84,7 +90,7 @@
             <p>Вы успешно поменяли пароль</p>
         </div>
     </div>    
-    <div class="modal modal--success-register">
+    <div class="modal modal--success-register" data-modal="success-register">
         <div class="modal__container">
             <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
             <img class="modal__success" src="./assets/images/svg/success-icon.svg" alt="success-icon">
@@ -92,7 +98,7 @@
             <p>Перейдите по ссылке из сообщения отправленному на вашу почту</p>
         </div>
     </div>
-    <div class="modal modal--register">
+    <div class="modal modal--register" data-modal="register">
         <div class="modal__container">
             <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
             <h2>Регистрация</h2>
@@ -180,7 +186,7 @@
             </div>
         </div>
     </div>    
-    <div class="modal modal--register-sms">
+    <div class="modal modal--register-sms" data-modal="register-sms">
         <div class="modal__container contact-form">
             <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
             <h2>Регистрация</h2>
@@ -207,7 +213,7 @@
             <span>Отправить код повторно можно через <b class="modal__timer">00:54</b></span>
         </div>
     </div>
-    <div class="modal modal--large modal--recovery">
+    <div class="modal modal--large modal--recovery" data-modal="recovery">
         <div class="modal__container">
             <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
             <h2>Воccтановление пароля</h2>
@@ -236,7 +242,7 @@
             </div>
         </div>
     </div>
-    <div class="modal modal--large modal--make-password">
+    <div class="modal modal--large modal--make-password" data-modal="make-password">
         <div class="modal__container contact-form">
             <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
             <h2>Придумайте пароль</h2>
@@ -261,7 +267,7 @@
             <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Подтвердить</button>
         </div>
     </div>    
-    <div class="modal modal--login">
+    <div class="modal modal--login" data-modal="login">
         <div class="modal__container contact-form contact-form--login">
             <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
             <h2>Войти</h2>
@@ -284,7 +290,7 @@
             <button type="button" class="modal__forgot-link">Забыли пароль?</button>
         </div>
     </div>    
-    <div class="modal modal--consultation">
+    <div class="modal modal--consultation" data-modal="consultation">
         <div class="modal__container">
             <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
             <div class="modal__info"> 
@@ -354,7 +360,7 @@
             </div>
         </div>
     </div>    
-    <div class="modal modal--pay">
+    <div class="modal modal--pay" data-modal="pay">
         <div class="modal__container contact-form">
             <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
             <div class="modal__info"> 
@@ -389,6 +395,218 @@
                     <img src="./assets/images/svg/maestro.svg" alt="card">
                     <img src="./assets/images/svg/visa.svg" alt="card">
                     <img src="./assets/images/svg/mir.svg" alt="card">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal--book" data-modal="book">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <picture class="modal__avatar"><img class="lozad lozad--disabled" data-src="./assets/images/modal-avatar-book-1.png" data-srcset="./assets/images/modal-avatar-book-1@2x.png" alt="modal-book"></picture>
+            <main>
+                <h4>Доктор, я счастлив? Небанальные советы психотерапевта</h4>
+                <p>Юрий Вагин — врач психотерапевт со стажем работы более 30 лет, кандидат медицинских наук, директор «Психологического центра доктора Вагина», автор 8 монографий и более 50 научных статей, создатель тифоаналитической терапии.</p>
+                <ul>
+                    <li>
+                        <em>Тема: </em>
+                        <span>Популярная психотерапия</span>
+                    </li>
+                    <li>
+                        <em>Год выпуска: </em>
+                        <span>Год выпуска: 2019 г.</span>
+                    </li>
+                    <li>
+                        <em>Количество страниц: </em>
+                        <span>288</span>
+                    </li>
+                </ul>
+                <footer>
+                    <a href="#" class="g-arrow-btn modal__ozon-btn">
+                        <span>Купить на Ozone</span>
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                    </a>
+                    <a href="#" class="g-arrow-btn modal__litres-btn">
+                        <span>Купить на Litres</span>
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                    </a>
+                </footer>
+            </main>
+        </div>
+    </div>    
+    <div class="modal modal--tariff" data-modal="tariff">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Этот материал доступен по подписке</h2>
+            <p>Выберите тариф, чтобы получить доступ к этим и другим материалам.</p>
+            <div class="modal__tariffs">
+                <ul class="modal__tariffs-item">
+                    <li>
+                        <span>Товар:</span>
+                        <em>Подписка</em>
+                    </li>
+                    <li>
+                        <span>Наименование:</span>
+                        <em>Тарфи “Премиум”</em>
+                        <p>Неограниченный доступ к платным статьям.</p>
+                    </li>
+                    <li>
+                        <span>Срок:</span>
+                        <em>1 месяц</em>
+                    </li>
+                    <li>
+                        <span>Сумма:</span>
+                        <em>200 ₽</em>
+                    </li>
+                    <svg class="modal__tariffs-item-check"><use xlink:href="./assets/images/svg/sprite.svg#checkIcon"></use></svg>
+                </ul>
+                <ul class="modal__tariffs-item active">
+                    <li>
+                        <span>Товар:</span>
+                        <em>Подписка</em>
+                    </li>
+                    <li>
+                        <span>Наименование:</span>
+                        <em>Тарфи “Премиум”</em>
+                        <p>Неограниченный доступ к платным статьям.</p>
+                    </li>
+                    <li>
+                        <span>Срок:</span>
+                        <em>1 месяц</em>
+                    </li>
+                    <li>
+                        <span>Сумма:</span>
+                        <em>200 ₽</em>
+                    </li>
+                    <svg class="modal__tariffs-item-check"><use xlink:href="./assets/images/svg/sprite.svg#checkIcon"></use></svg>
+                </ul>
+                <ul class="modal__tariffs-item">
+                    <li>
+                        <span>Товар:</span>
+                        <em>Подписка</em>
+                    </li>
+                    <li>
+                        <span>Наименование:</span>
+                        <em>Тарфи “Премиум”</em>
+                        <p>Неограниченный доступ к платным статьям.</p>
+                    </li>
+                    <li>
+                        <span>Срок:</span>
+                        <em>1 месяц</em>
+                    </li>
+                    <li>
+                        <span>Сумма:</span>
+                        <em>200 ₽</em>
+                    </li>
+                    <svg class="modal__tariffs-item-check"><use xlink:href="./assets/images/svg/sprite.svg#checkIcon"></use></svg>
+                </ul>
+            </div>
+            <a href="#" class="g-arrow-btn">
+                <span>Получить доступ</span>
+                <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+            </a>
+        </div>
+    </div>
+    <div class="modal modal--restricted" data-modal="restricted">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Доступ ограничен</h2>
+            <p>Данная статья является ограниченной и открыта для просмотра только пользователям с ежемесячной подпиской или по индивидуальной покупке.</p>
+            <p>Для просмотра требуется приобрести выбранный товар или <a href="#">оформите ежемесячную подписку</a></p>
+            <div class="modal__products">
+                <ul class="modal__products-item">
+                    <li>
+                        <span>Товар:</span>
+                        <em>Статья</em>
+                    </li>
+                    <li class="modal__products-item-name">
+                        <span>Наименование:</span>
+                        <em>Перестаньте развивать мозг</em>
+                    </li>
+                    <li class="modal__products-item-price">
+                        <span>Сумма:</span>
+                        <em>1 499 ₽</em>
+                    </li>
+                </ul>
+            </div>
+            <a href="#" class="g-arrow-btn">
+                <span>Получить доступ</span>
+                <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+            </a>
+        </div>
+    </div>
+    <div class="modal modal--login-restricted" data-modal="login-restricted">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Доступ ограничен</h2>
+            <p>Доступ к данной статье только для зарегистрированных пользователей.</p>
+            <p class="modal__pb">Для просмотра войдите в личный кабинет.</p>
+            <a href="#" class="g-arrow-btn">
+                <span>Войти</span>
+                <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+            </a>
+            <p>Нет аккаунта? <a href="#">Зарегистрируйтесь</a></p>
+        </div>
+    </div>
+    <div class="modal modal--review" data-modal="review">
+        <div class="modal__container contact-form">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Оставить отзыв</h2>
+            <div class="g-input">
+                <input autocomplete="off" type="text" data-validate-field="name" required>
+                <label for="name">Как вас зовут?</label>
+                <div class="g-input__hint">Заполните это поле</div>
+            </div>
+            <div class="g-textarea">
+                <textarea autocomplete="off" name="message" type="text" data-validate-field="message" placeholder="Напишите что нибудь"></textarea>
+                <div class="g-input__hint">Заполните это поле</div>
+            </div>
+            <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Отправить</button>
+        </div>
+    </div>
+    <div class="modal modal--specialist" data-modal="specialist">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <div class="modal__info"> 
+                <picture><img class="lozad lozad--disabled" data-src="./assets/images/teachers-2.png" data-srcset="./assets/images/teachers-2@2x.png" alt="specialist"></picture>
+                <h2>Записаться на онлайн консультацию к Евгении Холодовой</h2>
+                <p>Последовательность нашего взаимодействия: оставьте заявку, мы договоримся об удобном времени и начнем работать</p>
+            </div>
+            <div class="modal__form contact-form">
+                <div class="g-input">
+                    <input autocomplete="off" type="text" data-validate-field="name" required>
+                    <label for="name">ФИО:</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="+_ (___) __-__-___" required>
+                    <label for="name">Номер телефона</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="email" data-validate-field="mail">
+                    <label for="name">Электронная почта (необязательно)</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="modal__form-wrapper">
+                    <div class="g-input input--raised-label">
+                        <input type="text"  class="calendar calendar--consultation" data-validate-field="date" placeholder="2022-08-03">
+                        <label for="name">Дата:</label>
+                        <div class="g-input__hint">Укажите дату</div>
+                    </div>
+                    <div class="g-input input--raised-label">
+                        <input type="text" class="calendar calendar--timer" data-validate-field="time" placeholder="00:00">
+                        <label for="name">Выберите время</label>
+                        <div class="g-input__hint">Укажите время</div>
+                    </div>
+                </div>
+                <b>По Московскому времени, без обеда</b>
+                <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Перейти к оплате</button>
+                <div class="modal__policy contact-form__wrapper-form-policy">
+                    <input id="policyCheckboxSpecialist" type="checkbox" data-validate-field="checkbox">
+                    <label for="policyCheckboxSpecialist">
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#checkboxIcon"></use></svg>
+                        <p>Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности и даете свое согласие на обработку персональных данных</p>
+                    </label>
                 </div>
             </div>
         </div>
