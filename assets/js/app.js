@@ -757,7 +757,7 @@ setTimeout(function() {
                 linksContainer.innerHTML += 
                 `<a href="${link}" class="g-arrow-btn ${index === 0 ? 'active' : ''}">
                     <span>Узнать подробнее</span>
-                    <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                    <svg><use xlink:href="./assets/images/svg/sprite.svg#linkLongArrow"></use></svg>
                 </a>`
     
                 desc.remove();
@@ -916,7 +916,8 @@ function manangeActiveBtns(allBtns) {
     }
 }
 
-manangeActiveBtns(document.querySelectorAll('.modal__panel button'));
+manangeActiveBtns(document.querySelectorAll('.modal--register .modal__panel button'));
+manangeActiveBtns(document.querySelectorAll('.modal--recovery .modal__panel button'));
 if (document.querySelector('.desktop-menu')) {
     const mobileMenu = document.querySelector('.mobile-menu');
     const burger = document.querySelector('.burger--mb');
@@ -941,8 +942,9 @@ if (document.querySelectorAll('.modal')) {
         if (allCounters) {
             allCounters.forEach(function(counter) {
                 let btnLink = counter.parentElement.querySelector('.modal__timer-link');
+                btnLink.classList.remove('active');
                 function countdown() {
-                    var seconds = 4;
+                    var seconds = 60;
                     function tick() {
                         seconds--;
                         counter.innerHTML =
@@ -965,11 +967,15 @@ if (document.querySelectorAll('.modal')) {
             let btnModalTag = btn.getAttribute('data-modal-btn');
             allModal.forEach(function(modal) {
                 modal.classList.remove('open');
+                document.querySelector('body').classList.toggle('m-hidden');
                 if (modal.getAttribute('data-modal') === btnModalTag) {
-                    modal.classList.toggle('open');
-                    document.querySelector('body').classList.toggle('m-hidden');
-                    if (btnModalTag === 'register-sms') {
+                    modal.classList.add('open');
+                    document.querySelector('body').classList.add('m-hidden');
+                    if (btnModalTag === 'confirm-sms') {
                         timerInit(modal.querySelectorAll('.modal__timer'))
+                        modal.querySelectorAll('.modal__wrapper .g-input input').forEach(function(input, index) {
+                            if (index === 0) { input.focus() }
+                        });
                     }
                 }
             });
@@ -1044,8 +1050,11 @@ if (document.querySelector('.desktop-menu')) {
 if (document.querySelector('.reviews-add__table')) {
     const allElements = document.querySelectorAll('.reviews-add__table li');
     allElements.forEach(function(element) {
-        element.querySelector('button').addEventListener('click', function() {
+        element.querySelector('.reviews-add-show').addEventListener('click', function() {
             element.classList.add('open');
+        });
+        element.querySelector('.reviews-add-hide').addEventListener('click', function() {
+            element.classList.remove('open');
         });
     });
 }
@@ -1098,6 +1107,15 @@ if (document.querySelector('.search-btn')) {
         }
     }
 
+    function hide(element) {
+        setTimeout(function() {
+            element.classList.remove('none');
+        }, 200);
+        setTimeout(function() {
+            element.classList.remove('a-hide');
+        }, 400);
+    }
+
     searchBtn.addEventListener('click', function() {
         showHide(headerLinks);
         showHide(headerConsulting);
@@ -1113,6 +1131,7 @@ if (document.querySelector('.search-btn')) {
         showHide(headerIcons);
         showHide(searchInput)
     });
+
 }
 function initializeSelect(selects) {
     selects.forEach(select => {
@@ -1209,7 +1228,7 @@ function initAutoFocus (input, index, list) {
     })
 }
 
-document.querySelectorAll('.modal--register-sms .g-input input').forEach(initAutoFocus);
+document.querySelectorAll('.modal--confirm-sms .g-input input').forEach(initAutoFocus);
 if (document.querySelector('.tabs-panel')) {
     const tabsPanel = document.querySelector('.tabs-panel');
     const position = getPosition(tabsPanel).y
