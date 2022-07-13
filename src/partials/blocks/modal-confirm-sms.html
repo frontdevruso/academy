@@ -1,27 +1,31 @@
-<div class="modal modal--register-sms">
+<div class="modal modal--register-sms" data-modal="register-sms">
     <div class="modal__container contact-form">
         <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
         <h2>Регистрация</h2>
         <p>Введите код из смс отправленный по номеру <b>+79139269313</b></p>
         <div class="modal__wrapper">
             <div class="g-input">
-                <input autocomplete="off" type="num" data-validate-field="sms-code" required maxlength="1">
+                <input autocomplete="off" type="tel" data-validate-field="sms-code" required maxlength="1">
                 <div class="g-input__hint">Заполните</div>
             </div>
             <div class="g-input">
-                <input autocomplete="off" type="num" data-validate-field="sms-code" required maxlength="1">
+                <input autocomplete="off" type="tel" data-validate-field="sms-code" required maxlength="1">
                 <div class="g-input__hint">Заполните</div>
             </div>
             <div class="g-input">
-                <input autocomplete="off" type="num" data-validate-field="sms-code" required maxlength="1">
+                <input autocomplete="off" type="tel" data-validate-field="sms-code" required maxlength="1">
                 <div class="g-input__hint">Заполните</div>
             </div>
             <div class="g-input">
-                <input autocomplete="off" type="num" data-validate-field="sms-code" required maxlength="1">
+                <input autocomplete="off" type="tel" data-validate-field="sms-code" required maxlength="1">
                 <div class="g-input__hint">Заполните</div>
             </div>
         </div>
         <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Зарегистрироваться</button>
-        <span>Отправить код повторно можно через <b class="modal__timer">00:54</b></span>
+        <span>
+            Отправить код повторно можно через 
+            <b class="modal__timer">00:54</b>
+            <a href="#" class="modal__timer-link">Отправить еще раз</a>
+        </span>
     </div>
 </div>

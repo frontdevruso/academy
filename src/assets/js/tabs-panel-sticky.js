@@ -15,7 +15,7 @@ if (document.querySelector('.tabs-panel')) {
     
         return { x: xPosition, y: yPosition };
     }
-    
+
     const checkingTabPosition = () => {    
         if (window.scrollY > (position - headerPadding)) {
             tabsPanel.classList.add('tabs-panel--floating');
@@ -30,3 +30,24 @@ if (document.querySelector('.tabs-panel')) {
         checkingTabPosition();
     });
 }
+
+// function detectCertainElement(elements, timeout) {
+//     if (elements) {
+//         const observer = new IntersectionObserver(entries => {
+//             entries.forEach(entry => {
+//                 if (entry.isIntersecting) {
+//                     setTimeout(function() {
+//                         console.log(entry.target)
+//                         document.querySelector('.tabs-panel').classList.add('tabs-panel--fx-bottom');
+//                     }, timeout);
+//                 }
+//             });
+//         }, { threshold: 0.5 });
+        
+//         if (elements.length) {
+//             elements.forEach(element => {
+//                 observer.observe(element);
+//             });
+//         }
+//     }
+// }

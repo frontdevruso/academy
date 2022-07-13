@@ -25,3 +25,10 @@ if (document.querySelectorAll("input[data-validate-field='credit-card-cvv']")) {
         IMask(el, { mask: "000" });
     });
 }
+
+if (document.querySelectorAll("input[data-validate-field='sms-code']")) {
+    const creditCardNumb = document.querySelectorAll("input[data-validate-field='sms-code']");
+    creditCardNumb.forEach(el => {
+        IMask(el, { mask: "0" });
+    });
+}

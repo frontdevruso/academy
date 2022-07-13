@@ -281,7 +281,7 @@
 }
 
 .tabs-panel {
-    max-width: 370px;
+    max-width: 420px;
     width: 100%;
     padding: 0 50px 50px 0;
     height: fit-content;
@@ -292,12 +292,23 @@
     position: absolute;
     left: 30px;
     top: 0;
+
+    @media (max-width: 992px) {
+        max-width: 300px;
+    }
     
     &--floating {
         @media (min-width: 900px) {
             position: fixed;
             top: calc(var(--header-height) + 70px);
             left: initial;
+        }
+    }
+    
+    &--fx-bottom {
+        @media (min-width: 900px) {
+            position: sticky !important;
+            top: 100% !important;
         }
     }
 
@@ -338,7 +349,6 @@
             width: fit-content;
 
             overflow: hidden;
-            white-space: nowrap;
             text-overflow: ellipsis;
             
             transition: .6s ease all, .2s ease border-color;
@@ -356,6 +366,7 @@
                 overflow: initial;
                 display: flex;
                 width: fit-content;
+                white-space: nowrap;
 
                 border: none;
                 padding: 0 12px 15px;

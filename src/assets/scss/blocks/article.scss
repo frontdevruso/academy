@@ -1,5 +1,5 @@
 .article {
-    padding-bottom: 120px;
+    @media (max-width: 575px) { padding-bottom: 40px }
 
     &__container {
         display: flex;

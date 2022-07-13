@@ -2,24 +2,23 @@
     display: none;
 
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - var(--header-height));
     box-sizing: border-box;
 
     min-width: 320px;
-    min-height: 100%;
 
-    padding-top: calc(var(--header-height) + 15px);
     padding-bottom: 25px;
     overflow-x: hidden;
     overflow-y: scroll;
     
     position: fixed;
-    top: 0;left: 0;
+    bottom: 0;left: 0;
 
     z-index: 50;
     background-color: white;
     transition: .6s transform;
 
+    padding-top: 15px;
     transform: translateX(110%);
 
     &.show { transform: initial }

@@ -109,7 +109,7 @@ input:focus, textarea:focus, button:focus { outline: none }
 
     &:not(:first-child) { margin-top: 25px }
 
-    input {
+    input, textarea {
         border: none;
         background-color: transparent;
         padding: 15px 30px 10px 0;
@@ -254,6 +254,59 @@ input:focus, textarea:focus, button:focus { outline: none }
             border-bottom: none;
 
             transform: rotate(45deg) translateY(-8px);
+        }
+    }
+}
+
+.g-textarea {
+    width: 100%;
+    padding: 15px 20px;
+    
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    height: 180px;
+    position: relative;
+
+    textarea {
+        border: none;
+        background-color: transparent;
+        resize: none;
+
+        width: 100%;
+        height: 100%;
+        color: #1A1A1A;
+
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 180%;
+        
+        &::-webkit-scrollbar { width: 10px }
+          
+        &::-webkit-scrollbar-thumb {
+            border: 3px solid rgba(0, 0, 0, 0);
+            background-clip: padding-box;
+            border-radius: 9999px;
+            background-color: #939F9D;
+        }
+
+        &::placeholder {
+            transition: .6s ease;
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        &:focus {
+            &::placeholder { opacity: 0 }
+        }
+    }   
+
+    &.g-input-error {
+        border-color: #E16565;
+        .g-input__hint {
+            transform: translateY(calc(100% + 10px));
+            z-index: 50;
+            opacity: 1;
         }
     }
 }

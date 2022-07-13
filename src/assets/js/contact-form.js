@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             let hasSelected = false;
             let smsCodeValue = '0'.substring(1);
+            let samePass = 0;
 
             let regx = /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u;
             
@@ -72,6 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
                             formSurname.parentElement.classList.add('g-input-error');
                             errCount++;
                         } else { formSurname.parentElement.classList.remove('g-input-error') }
+                    }
+        
+                    if(formMessage) {
+                        if (formMessage.value.length === 0) {
+                            formMessage.parentElement.classList.add('g-input-error');
+                            errCount++;
+                        } else { formMessage.parentElement.classList.remove('g-input-error') }
                     }
 
                     if(formMailOrNum) {
@@ -126,19 +134,26 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
         
                     if(formPassword) {
-                        if (formPassword.value.length === 0 || formPassword.value.length <= 7) {
-                            formPassword.parentElement.classList.add('g-input-error');
-                            errCount++;
-                        } else { formPassword.parentElement.classList.remove('g-input-error') }
+                        if (formPasswordConfirm) {
+                            if (formPassword.value.length === 0 || formPassword.value.length < 7 || formPassword.value != formPasswordConfirm.value) {
+                                formPassword.parentElement.classList.add('g-input-error');
+                                errCount++;
+                            } else { formPassword.parentElement.classList.remove('g-input-error') }
+                        } else {
+                            if (formPassword.value.length === 0 || formPassword.value.length < 7) {
+                                formPassword.parentElement.classList.add('g-input-error');
+                                errCount++;
+                            } else { formPassword.parentElement.classList.remove('g-input-error') }
+                        }
                     }
         
                     if(formPasswordConfirm) {
-                        if (formPasswordConfirm.value.length === 0 || formPasswordConfirm.value.length <= 7) {
+                        if (formPasswordConfirm.value.length === 0 || formPasswordConfirm.value.length < 7 || formPassword.value != formPasswordConfirm.value) {
                             formPasswordConfirm.parentElement.classList.add('g-input-error');
                             errCount++;
                         } else { formPasswordConfirm.parentElement.classList.remove('g-input-error') }
                     }
-        
+                    
                     if(formMail) {
                         if (!formMail.required === false) {
                             if (formMail.value.length === 0 || !regx.test(formMail.value)) {

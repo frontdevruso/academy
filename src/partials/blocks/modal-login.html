@@ -1,8 +1,8 @@
-<div class="modal modal--login">
+<div class="modal modal--login" data-modal="login">
     <div class="modal__container contact-form contact-form--login">
         <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
         <h2>Войти</h2>
-        <span>Нет аккаунта? <button type="button" class="modal__register-link">Зарегистрируйтесь</button></span>
+        <span>Нет аккаунта? <button type="button" class="modal__register-link" data-modal-btn="register">Зарегистрируйтесь</button></span>
         <div class="g-input">
             <input autocomplete="off" type="text" data-validate-field="email-or-num" required>
             <label for="name">Номер телефона или email:</label>
@@ -18,6 +18,6 @@
             </button>
         </div>
         <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Подтвердить</button>
-        <button type="button" class="modal__forgot-link">Забыли пароль?</button>
+        <button type="button" class="modal__forgot-link" data-modal-btn="recovery">Забыли пароль?</button>
     </div>
 </div>
