@@ -74,7 +74,7 @@
                 </ul>
                 <div class="header__nav-icons">
                     <button type="button" class="search-btn"><svg><use xlink:href="./assets/images/svg/sprite.svg#searchIcon"></use></svg></button>
-                    <a href="./cabinet.html" type="button" class="profile-btn"><svg><use xlink:href="./assets/images/svg/sprite.svg#profileIcon"></use></svg></a>
+                    <a href="#" type="button" class="profile-btn" data-modal-btn="login"><svg><use xlink:href="./assets/images/svg/sprite.svg#profileIcon"></use></svg></a>
                 </div>
                 <button class="burger burger--mb" aria-label="Бургер меню">
                     <span></span>
@@ -287,13 +287,250 @@
                     <span class="footer__copyright-text">© 2022 Врач психотерапевт Вагин Юрий Робертович. Все права защищены.</span>
                     <div class="footer__copyright-ruso">
                         <span>Дизайн и разработка - </span>
-                        <a href="https://rusodot.ru">RUSO</a>
+                        <a href="https://rusodot.ru" target="_blank">RUSO</a>
                     </div>
                 </div>
             </div>
         </footer>        
     </div>
 
+
+    <div class="modal modal--large modal--help" data-modal="help">
+        <div class="modal__container contact-form">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Помощь с выбором</h2>
+            <div class="g-input">
+                <input autocomplete="off" type="text" data-validate-field="name" required>
+                <label for="name">Имя</label>
+                <div class="g-input__hint">Заполните это поле</div>
+            </div>
+            <div class="g-input">
+                <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="+_ (___) __-__-___" required>
+                <label for="name">Номер телефона</label>
+                <div class="g-input__hint">Заполните это поле</div>
+            </div>
+            <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Отправить заявку</button>
+            <div class="modal__policy contact-form__wrapper-form-policy">
+                <input id="policyCheckbox" type="checkbox" data-validate-field="checkbox">
+                <label for="policyCheckbox">
+                    <svg><use xlink:href="./assets/images/svg/sprite.svg#checkboxIcon"></use></svg>
+                    <p>Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности и даете свое согласие на обработку персональных данных</p>
+                </label>
+            </div>
+        </div>
+    </div>    
+    <div class="modal modal--success-password" data-modal="success-password">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <img class="modal__success" src="./assets/images/svg/success-icon.svg" alt="success-icon">
+            <h2>Готово!</h2>
+            <p>Вы успешно поменяли пароль</p>
+        </div>
+    </div>    
+    <div class="modal modal--success-register" data-modal="success-register">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <img class="modal__success" src="./assets/images/svg/success-icon.svg" alt="success-icon">
+            <h2>Вы успешно зарегистрированы</h2>
+            <p>Перейдите по ссылке из сообщения отправленному на вашу почту</p>
+        </div>
+    </div>
+    <div class="modal modal--register" data-modal="register">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Регистрация</h2>
+            <div class="modal__panel">
+                <button type="button" class="active" data-tab-btn="1">По email</button>
+                <button type="button" data-tab-btn="2">По телефону</button>
+            </div>
+            <div class="modal__tabs">
+                <div class="modal__tabs-item contact-form active show" data-tab="1">
+                    <div class="g-input">
+                        <input autocomplete="off" type="text" data-validate-field="name" required>
+                        <label for="name">ФИО:</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                    <div class="g-input">
+                        <input autocomplete="off" type="email" data-validate-field="mail" required>
+                        <label for="name">Email:</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                    <div class="g-input password-input">
+                        <input autocomplete="off" type="password" data-validate-field="password" required>
+                        <label for="name">Пароль:</label>
+                        <div class="g-input__hint">Пароли должны совподать и не быть короче 7 символов</div>
+                        <button type="button" class="password-input__icon password-input__icon--show">
+                            <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                            <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                        </button>
+                    </div>
+                    <div class="g-input password-input">
+                        <input autocomplete="off" type="password" data-validate-field="confirm-password" required>
+                        <label for="name">Подтвердите пароль:</label>
+                        <div class="g-input__hint">Пароли должны совподать и не быть короче 7 символов</div>
+                        <button type="button" class="password-input__icon password-input__icon--show">
+                            <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                            <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                        </button>
+                    </div>
+                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Отправить заявку</button>
+                    <div class="modal__policy contact-form__wrapper-form-policy">
+                        <input id="policyCheckboxRegEm" type="checkbox" data-validate-field="checkbox">
+                        <label for="policyCheckboxRegEm">
+                            <svg><use xlink:href="./assets/images/svg/sprite.svg#checkboxIcon"></use></svg>
+                            <p>Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности и даете свое согласие на обработку персональных данных</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal__tabs-item contact-form none" data-tab="2">
+                    <div class="g-input">
+                        <input autocomplete="off" type="text" data-validate-field="name" required>
+                        <label for="name">ФИО:</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                    <div class="g-input">
+                        <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="+_ (___) __-__-___" required>
+                        <label for="name">Номер телефона:</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                    <div class="g-input password-input">
+                        <input autocomplete="off" type="password" data-validate-field="password" required>
+                        <label for="name">Пароль:</label>
+                        <div class="g-input__hint">Не меньше 7 символов</div>
+                        <button type="button" class="password-input__icon password-input__icon--show">
+                            <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                            <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                        </button>
+                    </div>
+                    <div class="g-input password-input">
+                        <input autocomplete="off" type="password" data-validate-field="confirm-password" required>
+                        <label for="name">Подтвердите пароль:</label>
+                        <div class="g-input__hint">Не меньше 7 символов</div>
+                        <button type="button" class="password-input__icon password-input__icon--show">
+                            <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                            <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                        </button>
+                    </div>
+                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Зарегистрироваться</button>
+                    <div class="modal__policy contact-form__wrapper-form-policy">
+                        <input id="policyCheckboxRegNum" type="checkbox" data-validate-field="checkbox">
+                        <label for="policyCheckboxRegNum">
+                            <svg><use xlink:href="./assets/images/svg/sprite.svg#checkboxIcon"></use></svg>
+                            <p>Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности и даете свое согласие на обработку персональных данных</p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="modal modal--register-sms" data-modal="register-sms">
+        <div class="modal__container contact-form">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Регистрация</h2>
+            <p>Введите код из смс отправленный по номеру <b>+79139269313</b></p>
+            <div class="modal__wrapper">
+                <div class="g-input">
+                    <input autocomplete="off" type="tel" data-validate-field="sms-code" required maxlength="1">
+                    <div class="g-input__hint">Заполните</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="tel" data-validate-field="sms-code" required maxlength="1">
+                    <div class="g-input__hint">Заполните</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="tel" data-validate-field="sms-code" required maxlength="1">
+                    <div class="g-input__hint">Заполните</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="tel" data-validate-field="sms-code" required maxlength="1">
+                    <div class="g-input__hint">Заполните</div>
+                </div>
+            </div>
+            <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Зарегистрироваться</button>
+            <span>
+                Отправить код повторно можно через 
+                <b class="modal__timer">00:54</b>
+                <a href="#" class="modal__timer-link">Отправить еще раз</a>
+            </span>
+        </div>
+    </div>
+    <div class="modal modal--large modal--recovery" data-modal="recovery">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Воccтановление пароля</h2>
+            <p>Введите данные указанные при регистрации имы отправим вам ссылку для создания нового пароля</p>
+            <div class="modal__panel">
+                <button type="button" class="active" data-tab-btn="1">По email</button>
+                <button type="button" data-tab-btn="2">По телефону</button>
+            </div>
+            <div class="modal__tabs">
+                <div class="modal__tabs-item contact-form active show" data-tab="1">
+                    <div class="g-input">
+                        <input autocomplete="off" type="email" data-validate-field="mail" required>
+                        <label for="name">Email:</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Получить сообщение</button>
+                </div>
+                <div class="modal__tabs-item contact-form none" data-tab="2">
+                    <div class="g-input">
+                        <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="+_ (___) __-__-___" required>
+                        <label for="name">Номер телефона</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Получить сообщение</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal--large modal--make-password" data-modal="make-password">
+        <div class="modal__container contact-form">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Придумайте пароль</h2>
+            <div class="g-input password-input">
+                <input autocomplete="off" type="password" data-validate-field="password" required>
+                <label for="name">Пароль:</label>
+                <div class="g-input__hint">Не меньше 7 символов</div>
+                <button type="button" class="password-input__icon password-input__icon--show">
+                    <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                    <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                </button>
+            </div>
+            <div class="g-input password-input">
+                <input autocomplete="off" type="password" data-validate-field="confirm-password" required>
+                <label for="name">Подтвердите пароль:</label>
+                <div class="g-input__hint">Не меньше 7 символов</div>
+                <button type="button" class="password-input__icon password-input__icon--show">
+                    <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                    <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                </button>
+            </div>
+            <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Подтвердить</button>
+        </div>
+    </div>    
+    <div class="modal modal--login" data-modal="login">
+        <div class="modal__container contact-form contact-form--login">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Войти</h2>
+            <span>Нет аккаунта? <button type="button" class="modal__register-link" data-modal-btn="register">Зарегистрируйтесь</button></span>
+            <div class="g-input">
+                <input autocomplete="off" type="text" data-validate-field="email-or-num" required>
+                <label for="name">Номер телефона или email:</label>
+                <div class="g-input__hint">Заполните это поле</div>
+            </div>
+            <div class="g-input password-input">
+                <input autocomplete="off" type="password" data-validate-field="password" required>
+                <label for="name">Пароль:</label>
+                <div class="g-input__hint">Не меньше 7 символов</div>
+                <button type="button" class="password-input__icon password-input__icon--show">
+                    <svg class="password-input__icon-shown"><use xlink:href="./assets/images/svg/sprite.svg#showPassIcon"></use></svg>
+                    <svg class="password-input__icon-hidden"><use xlink:href="./assets/images/svg/sprite.svg#hidePassIcon"></use></svg>
+                </button>
+            </div>
+            <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Подтвердить</button>
+            <button type="button" class="modal__forgot-link" data-modal-btn="recovery">Забыли пароль?</button>
+        </div>
+    </div>    
     <div class="modal modal--consultation" data-modal="consultation">
         <div class="modal__container">
             <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
@@ -357,6 +594,257 @@
                 <div class="modal__policy contact-form__wrapper-form-policy">
                     <input id="policyCheckboxConsult" type="checkbox" data-validate-field="checkbox">
                     <label for="policyCheckboxConsult">
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#checkboxIcon"></use></svg>
+                        <p>Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности и даете свое согласие на обработку персональных данных</p>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="modal modal--pay" data-modal="pay">
+        <div class="modal__container contact-form">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <div class="modal__info"> 
+                <h2>Оплата месячной подписки банковской картой</h2>
+                <div class="modal__info-additional">
+                    <span>Сумма к оплате:</span>
+                    <em>200 €</em>
+                </div>
+            </div>
+            <div class="modal__form contact-form">
+                <div class="g-input input--raised-label">
+                    <input autocomplete="off" type="text" data-validate-field="credit-card-num" placeholder="0000 0000 0000 0000" required>
+                    <label for="name">Номер карты:</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="modal__form-wrapper">
+                    <div class="g-input input--raised-label">
+                        <input autocomplete="off" type="text" data-validate-field="credit-card-data" placeholder="00 / 00" required>
+                        <label for="name">ММ/ГГ</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                    <div class="g-input input--raised-label">
+                        <input autocomplete="off" type="text" data-validate-field="credit-card-cvv" placeholder="***" required>
+                        <label for="name">CVV</label>
+                        <div class="g-input__hint">Заполните это поле</div>
+                    </div>
+                </div>
+                <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Оплатить 200 €</button>
+                <p>Данные будут сохранены на защищенном платежном сервере QIWI, наш сайт не хранит данные вашей карты</p>
+                <div class="modal__form-icons">
+                    <img src="./assets/images/svg/master-card.svg" alt="card">
+                    <img src="./assets/images/svg/maestro.svg" alt="card">
+                    <img src="./assets/images/svg/visa.svg" alt="card">
+                    <img src="./assets/images/svg/mir.svg" alt="card">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal--book" data-modal="book">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <picture class="modal__avatar"><img class="lozad lozad--disabled" data-src="./assets/images/modal-avatar-book-1.png" data-srcset="./assets/images/modal-avatar-book-1@2x.png" alt="modal-book"></picture>
+            <main>
+                <h4>Доктор, я счастлив? Небанальные советы психотерапевта</h4>
+                <p>Юрий Вагин — врач психотерапевт со стажем работы более 30 лет, кандидат медицинских наук, директор «Психологического центра доктора Вагина», автор 8 монографий и более 50 научных статей, создатель тифоаналитической терапии.</p>
+                <ul>
+                    <li>
+                        <em>Тема: </em>
+                        <span>Популярная психотерапия</span>
+                    </li>
+                    <li>
+                        <em>Год выпуска: </em>
+                        <span>Год выпуска: 2019 г.</span>
+                    </li>
+                    <li>
+                        <em>Количество страниц: </em>
+                        <span>288</span>
+                    </li>
+                </ul>
+                <footer>
+                    <a href="#" class="g-arrow-btn modal__ozon-btn">
+                        <span>Купить на Ozone</span>
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                    </a>
+                    <a href="#" class="g-arrow-btn modal__litres-btn">
+                        <span>Купить на Litres</span>
+                        <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                    </a>
+                </footer>
+            </main>
+        </div>
+    </div>    
+    <div class="modal modal--tariff" data-modal="tariff">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Этот материал доступен по подписке</h2>
+            <p>Выберите тариф, чтобы получить доступ к этим и другим материалам.</p>
+            <div class="modal__tariffs">
+                <ul class="modal__tariffs-item">
+                    <li>
+                        <span>Товар:</span>
+                        <em>Подписка</em>
+                    </li>
+                    <li>
+                        <span>Наименование:</span>
+                        <em>Тарфи “Премиум”</em>
+                        <p>Неограниченный доступ к платным статьям.</p>
+                    </li>
+                    <li>
+                        <span>Срок:</span>
+                        <em>1 месяц</em>
+                    </li>
+                    <li>
+                        <span>Сумма:</span>
+                        <em>200 ₽</em>
+                    </li>
+                    <svg class="modal__tariffs-item-check"><use xlink:href="./assets/images/svg/sprite.svg#checkIcon"></use></svg>
+                </ul>
+                <ul class="modal__tariffs-item active">
+                    <li>
+                        <span>Товар:</span>
+                        <em>Подписка</em>
+                    </li>
+                    <li>
+                        <span>Наименование:</span>
+                        <em>Тарфи “Премиум”</em>
+                        <p>Неограниченный доступ к платным статьям.</p>
+                    </li>
+                    <li>
+                        <span>Срок:</span>
+                        <em>1 месяц</em>
+                    </li>
+                    <li>
+                        <span>Сумма:</span>
+                        <em>200 ₽</em>
+                    </li>
+                    <svg class="modal__tariffs-item-check"><use xlink:href="./assets/images/svg/sprite.svg#checkIcon"></use></svg>
+                </ul>
+                <ul class="modal__tariffs-item">
+                    <li>
+                        <span>Товар:</span>
+                        <em>Подписка</em>
+                    </li>
+                    <li>
+                        <span>Наименование:</span>
+                        <em>Тарфи “Премиум”</em>
+                        <p>Неограниченный доступ к платным статьям.</p>
+                    </li>
+                    <li>
+                        <span>Срок:</span>
+                        <em>1 месяц</em>
+                    </li>
+                    <li>
+                        <span>Сумма:</span>
+                        <em>200 ₽</em>
+                    </li>
+                    <svg class="modal__tariffs-item-check"><use xlink:href="./assets/images/svg/sprite.svg#checkIcon"></use></svg>
+                </ul>
+            </div>
+            <a href="#" class="g-arrow-btn">
+                <span>Получить доступ</span>
+                <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+            </a>
+        </div>
+    </div>
+    <div class="modal modal--restricted" data-modal="restricted">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Доступ ограничен</h2>
+            <p>Данная статья является ограниченной и открыта для просмотра только пользователям с ежемесячной подпиской или по индивидуальной покупке.</p>
+            <p>Для просмотра требуется приобрести выбранный товар или <a href="#">оформите ежемесячную подписку</a></p>
+            <div class="modal__products">
+                <ul class="modal__products-item">
+                    <li>
+                        <span>Товар:</span>
+                        <em>Статья</em>
+                    </li>
+                    <li class="modal__products-item-name">
+                        <span>Наименование:</span>
+                        <em>Перестаньте развивать мозг</em>
+                    </li>
+                    <li class="modal__products-item-price">
+                        <span>Сумма:</span>
+                        <em>1 499 ₽</em>
+                    </li>
+                </ul>
+            </div>
+            <a href="#" class="g-arrow-btn">
+                <span>Получить доступ</span>
+                <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+            </a>
+        </div>
+    </div>
+    <div class="modal modal--login-restricted" data-modal="login-restricted">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Доступ ограничен</h2>
+            <p>Доступ к данной статье только для зарегистрированных пользователей.</p>
+            <p class="modal__pb">Для просмотра войдите в личный кабинет.</p>
+            <a href="#" class="g-arrow-btn">
+                <span>Войти</span>
+                <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+            </a>
+            <p>Нет аккаунта? <a href="#">Зарегистрируйтесь</a></p>
+        </div>
+    </div>
+    <div class="modal modal--review" data-modal="review">
+        <div class="modal__container contact-form">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <h2>Оставить отзыв</h2>
+            <div class="g-input">
+                <input autocomplete="off" type="text" data-validate-field="name" required>
+                <label for="name">Как вас зовут?</label>
+                <div class="g-input__hint">Заполните это поле</div>
+            </div>
+            <div class="g-textarea">
+                <textarea autocomplete="off" name="message" type="text" data-validate-field="message" placeholder="Напишите что нибудь"></textarea>
+                <div class="g-input__hint">Заполните это поле</div>
+            </div>
+            <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Отправить</button>
+        </div>
+    </div>
+    <div class="modal modal--specialist" data-modal="specialist">
+        <div class="modal__container">
+            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <div class="modal__info"> 
+                <picture><img class="lozad lozad--disabled" data-src="./assets/images/teachers-2.png" data-srcset="./assets/images/teachers-2@2x.png" alt="specialist"></picture>
+                <h2>Записаться на онлайн консультацию к Евгении Холодовой</h2>
+                <p>Последовательность нашего взаимодействия: оставьте заявку, мы договоримся об удобном времени и начнем работать</p>
+            </div>
+            <div class="modal__form contact-form">
+                <div class="g-input">
+                    <input autocomplete="off" type="text" data-validate-field="name" required>
+                    <label for="name">ФИО:</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="+_ (___) __-__-___" required>
+                    <label for="name">Номер телефона</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="email" data-validate-field="mail">
+                    <label for="name">Электронная почта (необязательно)</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="modal__form-wrapper">
+                    <div class="g-input input--raised-label">
+                        <input type="text"  class="calendar calendar--consultation" data-validate-field="date" placeholder="2022-08-03">
+                        <label for="name">Дата:</label>
+                        <div class="g-input__hint">Укажите дату</div>
+                    </div>
+                    <div class="g-input input--raised-label">
+                        <input type="text" class="calendar calendar--timer" data-validate-field="time" placeholder="00:00">
+                        <label for="name">Выберите время</label>
+                        <div class="g-input__hint">Укажите время</div>
+                    </div>
+                </div>
+                <b>По Московскому времени, без обеда</b>
+                <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Перейти к оплате</button>
+                <div class="modal__policy contact-form__wrapper-form-policy">
+                    <input id="policyCheckboxSpecialist" type="checkbox" data-validate-field="checkbox">
+                    <label for="policyCheckboxSpecialist">
                         <svg><use xlink:href="./assets/images/svg/sprite.svg#checkboxIcon"></use></svg>
                         <p>Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности и даете свое согласие на обработку персональных данных</p>
                     </label>

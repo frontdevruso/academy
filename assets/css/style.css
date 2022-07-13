@@ -431,7 +431,7 @@ input:focus, textarea:focus, button:focus {
   min-width: 320px;
   display: flex;
   align-items: center;
-  z-index: 75;
+  z-index: 40;
   background-color: white;
   position: fixed;
   top: 0; }
@@ -549,7 +549,8 @@ input:focus, textarea:focus, button:focus {
             .header__nav-search ul a picture img {
               width: auto;
               height: auto;
-              max-width: 100%; }
+              max-width: 100%;
+              transition: .4s; }
           .header__nav-search ul a main {
             display: flex;
             flex-direction: column;
@@ -562,6 +563,10 @@ input:focus, textarea:focus, button:focus {
               font-weight: 400;
               font-size: 14px;
               line-height: 120%; }
+          .header__nav-search ul a:hover main h5 {
+            text-decoration: underline; }
+          .header__nav-search ul a:hover picture img {
+            filter: drop-shadow(0px 0px 10px rgba(70, 154, 252, 0.75)); }
         @media (max-width: 1024px) {
           .header__nav-search ul {
             left: 40px; } }
@@ -591,8 +596,8 @@ input:focus, textarea:focus, button:focus {
         .header__nav-links a:hover {
           color: #469AFC; }
     .header__nav-icons {
-      margin-left: auto;
       display: flex;
+      margin-left: auto;
       transition: .4s linear; }
       @media (max-width: 650px) {
         .header__nav-icons {
@@ -1019,7 +1024,7 @@ input:focus, textarea:focus, button:focus {
   .education-programs--list .education-programs__slider .swiper-wrapper {
     padding-right: 0; }
   .education-programs--list .education-programs__slider ul a {
-    height: 570px;
+    height: 580px;
     max-width: 400px; }
     @media (max-width: 575px) {
       .education-programs--list .education-programs__slider ul a {
@@ -1964,17 +1969,20 @@ input:focus, textarea:focus, button:focus {
           left: 0;
           overflow: hidden;
           z-index: -1;
-          opacity: 0; }
+          opacity: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          max-width: 240px;
+          box-sizing: border-box; }
           .main-slider__info-wrapper-link .g-arrow-btn.active {
             z-index: 5;
             opacity: 1; }
-          @media (max-width: 400px) {
-            .main-slider__info-wrapper-link .g-arrow-btn {
-              width: 100%;
-              box-sizing: border-box;
-              font-weight: 400; }
-              .main-slider__info-wrapper-link .g-arrow-btn svg {
-                margin: 2px 0 0 auto; } }
+          .main-slider__info-wrapper-link .g-arrow-btn svg {
+            margin: 2px 0 0 10px; }
+          .main-slider__info-wrapper-link .g-arrow-btn:hover svg {
+            transform: translateX(20px); }
   .main-slider .swiper-wrapper .swiper-slide-active img {
     transform: scale(1) !important; }
   .main-slider .swiper-wrapper .swiper-slide {
@@ -2489,20 +2497,19 @@ input:focus, textarea:focus, button:focus {
 .mobile-menu {
   display: none;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - var(--header-height));
   box-sizing: border-box;
   min-width: 320px;
-  min-height: 100%;
-  padding-top: calc(var(--header-height) + 15px);
   padding-bottom: 25px;
   overflow-x: hidden;
   overflow-y: scroll;
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   z-index: 50;
   background-color: white;
   transition: .6s transform;
+  padding-top: 15px;
   transform: translateX(110%); }
   .mobile-menu.show {
     transform: initial; }
@@ -2589,6 +2596,8 @@ input:focus, textarea:focus, button:focus {
       @media (max-width: 500px) {
         .preview__container p {
           font-size: 16px; } }
+  .preview--president p {
+    max-width: 440px; }
 
 .teachers {
   padding-top: 100px; }
@@ -4186,9 +4195,8 @@ input:focus, textarea:focus, button:focus {
         font-weight: 400;
         font-size: 16px;
         line-height: 150%;
-        color: #5E6766; }
-        .reviews-add ul li > main p:not(:last-child) {
-          margin-bottom: 20px; }
+        color: #5E6766;
+        margin-bottom: 20px; }
     .reviews-add ul li button, .reviews-add ul li a {
       background-color: transparent;
       display: flex;
@@ -4741,6 +4749,17 @@ input:focus, textarea:focus, button:focus {
         border-radius: 45px 0px 0px 45px; }
       .modal__panel button:last-child {
         border-radius: 0px 45px 45px 0px; }
+  .modal__timer-link {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #469AFC;
+    width: fit-content;
+    display: none; }
+    .modal__timer-link:hover {
+      text-decoration: underline; }
+    .modal__timer-link.active {
+      display: flex; }
   .modal__tabs-item {
     display: flex;
     flex-direction: column;

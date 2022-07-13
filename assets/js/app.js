@@ -196,6 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             let hasSelected = false;
             let smsCodeValue = '0'.substring(1);
+            let samePass = 0;
 
             let regx = /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u;
             
@@ -303,19 +304,26 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
         
                     if(formPassword) {
-                        if (formPassword.value.length === 0 || formPassword.value.length <= 7) {
-                            formPassword.parentElement.classList.add('g-input-error');
-                            errCount++;
-                        } else { formPassword.parentElement.classList.remove('g-input-error') }
+                        if (formPasswordConfirm) {
+                            if (formPassword.value.length === 0 || formPassword.value.length < 7 || formPassword.value != formPasswordConfirm.value) {
+                                formPassword.parentElement.classList.add('g-input-error');
+                                errCount++;
+                            } else { formPassword.parentElement.classList.remove('g-input-error') }
+                        } else {
+                            if (formPassword.value.length === 0 || formPassword.value.length < 7) {
+                                formPassword.parentElement.classList.add('g-input-error');
+                                errCount++;
+                            } else { formPassword.parentElement.classList.remove('g-input-error') }
+                        }
                     }
         
                     if(formPasswordConfirm) {
-                        if (formPasswordConfirm.value.length === 0 || formPasswordConfirm.value.length <= 7) {
+                        if (formPasswordConfirm.value.length === 0 || formPasswordConfirm.value.length < 7 || formPassword.value != formPasswordConfirm.value) {
                             formPasswordConfirm.parentElement.classList.add('g-input-error');
                             errCount++;
                         } else { formPasswordConfirm.parentElement.classList.remove('g-input-error') }
                     }
-        
+                    
                     if(formMail) {
                         if (!formMail.required === false) {
                             if (formMail.value.length === 0 || !regx.test(formMail.value)) {
@@ -578,6 +586,13 @@ if (document.querySelectorAll("input[data-validate-field='credit-card-cvv']")) {
     const creditCardNumb = document.querySelectorAll("input[data-validate-field='credit-card-cvv']");
     creditCardNumb.forEach(el => {
         IMask(el, { mask: "000" });
+    });
+}
+
+if (document.querySelectorAll("input[data-validate-field='sms-code']")) {
+    const creditCardNumb = document.querySelectorAll("input[data-validate-field='sms-code']");
+    creditCardNumb.forEach(el => {
+        IMask(el, { mask: "0" });
     });
 }
 function initializeTabsPanel(selects) {
@@ -925,8 +940,9 @@ if (document.querySelectorAll('.modal')) {
     function timerInit(allCounters) {
         if (allCounters) {
             allCounters.forEach(function(counter) {
+                let btnLink = counter.parentElement.querySelector('.modal__timer-link');
                 function countdown() {
-                    var seconds = 59;
+                    var seconds = 4;
                     function tick() {
                         seconds--;
                         counter.innerHTML =
@@ -934,8 +950,7 @@ if (document.querySelectorAll('.modal')) {
                         if (seconds > 0) {
                             setTimeout(tick, 1000);
                         } else {
-                            // let container = counter.parentElement;
-                            // counter.parentElement.innerHTML += '<button type="button">Отправить ещё раз</button>';
+                            btnLink.classList.add('active');
                         }
                     }
                     tick();
@@ -949,6 +964,7 @@ if (document.querySelectorAll('.modal')) {
         btn.addEventListener('click', function() {
             let btnModalTag = btn.getAttribute('data-modal-btn');
             allModal.forEach(function(modal) {
+                modal.classList.remove('open');
                 if (modal.getAttribute('data-modal') === btnModalTag) {
                     modal.classList.toggle('open');
                     document.querySelector('body').classList.toggle('m-hidden');
@@ -962,6 +978,14 @@ if (document.querySelectorAll('.modal')) {
 
     allModal.forEach(function(modal) {
         const closeBtn = modal.querySelector('.modal__close');
+        
+        modal.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.classList.remove('open');
+                document.querySelector('body').classList.toggle('m-hidden');
+            }
+        })
+
         closeBtn.addEventListener('click', function() {
             modal.classList.remove('open');
             document.querySelector('body').classList.toggle('m-hidden');
