@@ -70,7 +70,7 @@
                     <a href="./list.html">Список курсов</a>
                     <a href="#">Авторский тест</a>
                     <a href="./library.html">Библиотека</a>
-                    <a href="#">Консультации нашей команды</a>
+                    <a href="#">Консультации <b>нашей команды</b></a>
                 </ul>
                 <div class="header__nav-icons">
                     <button type="button" class="search-btn"><svg><use xlink:href="./assets/images/svg/sprite.svg#searchIcon"></use></svg></button>
@@ -170,7 +170,11 @@
         <section class="cabinet">
             <div class="cabinet__container container__1440px">
                 <div class="cabinet__account">
-                    <picture><img class="lozad" data-src="./assets/images/reviews-avatar-1.png" data-srcset="./assets/images/reviews-avatar-1@2x.png" alt="avatar"></picture>
+                    <picture class="cabinet__account-img">
+                        <img class="cabinet__account-img-avatar lozad" data-src="./assets/images/reviews-avatar-1.png" data-srcset="./assets/images/reviews-avatar-1@2x.png" alt="avatar">
+                        <div class="cabinet__account-img-preview"><svg><use xlink:href="./assets/images/svg/sprite.svg#imageInputIcon"></use></svg></div>
+                        <input class="cabinet__account-img-input" type="file" accept=".jpg, .png">
+                    </picture>
                     <main class="active show" data-tab="1">
                         <h2>Алексей Барков</h2>
                         <ul>
@@ -208,7 +212,10 @@
                                 <div class="g-input__hint">Заполните это поле</div>
                             </div>
                         </form>
-                        <button data-tab-btn="1" type="button" class="cabinet-save-changes">Сохранить изменения</button>
+                        <footer>
+                            <button data-tab-btn="1" type="button" class="cabinet-save-changes">Сохранить изменения</button>
+                            <button data-tab-btn="1" type="button">Отменить</button>
+                        </footer>
                     </main>
                 </div>
                 <div class="cabinet__status">
@@ -223,7 +230,7 @@
                         </li>
                     </ul>
                     <p>Без доступа к платным статьям.</p>
-                    <button type="button">Изменить статус</button>
+                    <button type="button" data-modal-btn="tariff">Изменить статус</button>
                 </div>
             </div>
         </section>
@@ -236,31 +243,11 @@
                         <main>
                             <div class="purchases-history__table-item-data">
                                 <em>Дата:</em>
-                                <time>29 февраля 2022</time>
+                                <time>29 февраля 2022 - <br> 1 марта 2022</time>
                             </div>
                             <div class="purchases-history__table-item-data">
-                                <em>Товар:</em>
-                                <span>Статья</span>
-                            </div>
-                            <div class="purchases-history__table-item-data">
-                                <em>Наименование:</em>
-                                <span>Перестаньте развивать мозг</span>
-                            </div>
-                        </main>
-                        <div class="purchases-history__table-item-total">
-                            <em>Сумма:</em>
-                            <b>1 499 ₽</b>
-                        </div>
-                    </div>
-                    <div class="purchases-history__table-item">
-                        <main>
-                            <div class="purchases-history__table-item-data">
-                                <em>Дата:</em>
-                                <time>29 февраля 2022</time>
-                            </div>
-                            <div class="purchases-history__table-item-data">
-                                <em>Товар:</em>
-                                <span>Статья</span>
+                                <em>Покупка:</em>
+                                <span>Тариф "Старт"</span>
                             </div>
                             <div class="purchases-history__table-item-data">
                                 <em>Наименование:</em>
@@ -276,31 +263,11 @@
                         <main>
                             <div class="purchases-history__table-item-data">
                                 <em>Дата:</em>
-                                <time>29 февраля 2022</time>
+                                <time>29 февраля 2022 - <br> 1 марта 2022</time>
                             </div>
                             <div class="purchases-history__table-item-data">
-                                <em>Товар:</em>
-                                <span>Статья</span>
-                            </div>
-                            <div class="purchases-history__table-item-data">
-                                <em>Наименование:</em>
-                                <span>Перестаньте развивать мозг</span>
-                            </div>
-                        </main>
-                        <div class="purchases-history__table-item-total">
-                            <em>Сумма:</em>
-                            <b>1 499 ₽</b>
-                        </div>
-                    </div>
-                    <div class="purchases-history__table-item">
-                        <main>
-                            <div class="purchases-history__table-item-data">
-                                <em>Дата:</em>
-                                <time>29 февраля 2022</time>
-                            </div>
-                            <div class="purchases-history__table-item-data">
-                                <em>Товар:</em>
-                                <span>Статья</span>
+                                <em>Покупка:</em>
+                                <span>Тариф "Старт"</span>
                             </div>
                             <div class="purchases-history__table-item-data">
                                 <em>Наименование:</em>
@@ -316,11 +283,51 @@
                         <main>
                             <div class="purchases-history__table-item-data">
                                 <em>Дата:</em>
-                                <time>29 февраля 2022</time>
+                                <time>29 февраля 2022 - <br> 1 марта 2022</time>
                             </div>
                             <div class="purchases-history__table-item-data">
-                                <em>Товар:</em>
-                                <span>Статья</span>
+                                <em>Покупка:</em>
+                                <span>Тариф "Старт"</span>
+                            </div>
+                            <div class="purchases-history__table-item-data">
+                                <em>Наименование:</em>
+                                <span>Перестаньте развивать мозг</span>
+                            </div>
+                        </main>
+                        <div class="purchases-history__table-item-total">
+                            <em>Сумма:</em>
+                            <b>1 499 ₽</b>
+                        </div>
+                    </div>
+                    <div class="purchases-history__table-item">
+                        <main>
+                            <div class="purchases-history__table-item-data">
+                                <em>Дата:</em>
+                                <time>29 февраля 2022 - <br> 1 марта 2022</time>
+                            </div>
+                            <div class="purchases-history__table-item-data">
+                                <em>Покупка:</em>
+                                <span>Тариф "Старт"</span>
+                            </div>
+                            <div class="purchases-history__table-item-data">
+                                <em>Наименование:</em>
+                                <span>Перестаньте развивать мозг</span>
+                            </div>
+                        </main>
+                        <div class="purchases-history__table-item-total">
+                            <em>Сумма:</em>
+                            <b>1 499 ₽</b>
+                        </div>
+                    </div>
+                    <div class="purchases-history__table-item">
+                        <main>
+                            <div class="purchases-history__table-item-data">
+                                <em>Дата:</em>
+                                <time>29 февраля 2022 - <br> 1 марта 2022</time>
+                            </div>
+                            <div class="purchases-history__table-item-data">
+                                <em>Покупка:</em>
+                                <span>Тариф "Старт"</span>
                             </div>
                             <div class="purchases-history__table-item-data">
                                 <em>Наименование:</em>
@@ -567,7 +574,7 @@
                         <label for="name">Email:</label>
                         <div class="g-input__hint">Заполните это поле</div>
                     </div>
-                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Получить сообщение</button>
+                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Получить код</button>
                 </div>
                 <div class="modal__tabs-item contact-form none" data-tab="2">
                     <div class="g-input">
@@ -575,7 +582,7 @@
                         <label for="name">Номер телефона</label>
                         <div class="g-input__hint">Заполните это поле</div>
                     </div>
-                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Получить сообщение</button>
+                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Получить код</button>
                 </div>
             </div>
         </div>
@@ -709,6 +716,16 @@
                 </div>
             </div>
             <div class="modal__form contact-form">
+                <div class="g-input">
+                    <input autocomplete="off" type="text" data-validate-field="name" required>
+                    <label for="name">Имя</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="email" data-validate-field="mail" required>
+                    <label for="name">Email:</label>
+                    <div class="g-input__hint">Это поле должно соответствовать email</div>
+                </div>
                 <div class="g-input input--raised-label">
                     <input autocomplete="off" type="text" data-validate-field="credit-card-num" placeholder="0000 0000 0000 0000" required>
                     <label for="name">Номер карты:</label>

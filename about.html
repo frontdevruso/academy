@@ -70,7 +70,7 @@
                     <a href="./list.html">Список курсов</a>
                     <a href="#">Авторский тест</a>
                     <a href="./library.html">Библиотека</a>
-                    <a href="#">Консультации нашей команды</a>
+                    <a href="#">Консультации <b>нашей команды</b></a>
                 </ul>
                 <div class="header__nav-icons">
                     <button type="button" class="search-btn"><svg><use xlink:href="./assets/images/svg/sprite.svg#searchIcon"></use></svg></button>
@@ -729,7 +729,7 @@
                         <label for="name">Email:</label>
                         <div class="g-input__hint">Заполните это поле</div>
                     </div>
-                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Получить сообщение</button>
+                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Получить код</button>
                 </div>
                 <div class="modal__tabs-item contact-form none" data-tab="2">
                     <div class="g-input">
@@ -737,7 +737,7 @@
                         <label for="name">Номер телефона</label>
                         <div class="g-input__hint">Заполните это поле</div>
                     </div>
-                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Получить сообщение</button>
+                    <button class="modal__btn contact-form-submit g-blue-btn" type="submit">Получить код</button>
                 </div>
             </div>
         </div>
@@ -871,6 +871,16 @@
                 </div>
             </div>
             <div class="modal__form contact-form">
+                <div class="g-input">
+                    <input autocomplete="off" type="text" data-validate-field="name" required>
+                    <label for="name">Имя</label>
+                    <div class="g-input__hint">Заполните это поле</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="email" data-validate-field="mail" required>
+                    <label for="name">Email:</label>
+                    <div class="g-input__hint">Это поле должно соответствовать email</div>
+                </div>
                 <div class="g-input input--raised-label">
                     <input autocomplete="off" type="text" data-validate-field="credit-card-num" placeholder="0000 0000 0000 0000" required>
                     <label for="name">Номер карты:</label>

@@ -87,6 +87,25 @@ if (mainSliderComment) {
         item.style.setProperty("-webkit-box-orient", "vertical");
     })
 }
+if (document.querySelector('.--tariff-block')) {
+    if (document.querySelector('.modal--tariff')) {
+        const modal = document.querySelector('.modal--tariff');
+
+        const blockingPage = () => {    
+            if (window.scrollY > 50) {
+                modal.classList.add('open');
+                modal.classList.add('--block');
+                document.querySelector('body').classList.add('m-hidden');
+            }
+        }
+    
+        blockingPage();
+    
+        window.addEventListener("scroll", function() {
+            blockingPage();
+        });
+    }
+}
 document.addEventListener("DOMContentLoaded", () => {
     const burgers = document.querySelectorAll(".burger");
     
@@ -967,16 +986,16 @@ if (document.querySelectorAll('.modal')) {
             let btnModalTag = btn.getAttribute('data-modal-btn');
             allModal.forEach(function(modal) {
                 modal.classList.remove('open');
-                document.querySelector('body').classList.toggle('m-hidden');
+                document.querySelector('body').classList.add('m-hidden');
                 if (modal.getAttribute('data-modal') === btnModalTag) {
                     modal.classList.add('open');
                     document.querySelector('body').classList.add('m-hidden');
                     if (btnModalTag === 'confirm-sms') {
                         timerInit(modal.querySelectorAll('.modal__timer'))
-                        modal.querySelectorAll('.modal__wrapper .g-input input').forEach(function(input, index) {
-                            if (index === 0) { input.focus() }
-                        });
                     }
+                    modal.querySelectorAll('.g-input input').forEach(function(input, index) {
+                        if (index === 0) { input.focus() }
+                    });
                 }
             });
         });
@@ -986,15 +1005,19 @@ if (document.querySelectorAll('.modal')) {
         const closeBtn = modal.querySelector('.modal__close');
         
         modal.addEventListener('click', function(event) {
-            if (event.target == modal) {
-                modal.classList.remove('open');
-                document.querySelector('body').classList.toggle('m-hidden');
+            if(!modal.classList.contains('--block')) {
+                if (event.target == modal) {
+                    modal.classList.remove('open');
+                    document.querySelector('body').classList.remove('m-hidden');
+                }
             }
         })
 
         closeBtn.addEventListener('click', function() {
-            modal.classList.remove('open');
-            document.querySelector('body').classList.toggle('m-hidden');
+            if(!modal.classList.contains('--block')) {
+                modal.classList.remove('open');
+                document.querySelector('body').classList.toggle('m-hidden');
+            }
         });
     });
 }
@@ -1116,12 +1139,30 @@ if (document.querySelector('.search-btn')) {
         }, 400);
     }
 
+    function hidePageSearch() {
+        function hide() {
+            if (document.querySelector('.hide-search-outside')) {
+                showHide(headerLinks);
+                showHide(headerConsulting);
+                showHide(burgerPc);
+                showHide(headerIcons);
+                showHide(searchInput)
+                document.querySelector('.hide-search-outside').classList.remove('hide-search-outside');
+            }
+        }
+        document.querySelector('.page').addEventListener('click', function() {
+            hide();
+        });
+    }
+
     searchBtn.addEventListener('click', function() {
         showHide(headerLinks);
         showHide(headerConsulting);
         showHide(burgerPc);
         showHide(headerIcons);
         showHide(searchInput)
+        hidePageSearch();
+        document.querySelector('body').classList.add('hide-search-outside');
     });
 
     closeSearchForm.addEventListener('click', function() {
@@ -1129,7 +1170,9 @@ if (document.querySelector('.search-btn')) {
         showHide(headerConsulting);
         showHide(burgerPc);
         showHide(headerIcons);
-        showHide(searchInput)
+        showHide(searchInput);
+        hidePageSearch();
+        document.querySelector('body').classList.remove('hide-search-outside');
     });
 
 }

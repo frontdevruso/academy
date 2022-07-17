@@ -454,6 +454,9 @@ input:focus, textarea:focus, button:focus {
       height: 100%;
       padding: 0 50px;
       border-bottom: 1px solid transparent; }
+      @media (max-width: 1600px) {
+        .header__nav > main {
+          padding: 0 30px; } }
       @media (max-width: 650px) {
         .header__nav > main {
           padding: 0 25px; } }
@@ -580,12 +583,18 @@ input:focus, textarea:focus, button:focus {
     .header__nav-logo {
       display: flex;
       margin-right: 50px; }
+      @media (max-width: 1600px) {
+        .header__nav-logo {
+          margin-right: 30px; } }
     .header__nav-links {
       display: flex;
       align-items: center;
       padding: 0 40px 0 0;
       transition: .4s linear; }
-      @media (max-width: 1520px) {
+      @media (max-width: 1600px) {
+        .header__nav-links {
+          padding: 0 20px 0 0; } }
+      @media (max-width: 1200px) {
         .header__nav-links {
           display: none; } }
       .header__nav-links a {
@@ -598,9 +607,14 @@ input:focus, textarea:focus, button:focus {
           margin-right: 40px; }
         .header__nav-links a:hover {
           color: #469AFC; }
+        .header__nav-links a b {
+          font-weight: inherit; }
         @media (max-width: 1700px) {
           .header__nav-links a {
             font-size: 14px; } }
+        @media (max-width: 1600px) {
+          .header__nav-links a b {
+            display: none; } }
     .header__nav-icons {
       display: flex;
       margin-left: auto;
@@ -632,17 +646,30 @@ input:focus, textarea:focus, button:focus {
       transition: .4s linear;
       padding: 15px 15px 15px 30px;
       box-sizing: border-box; }
+      @media (max-width: 1600px) {
+        .header__nav-consulting {
+          max-width: none;
+          width: fit-content;
+          align-items: center;
+          justify-content: center;
+          padding: 15px; } }
       .header__nav-consulting svg {
         width: 24px;
         height: 24px;
         fill: white;
         margin-bottom: auto;
         margin-left: auto; }
+        @media (max-width: 1600px) {
+          .header__nav-consulting svg {
+            margin: 0; } }
       .header__nav-consulting span {
         font-weight: 400;
         font-size: 16px;
         line-height: 180%;
         margin-top: auto; }
+        @media (max-width: 1600px) {
+          .header__nav-consulting span {
+            display: none; } }
       @media (max-width: 650px) {
         .header__nav-consulting {
           display: none; } }
@@ -3315,12 +3342,15 @@ input:focus, textarea:focus, button:focus {
     height: fit-content;
     margin-bottom: 40px;
     position: relative;
-    display: flex; }
+    display: flex;
+    background-color: transparent;
+    padding: 0; }
     .products__img img {
       width: 76.48%;
       max-width: 360px;
       height: auto;
-      border-radius: 10px; }
+      border-radius: 10px;
+      cursor: pointer; }
     .products__img em {
       position: absolute;
       top: 10px;
@@ -3367,23 +3397,25 @@ input:focus, textarea:focus, button:focus {
         line-height: 160%;
         color: #7A8281;
         margin-bottom: 20px; }
-      .products ul li a {
+      .products ul li button, .products ul li a {
         display: flex;
         align-items: center;
         margin-top: auto;
-        width: fit-content; }
-        .products ul li a span {
+        width: fit-content;
+        background-color: transparent;
+        padding: 0; }
+        .products ul li button span, .products ul li a span {
           color: #469AFC;
           margin-right: 10px;
           font-weight: 500;
           font-size: 16px; }
-        .products ul li a svg {
+        .products ul li button svg, .products ul li a svg {
           width: 16px;
           height: 10px;
           transition: 1.3s;
           margin-top: 1px;
           fill: #469AFC; }
-        .products ul li a:hover svg {
+        .products ul li button:hover svg, .products ul li a:hover svg {
           animation: linkArrowAnimation 1.3s ease forwards; }
 
 .professional-path {
@@ -4398,21 +4430,65 @@ input:focus, textarea:focus, button:focus {
       .cabinet__account {
         flex-direction: column;
         align-items: center; } }
+    @media (max-width: 400px) {
+      .cabinet__account {
+        padding: 30px 0 30px; } }
     .cabinet__account > *:last-child {
       margin-bottom: 0; }
-    .cabinet__account picture {
+    .cabinet__account-img {
       width: 100%;
       max-width: 132px;
       min-width: 132px;
       height: 132px;
-      margin: 15px 38px 0 0; }
-      .cabinet__account picture img {
+      margin: 15px 38px 0 0;
+      position: relative;
+      border-radius: 9999px;
+      overflow: hidden;
+      background-image: url("../images/svg/no-avatar-placeholder.svg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: 50% 50%; }
+      .cabinet__account-img-avatar {
         max-width: 100%;
         width: 100%;
         height: auto; }
+      .cabinet__account-img-preview {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: .6s ease;
+        opacity: 0; }
+        .cabinet__account-img-preview svg {
+          width: 34px;
+          height: 34px;
+          fill: #b1b1b1; }
+      .cabinet__account-img input {
+        display: flex;
+        font-size: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        cursor: pointer;
+        background-color: transparent;
+        padding: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%; }
       @media (max-width: 768px) {
-        .cabinet__account picture {
+        .cabinet__account-img {
           margin: 0 0 10px 0; } }
+      .cabinet__account-img:hover .cabinet__account-img-preview {
+        opacity: 1; }
     .cabinet__account main {
       display: flex;
       flex-direction: column;
@@ -4475,7 +4551,8 @@ input:focus, textarea:focus, button:focus {
         display: flex; }
         @media (max-width: 1366px) {
           .cabinet__account main form {
-            flex-direction: column; } }
+            flex-direction: column;
+            margin-bottom: 50px; } }
         @media (max-width: 1100px) {
           .cabinet__account main form {
             flex-direction: row; } }
@@ -4524,6 +4601,45 @@ input:focus, textarea:focus, button:focus {
             margin-right: auto;
             width: 100%;
             padding: 16px 0; } }
+      .cabinet__account main footer {
+        display: flex;
+        align-items: center;
+        margin-top: auto; }
+        @media (max-width: 1300px) {
+          .cabinet__account main footer {
+            flex-direction: column;
+            align-items: initial; } }
+        @media (max-width: 1300px) {
+          .cabinet__account main footer {
+            flex-direction: row;
+            align-items: center; } }
+        .cabinet__account main footer button {
+          padding: 16px 60px; }
+        @media (max-width: 768px) {
+          .cabinet__account main footer button {
+            padding: 16px 50px;
+            white-space: nowrap; } }
+        @media (max-width: 575px) {
+          .cabinet__account main footer {
+            flex-direction: column; } }
+        .cabinet__account main footer button:not(:first-child) {
+          margin-left: 15px;
+          background-color: #469AFC;
+          color: white; }
+          .cabinet__account main footer button:not(:first-child):hover {
+            background-color: #3c77ff; }
+          @media (max-width: 1300px) {
+            .cabinet__account main footer button:not(:first-child) {
+              margin-left: 0;
+              margin-top: 15px; } }
+          @media (max-width: 1300px) {
+            .cabinet__account main footer button:not(:first-child) {
+              margin-left: 15px;
+              margin-top: 0; } }
+          @media (max-width: 575px) {
+            .cabinet__account main footer button:not(:first-child) {
+              margin-left: 0;
+              margin-top: 15px; } }
   .cabinet__status {
     display: flex;
     flex-direction: column;
@@ -5033,7 +5149,7 @@ input:focus, textarea:focus, button:focus {
   .modal--pay .modal__container {
     padding: 0;
     border-radius: 0;
-    height: 480px;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     max-width: fit-content;
@@ -5105,6 +5221,8 @@ input:focus, textarea:focus, button:focus {
       margin: auto auto 0; }
       .modal--pay .modal__form-icons img:not(:last-child) {
         margin-right: 15px; }
+    .modal--pay .modal__form .g-input label {
+      color: rgba(26, 26, 26, 0.4); }
     .modal--pay .modal__form-wrapper {
       display: flex; }
       .modal--pay .modal__form-wrapper .g-input {
