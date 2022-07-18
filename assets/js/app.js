@@ -1015,10 +1015,8 @@ if (document.querySelectorAll('.modal')) {
         })
 
         closeBtn.addEventListener('click', function() {
-            if(!modal.classList.contains('--block')) {
-                modal.classList.remove('open');
-                document.querySelector('body').classList.toggle('m-hidden');
-            }
+            modal.classList.remove('open');
+            document.querySelector('body').classList.toggle('m-hidden');
         });
     });
 }

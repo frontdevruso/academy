@@ -790,7 +790,7 @@
     </div>    
     <div class="modal modal--tariff" id="modalTariff" data-modal="tariff">
         <div class="modal__container">
-            <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
+            <!-- <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button> -->
             <h2>Этот материал доступен по подписке</h2>
             <p>Выберите тариф, чтобы получить доступ к этим и другим материалам.</p>
             <div class="modal__tariffs">
@@ -861,10 +861,10 @@
                     </ul>
                 </button>
             </div>
-            <a href="#" class="g-arrow-btn">
+            <button type="button" class="g-arrow-btn" data-modal-btn="pay">
                 <span>Получить доступ</span>
                 <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
-            </a>
+            </button>
         </div>
     </div>
     <div class="modal modal--restricted" data-modal="restricted">
