@@ -937,6 +937,7 @@ function manangeActiveBtns(allBtns) {
 
 manangeActiveBtns(document.querySelectorAll('.modal--register .modal__panel button'));
 manangeActiveBtns(document.querySelectorAll('.modal--recovery .modal__panel button'));
+manangeActiveBtns(document.querySelectorAll('.modal--tariff .modal__tariffs-item'));
 if (document.querySelector('.desktop-menu')) {
     const mobileMenu = document.querySelector('.mobile-menu');
     const burger = document.querySelector('.burger--mb');

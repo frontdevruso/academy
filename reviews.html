@@ -699,14 +699,14 @@
             </div>
             <div class="modal__form contact-form">
                 <div class="g-input">
-                    <input autocomplete="off" type="text" data-validate-field="name" required>
-                    <label for="name">Имя</label>
-                    <div class="g-input__hint">Заполните это поле</div>
-                </div>
-                <div class="g-input">
                     <input autocomplete="off" type="email" data-validate-field="mail" required>
                     <label for="name">Email:</label>
                     <div class="g-input__hint">Это поле должно соответствовать email</div>
+                </div>
+                <div class="g-input">
+                    <input autocomplete="off" type="text" data-validate-field="name" required>
+                    <label for="name">Имя и фамилия</label>
+                    <div class="g-input__hint">Заполните это поле</div>
                 </div>
                 <div class="g-input input--raised-label">
                     <input autocomplete="off" type="text" data-validate-field="credit-card-num" placeholder="0000 0000 0000 0000" required>
@@ -770,72 +770,78 @@
             </main>
         </div>
     </div>    
-    <div class="modal modal--tariff" data-modal="tariff">
+    <div class="modal modal--tariff" id="modalTariff" data-modal="tariff">
         <div class="modal__container">
             <button class="modal__close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeModal"></use></svg></button>
             <h2>Этот материал доступен по подписке</h2>
             <p>Выберите тариф, чтобы получить доступ к этим и другим материалам.</p>
             <div class="modal__tariffs">
-                <ul class="modal__tariffs-item">
-                    <li>
-                        <span>Товар:</span>
-                        <em>Подписка</em>
-                    </li>
-                    <li>
-                        <span>Наименование:</span>
-                        <em>Тарфи “Премиум”</em>
-                        <p>Неограниченный доступ к платным статьям.</p>
-                    </li>
-                    <li>
-                        <span>Срок:</span>
-                        <em>1 месяц</em>
-                    </li>
-                    <li>
-                        <span>Сумма:</span>
-                        <em>200 ₽</em>
-                    </li>
-                    <svg class="modal__tariffs-item-check"><use xlink:href="./assets/images/svg/sprite.svg#checkIcon"></use></svg>
-                </ul>
-                <ul class="modal__tariffs-item active">
-                    <li>
-                        <span>Товар:</span>
-                        <em>Подписка</em>
-                    </li>
-                    <li>
-                        <span>Наименование:</span>
-                        <em>Тарфи “Премиум”</em>
-                        <p>Неограниченный доступ к платным статьям.</p>
-                    </li>
-                    <li>
-                        <span>Срок:</span>
-                        <em>1 месяц</em>
-                    </li>
-                    <li>
-                        <span>Сумма:</span>
-                        <em>200 ₽</em>
-                    </li>
-                    <svg class="modal__tariffs-item-check"><use xlink:href="./assets/images/svg/sprite.svg#checkIcon"></use></svg>
-                </ul>
-                <ul class="modal__tariffs-item">
-                    <li>
-                        <span>Товар:</span>
-                        <em>Подписка</em>
-                    </li>
-                    <li>
-                        <span>Наименование:</span>
-                        <em>Тарфи “Премиум”</em>
-                        <p>Неограниченный доступ к платным статьям.</p>
-                    </li>
-                    <li>
-                        <span>Срок:</span>
-                        <em>1 месяц</em>
-                    </li>
-                    <li>
-                        <span>Сумма:</span>
-                        <em>200 ₽</em>
-                    </li>
-                    <svg class="modal__tariffs-item-check"><use xlink:href="./assets/images/svg/sprite.svg#checkIcon"></use></svg>
-                </ul>
+                <button class="modal__tariffs-item">
+                    <ul>
+                        <li>
+                            <span>Товар:</span>
+                            <em>Подписка</em>
+                        </li>
+                        <li>
+                            <span>Наименование:</span>
+                            <em>Тарфи “Премиум”</em>
+                            <p>Неограниченный доступ к платным статьям.</p>
+                        </li>
+                        <li>
+                            <span>Срок:</span>
+                            <em>1 месяц</em>
+                        </li>
+                        <li>
+                            <span>Сумма:</span>
+                            <em>200 ₽</em>
+                        </li>
+                        <svg class="modal__tariffs-item-check"><use xlink:href="./assets/images/svg/sprite.svg#checkIcon"></use></svg>
+                    </ul>
+                </button>
+                <button class="modal__tariffs-item active">
+                    <ul>
+                        <li>
+                            <span>Товар:</span>
+                            <em>Подписка</em>
+                        </li>
+                        <li>
+                            <span>Наименование:</span>
+                            <em>Тарфи “Премиум”</em>
+                            <p>Неограниченный доступ к платным статьям.</p>
+                        </li>
+                        <li>
+                            <span>Срок:</span>
+                            <em>1 месяц</em>
+                        </li>
+                        <li>
+                            <span>Сумма:</span>
+                            <em>200 ₽</em>
+                        </li>
+                        <svg class="modal__tariffs-item-check"><use xlink:href="./assets/images/svg/sprite.svg#checkIcon"></use></svg>
+                    </ul>
+                </button>
+                <button class="modal__tariffs-item">
+                    <ul>
+                        <li>
+                            <span>Товар:</span>
+                            <em>Подписка</em>
+                        </li>
+                        <li>
+                            <span>Наименование:</span>
+                            <em>Тарфи “Премиум”</em>
+                            <p>Неограниченный доступ к платным статьям.</p>
+                        </li>
+                        <li>
+                            <span>Срок:</span>
+                            <em>1 месяц</em>
+                        </li>
+                        <li>
+                            <span>Сумма:</span>
+                            <em>200 ₽</em>
+                        </li>
+                        <svg class="modal__tariffs-item-check"><use xlink:href="./assets/images/svg/sprite.svg#checkIcon"></use></svg>
+                    </ul>
+                </button>
             </div>
             <a href="#" class="g-arrow-btn">
                 <span>Получить доступ</span>

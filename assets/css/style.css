@@ -5337,13 +5337,8 @@ input:focus, textarea:focus, button:focus {
     border-bottom: 1px solid #E5E5E5;
     margin-bottom: 40px; }
     .modal--tariff .modal__tariffs-item {
-      display: grid;
-      grid-template-columns: repeat(4, auto);
-      grid-gap: 30px;
-      padding: 30px 40px;
-      min-height: 170px;
-      position: relative;
-      box-sizing: border-box; }
+      padding: 0;
+      background-color: transparent; }
       @media (max-width: 800px) {
         .modal--tariff .modal__tariffs-item {
           grid-template-columns: repeat(2, auto); } }
@@ -5352,38 +5347,51 @@ input:focus, textarea:focus, button:focus {
           padding: 20px 25px; } }
       .modal--tariff .modal__tariffs-item:not(:first-child) {
         margin-left: auto; }
-      .modal--tariff .modal__tariffs-item.active {
+      .modal--tariff .modal__tariffs-item.active ul {
         background-color: #469AFC;
         color: white; }
-        .modal--tariff .modal__tariffs-item.active li span {
+        .modal--tariff .modal__tariffs-item.active ul li span {
           color: rgba(255, 255, 255, 0.4); }
-        .modal--tariff .modal__tariffs-item.active li p {
+        .modal--tariff .modal__tariffs-item.active ul li p {
           font-weight: 300;
           color: white; }
-      .modal--tariff .modal__tariffs-item li {
-        display: flex;
-        flex-direction: column;
-        min-width: 100px; }
-        @media (max-width: 400px) {
-          .modal--tariff .modal__tariffs-item li {
-            min-width: 60px; } }
-        .modal--tariff .modal__tariffs-item li span, .modal--tariff .modal__tariffs-item li p, .modal--tariff .modal__tariffs-item li em {
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 140%; }
+      .modal--tariff .modal__tariffs-item ul {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-gap: 30px;
+        padding: 30px 40px;
+        min-height: 170px;
+        position: relative;
+        box-sizing: border-box;
+        transition: .4s ease background-color; }
+        .modal--tariff .modal__tariffs-item ul li {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          min-width: 100px; }
           @media (max-width: 400px) {
-            .modal--tariff .modal__tariffs-item li span, .modal--tariff .modal__tariffs-item li p, .modal--tariff .modal__tariffs-item li em {
-              font-size: 12px; } }
-        .modal--tariff .modal__tariffs-item li span {
-          color: rgba(26, 26, 26, 0.8); }
-          .modal--tariff .modal__tariffs-item li span:not(:last-child) {
-            margin-bottom: 10px; }
-        .modal--tariff .modal__tariffs-item li em {
-          font-weight: 500; }
-          .modal--tariff .modal__tariffs-item li em:not(:last-child) {
-            margin-bottom: 20px; }
-        .modal--tariff .modal__tariffs-item li p {
-          font-weight: 500; }
+            .modal--tariff .modal__tariffs-item ul li {
+              min-width: 60px; } }
+          .modal--tariff .modal__tariffs-item ul li span, .modal--tariff .modal__tariffs-item ul li p, .modal--tariff .modal__tariffs-item ul li em {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            text-align: left; }
+            @media (max-width: 400px) {
+              .modal--tariff .modal__tariffs-item ul li span, .modal--tariff .modal__tariffs-item ul li p, .modal--tariff .modal__tariffs-item ul li em {
+                font-size: 12px; } }
+          .modal--tariff .modal__tariffs-item ul li span {
+            color: rgba(26, 26, 26, 0.8); }
+            .modal--tariff .modal__tariffs-item ul li span:not(:last-child) {
+              margin-bottom: 10px; }
+          .modal--tariff .modal__tariffs-item ul li em, .modal--tariff .modal__tariffs-item ul li p {
+            transition: .2s; }
+          .modal--tariff .modal__tariffs-item ul li em {
+            font-weight: 500; }
+            .modal--tariff .modal__tariffs-item ul li em:not(:last-child) {
+              margin-bottom: 20px; }
+          .modal--tariff .modal__tariffs-item ul li p {
+            font-weight: 500; }
       .modal--tariff .modal__tariffs-item-check {
         width: 24px;
         height: 24px;
