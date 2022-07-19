@@ -115,31 +115,31 @@ document.addEventListener("DOMContentLoaded", () => {
         });    
     })
 });
-if (document.querySelector('.cabinet-save-changes')) {
-    document.querySelector('.cabinet-save-changes').addEventListener('click', function() {
-        let cabinetBirthdayValue = document.querySelector('.cabinet-input-birthday input');
-        let cabinetPhoneValue = document.querySelector('.cabinet-input-phone input');
-        let cabinetEmailValue = document.querySelector('.cabinet-input-email input');
+// if (document.querySelector('.cabinet-save-changes')) {
+//     document.querySelector('.cabinet-save-changes').addEventListener('click', function() {
+//         let cabinetBirthdayValue = document.querySelector('.cabinet-input-birthday input');
+//         let cabinetPhoneValue = document.querySelector('.cabinet-input-phone input');
+//         let cabinetEmailValue = document.querySelector('.cabinet-input-email input');
 
-        let cabinetBirthdayField = document.querySelector('.cabinet__account-birthday');
-        let cabinetPhoneField = document.querySelector('.cabinet__account-phone');
-        let cabinetEmailField = document.querySelector('.cabinet__account-email');
+//         let cabinetBirthdayField = document.querySelector('.cabinet__account-birthday');
+//         let cabinetPhoneField = document.querySelector('.cabinet__account-phone');
+//         let cabinetEmailField = document.querySelector('.cabinet__account-email');
 
-        let regx = /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u;
+//         let regx = /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u;
 
-        if (cabinetBirthdayValue.value) {
-            cabinetBirthdayField.innerHTML = cabinetBirthdayValue.value;
-        }
+//         if (cabinetBirthdayValue.value) {
+//             cabinetBirthdayField.innerHTML = cabinetBirthdayValue.value;
+//         }
         
-        if (cabinetPhoneValue.value.length > 15) {
-            cabinetPhoneField.innerHTML = cabinetPhoneValue.value;
-        }
+//         if (cabinetPhoneValue.value.length > 15) {
+//             cabinetPhoneField.innerHTML = cabinetPhoneValue.value;
+//         }
 
-        if (regx.test(cabinetEmailValue.value)) {
-            cabinetEmailField.innerHTML = cabinetEmailValue.value;
-        }
-    });
-}
+//         if (regx.test(cabinetEmailValue.value)) {
+//             cabinetEmailField.innerHTML = cabinetEmailValue.value;
+//         }
+//     });
+// }
 if (document.querySelectorAll('.calendar')) {
     document.querySelectorAll('.calendar--consultation').forEach(function(calendar) {
         let useCalendar = flatpickr(calendar, {
@@ -383,6 +383,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         if (form.classList.contains('contact-form--login')) {
                             // THIS CODE WILL SEND AJAX REQUEST FOR FORMS WHICH HAVE THE CLASS --login
                             alert('DATA HAS SENDED!')
+                        } else if (form.classList.contains('contact-form--cabinet')) {
+                            form.classList.remove('active');
+                            form.classList.remove('show');
+                            form.classList.add('none');
+                            form.parentElement.querySelector('[data-tab="1"]').classList.add('active');
+                            form.parentElement.querySelector('[data-tab="1"]').classList.remove('none');
+
+                            formAllInput.forEach(function(input) {
+                                input.value = null;
+                            })
                         } else {
                             // CODE HERE WILL SEND AJAX REQUEST FOR ALL FORMS BY DEFAULT
                             alert('SEND AJAX REQUEST FOR ALL FORMS BY DEFAULT');
@@ -1014,10 +1024,12 @@ if (document.querySelectorAll('.modal')) {
             }
         })
 
-        closeBtn.addEventListener('click', function() {
-            modal.classList.remove('open');
-            document.querySelector('body').classList.toggle('m-hidden');
-        });
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('open');
+                document.querySelector('body').classList.toggle('m-hidden');
+            });
+        }
     });
 }
 
