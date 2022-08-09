@@ -9,4 +9,6 @@ function manangeActiveBtns(allBtns) {
     }
 }
 
-manangeActiveBtns(document.querySelectorAll('.modal__panel button'));
+manangeActiveBtns(document.querySelectorAll('.modal--register .modal__panel button'));
+manangeActiveBtns(document.querySelectorAll('.modal--recovery .modal__panel button'));
+manangeActiveBtns(document.querySelectorAll('.modal--tariff .modal__tariffs-item'));

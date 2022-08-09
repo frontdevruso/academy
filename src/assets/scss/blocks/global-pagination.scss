@@ -1,0 +1,18 @@
+.global-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid #DEE8F5;
+    padding-top: 25px;
+
+    &-number {
+        border: 1px solid #DEE8F5;
+        border-radius: 5px;
+        color: $skyblue;
+
+        padding: 15px 50px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+}

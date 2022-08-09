@@ -7,4 +7,4 @@ function initAutoFocus (input, index, list) {
     })
 }
 
-document.querySelectorAll('.modal--register-sms .g-input input').forEach(initAutoFocus);
+document.querySelectorAll('.modal--confirm-sms .g-input input').forEach(initAutoFocus);

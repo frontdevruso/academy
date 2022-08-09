@@ -17,9 +17,13 @@
                     max-height: initial;
                     &::after { opacity: 0 }
                 }
-                button, a {
+                .reviews-add-show {
                     opacity: 0;
                     height: 0;
+                }
+                .reviews-add-hide {
+                    opacity: 1;
+                    height: auto;
                 }
             }
 
@@ -122,6 +126,7 @@
 
                 padding: 0;
                 transition: .6s ease;
+                overflow: hidden;
 
                 span {
                     color: $skyblue;
@@ -143,6 +148,37 @@
                     svg { animation: linkArrowDownAnimation 1.3s ease forwards }
                 }
             }
+
+            .reviews-add-hide {
+                opacity: 0;
+                height: 0;
+
+                &:hover {
+                    svg { animation: linkArrowTopAnimationReview 1.3s ease forwards }
+                }
+                svg { transform: rotate(180deg) }
+            }
+
+            @keyframes linkArrowTopAnimationReview {
+                0% { transform: translateY(0) rotate(180deg) }
+                25% { transform: translateY(2px) rotate(180deg) }
+                50% { transform: translateY(0) rotate(180deg) }
+                75% { transform: translateY(2px) rotate(180deg) }
+                100% { transform: translateY(0) rotate(180deg) }
+            }
+        }
+    }
+
+    .global-pagination {
+        border-top: none;
+        padding-top: 75px;
+
+        @media (max-width: 768px) { padding-top: 55px }
+
+        @media (max-width: 575px) {
+            border-top: 1px solid #DEE8F5;
+            padding-top: 25px;
+            margin-top: 45px;
         }
     }
 }

@@ -6,8 +6,9 @@ if (document.querySelectorAll('.modal')) {
         if (allCounters) {
             allCounters.forEach(function(counter) {
                 let btnLink = counter.parentElement.querySelector('.modal__timer-link');
+                btnLink.classList.remove('active');
                 function countdown() {
-                    var seconds = 4;
+                    var seconds = 60;
                     function tick() {
                         seconds--;
                         counter.innerHTML =
@@ -30,12 +31,16 @@ if (document.querySelectorAll('.modal')) {
             let btnModalTag = btn.getAttribute('data-modal-btn');
             allModal.forEach(function(modal) {
                 modal.classList.remove('open');
+                document.querySelector('body').classList.add('m-hidden');
                 if (modal.getAttribute('data-modal') === btnModalTag) {
-                    modal.classList.toggle('open');
-                    document.querySelector('body').classList.toggle('m-hidden');
-                    if (btnModalTag === 'register-sms') {
+                    modal.classList.add('open');
+                    document.querySelector('body').classList.add('m-hidden');
+                    if (btnModalTag === 'confirm-sms') {
                         timerInit(modal.querySelectorAll('.modal__timer'))
                     }
+                    modal.querySelectorAll('.g-input input').forEach(function(input, index) {
+                        if (index === 0) { input.focus() }
+                    });
                 }
             });
         });
@@ -45,15 +50,19 @@ if (document.querySelectorAll('.modal')) {
         const closeBtn = modal.querySelector('.modal__close');
         
         modal.addEventListener('click', function(event) {
-            if (event.target == modal) {
-                modal.classList.remove('open');
-                document.querySelector('body').classList.toggle('m-hidden');
+            if(!modal.classList.contains('--block')) {
+                if (event.target == modal) {
+                    modal.classList.remove('open');
+                    document.querySelector('body').classList.remove('m-hidden');
+                }
             }
         })
 
-        closeBtn.addEventListener('click', function() {
-            modal.classList.remove('open');
-            document.querySelector('body').classList.toggle('m-hidden');
-        });
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('open');
+                document.querySelector('body').classList.toggle('m-hidden');
+            });
+        }
     });
 }

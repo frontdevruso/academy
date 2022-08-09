@@ -21,12 +21,16 @@
         position: relative;
         display: flex;
 
+        background-color: transparent;
+        padding: 0;
+
         img {
             width: 76.48%;
             max-width: 360px;
             height: auto;
 
             border-radius: 10px;
+            cursor: pointer;
         }
 
         em {
@@ -94,12 +98,15 @@
                 margin-bottom: 20px;
             }
 
-            a {
+            button ,a {
                 display: flex;
                 align-items: center;
 
                 margin-top: auto;
                 width: fit-content;
+
+                background-color: transparent;
+                padding: 0;
         
                 span {
                     color: $skyblue;

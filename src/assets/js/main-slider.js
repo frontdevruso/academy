@@ -68,7 +68,7 @@ setTimeout(function() {
                 linksContainer.innerHTML += 
                 `<a href="${link}" class="g-arrow-btn ${index === 0 ? 'active' : ''}">
                     <span>Узнать подробнее</span>
-                    <svg><use xlink:href="./assets/images/svg/sprite.svg#linkArrow"></use></svg>
+                    <svg><use xlink:href="./assets/images/svg/sprite.svg#linkLongArrow"></use></svg>
                 </a>`
     
                 desc.remove();

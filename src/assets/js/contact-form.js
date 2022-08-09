@@ -194,6 +194,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         if (form.classList.contains('contact-form--login')) {
                             // THIS CODE WILL SEND AJAX REQUEST FOR FORMS WHICH HAVE THE CLASS --login
                             alert('DATA HAS SENDED!')
+                        } else if (form.classList.contains('contact-form--cabinet')) {
+                            form.classList.remove('active');
+                            form.classList.remove('show');
+                            form.classList.add('none');
+                            form.parentElement.querySelector('[data-tab="1"]').classList.add('active');
+                            form.parentElement.querySelector('[data-tab="1"]').classList.remove('none');
+
+                            formAllInput.forEach(function(input) {
+                                input.value = null;
+                            })
                         } else {
                             // CODE HERE WILL SEND AJAX REQUEST FOR ALL FORMS BY DEFAULT
                             alert('SEND AJAX REQUEST FOR ALL FORMS BY DEFAULT');

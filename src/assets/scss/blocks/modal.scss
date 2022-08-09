@@ -291,7 +291,7 @@
         }
     }
 
-    &--register-sms {
+    &--confirm-sms {
         .modal__container {
             h2 {
                 margin-bottom: 10px;
@@ -513,7 +513,7 @@
         .modal__container {
             padding: 0;
             border-radius: 0;
-            height: 480px;
+            height: fit-content;
             
             display: flex;
             flex-direction: row;
@@ -617,6 +617,10 @@
                 img {
                     &:not(:last-child) { margin-right: 15px }
                 }
+            }
+            
+            .g-input {
+                label { color: rgba(26, 26, 26, 0.4) }
             }
 
             &-wrapper {
@@ -772,15 +776,8 @@
             margin-bottom: 40px;
             
             &-item {
-                display: grid;
-                grid-template-columns: repeat(4, auto);
-                grid-gap: 30px;
-
-                padding: 30px 40px;
-                min-height: 170px;
-
-                position: relative;
-                box-sizing: border-box;
+                padding: 0;
+                background-color: transparent;
 
                 @media (max-width: 800px) { grid-template-columns: repeat(2, auto) }
                 @media (max-width: 400px) { padding: 20px 25px }
@@ -788,43 +785,67 @@
                 &:not(:first-child) { margin-left: auto }
 
                 &.active {
-                    background-color: $skyblue;
-                    color: white;
-                    li {
-                        span { color: rgba(255, 255, 255, 0.4) }
-                        p {
-                            font-weight: 300;
-                            color: white;
+                    ul {
+                        background-color: $skyblue;
+                        color: white;
+
+                        li {
+                            span { color: rgba(255, 255, 255, 0.4) }
+                            p {
+                                font-weight: 300;
+                                color: white;
+                            }
                         }
                     }
                 }
 
-                li {
-                    display: flex;
-                    flex-direction: column;
+                ul {
+                    display: grid;
+                    grid-template-columns: repeat(4, auto);
+                    grid-gap: 30px;
+    
+                    padding: 30px 40px;
+                    min-height: 170px;
+    
+                    position: relative;
+                    box-sizing: border-box;
 
-                    min-width: 100px;
-                    @media (max-width: 400px) { min-width: 60px }
+                    transition: .4s ease background-color;
+                    
+                    li {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        
+                        min-width: 100px;
+                        @media (max-width: 400px) { min-width: 60px }
+                        
+                        span, p, em {
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 140%;
 
-                    span, p, em {
-                        font-weight: 400;
-                        font-size: 14px;
-                        line-height: 140%;
+                            text-align: left;
+    
+                            @media (max-width: 400px) { font-size: 12px }
+                        }
+    
+                        span {
+                            color: rgba(26, 26, 26, 0.8);            
+                            &:not(:last-child) { margin-bottom: 10px }
+                        }
 
-                        @media (max-width: 400px) { font-size: 12px }
+                        em, p {
+                            transition: .2s ;
+                        }
+    
+                        em {
+                            font-weight: 500;
+                            &:not(:last-child) { margin-bottom: 20px }
+                        }
+    
+                        p { font-weight: 500 }
                     }
-
-                    span {
-                        color: rgba(26, 26, 26, 0.8);            
-                        &:not(:last-child) { margin-bottom: 10px }
-                    }
-
-                    em {
-                        font-weight: 500;
-                        &:not(:last-child) { margin-bottom: 20px }
-                    }
-
-                    p { font-weight: 500 }
                 }
                 
                 &-check {

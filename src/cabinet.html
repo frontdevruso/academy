@@ -6,7 +6,11 @@ title: Академия | Кабиент
 <section class="cabinet">
     <div class="cabinet__container container__1440px">
         <div class="cabinet__account">
-            <picture><img class="lozad" data-src="./assets/images/reviews-avatar-1.png" data-srcset="./assets/images/reviews-avatar-1@2x.png" alt="avatar"></picture>
+            <picture class="cabinet__account-img">
+                <img class="cabinet__account-img-avatar lozad" data-src="./assets/images/reviews-avatar-1.png" data-srcset="./assets/images/reviews-avatar-1@2x.png" alt="avatar">
+                <div class="cabinet__account-img-preview"><svg><use xlink:href="./assets/images/svg/sprite.svg#imageInputIcon"></use></svg></div>
+                <input class="cabinet__account-img-input" type="file" accept=".jpg, .png">
+            </picture>
             <main class="active show" data-tab="1">
                 <h2>Алексей Барков</h2>
                 <ul>
@@ -25,7 +29,7 @@ title: Академия | Кабиент
                 </ul>
                 <button data-tab-btn="2" type="button">Редактировать</button>
             </main>
-            <main class="none" data-tab="2">
+            <main class="contact-form contact-form--cabinet none" data-tab="2">
                 <h2>Алексей Барков</h2>
                 <form action="/">
                     <div class="g-input cabinet-input-birthday input--raised-label">
@@ -44,7 +48,10 @@ title: Академия | Кабиент
                         <div class="g-input__hint">Заполните это поле</div>
                     </div>
                 </form>
-                <button data-tab-btn="1" type="button" class="cabinet-save-changes">Сохранить изменения</button>
+                <footer>
+                    <button type="button" class="cabinet-save-changes contact-form-submit" type="submit">Сохранить изменения</button>
+                    <button data-tab-btn="1" type="button">Отменить</button>
+                </footer>
             </main>
         </div>
         <div class="cabinet__status">
@@ -59,7 +66,7 @@ title: Академия | Кабиент
                 </li>
             </ul>
             <p>Без доступа к платным статьям.</p>
-            <button type="button">Изменить статус</button>
+            <button type="button" data-modal-btn="tariff">Изменить статус</button>
         </div>
     </div>
 </section>
@@ -72,31 +79,11 @@ title: Академия | Кабиент
                 <main>
                     <div class="purchases-history__table-item-data">
                         <em>Дата:</em>
-                        <time>29 февраля 2022</time>
+                        <time>29 февраля 2022 - <br> 1 марта 2022</time>
                     </div>
                     <div class="purchases-history__table-item-data">
-                        <em>Товар:</em>
-                        <span>Статья</span>
-                    </div>
-                    <div class="purchases-history__table-item-data">
-                        <em>Наименование:</em>
-                        <span>Перестаньте развивать мозг</span>
-                    </div>
-                </main>
-                <div class="purchases-history__table-item-total">
-                    <em>Сумма:</em>
-                    <b>1 499 ₽</b>
-                </div>
-            </div>
-            <div class="purchases-history__table-item">
-                <main>
-                    <div class="purchases-history__table-item-data">
-                        <em>Дата:</em>
-                        <time>29 февраля 2022</time>
-                    </div>
-                    <div class="purchases-history__table-item-data">
-                        <em>Товар:</em>
-                        <span>Статья</span>
+                        <em>Покупка:</em>
+                        <span>Тариф "Старт"</span>
                     </div>
                     <div class="purchases-history__table-item-data">
                         <em>Наименование:</em>
@@ -112,31 +99,11 @@ title: Академия | Кабиент
                 <main>
                     <div class="purchases-history__table-item-data">
                         <em>Дата:</em>
-                        <time>29 февраля 2022</time>
+                        <time>29 февраля 2022 - <br> 1 марта 2022</time>
                     </div>
                     <div class="purchases-history__table-item-data">
-                        <em>Товар:</em>
-                        <span>Статья</span>
-                    </div>
-                    <div class="purchases-history__table-item-data">
-                        <em>Наименование:</em>
-                        <span>Перестаньте развивать мозг</span>
-                    </div>
-                </main>
-                <div class="purchases-history__table-item-total">
-                    <em>Сумма:</em>
-                    <b>1 499 ₽</b>
-                </div>
-            </div>
-            <div class="purchases-history__table-item">
-                <main>
-                    <div class="purchases-history__table-item-data">
-                        <em>Дата:</em>
-                        <time>29 февраля 2022</time>
-                    </div>
-                    <div class="purchases-history__table-item-data">
-                        <em>Товар:</em>
-                        <span>Статья</span>
+                        <em>Покупка:</em>
+                        <span>Тариф "Старт"</span>
                     </div>
                     <div class="purchases-history__table-item-data">
                         <em>Наименование:</em>
@@ -152,11 +119,51 @@ title: Академия | Кабиент
                 <main>
                     <div class="purchases-history__table-item-data">
                         <em>Дата:</em>
-                        <time>29 февраля 2022</time>
+                        <time>29 февраля 2022 - <br> 1 марта 2022</time>
                     </div>
                     <div class="purchases-history__table-item-data">
-                        <em>Товар:</em>
-                        <span>Статья</span>
+                        <em>Покупка:</em>
+                        <span>Тариф "Старт"</span>
+                    </div>
+                    <div class="purchases-history__table-item-data">
+                        <em>Наименование:</em>
+                        <span>Перестаньте развивать мозг</span>
+                    </div>
+                </main>
+                <div class="purchases-history__table-item-total">
+                    <em>Сумма:</em>
+                    <b>1 499 ₽</b>
+                </div>
+            </div>
+            <div class="purchases-history__table-item">
+                <main>
+                    <div class="purchases-history__table-item-data">
+                        <em>Дата:</em>
+                        <time>29 февраля 2022 - <br> 1 марта 2022</time>
+                    </div>
+                    <div class="purchases-history__table-item-data">
+                        <em>Покупка:</em>
+                        <span>Тариф "Старт"</span>
+                    </div>
+                    <div class="purchases-history__table-item-data">
+                        <em>Наименование:</em>
+                        <span>Перестаньте развивать мозг</span>
+                    </div>
+                </main>
+                <div class="purchases-history__table-item-total">
+                    <em>Сумма:</em>
+                    <b>1 499 ₽</b>
+                </div>
+            </div>
+            <div class="purchases-history__table-item">
+                <main>
+                    <div class="purchases-history__table-item-data">
+                        <em>Дата:</em>
+                        <time>29 февраля 2022 - <br> 1 марта 2022</time>
+                    </div>
+                    <div class="purchases-history__table-item-data">
+                        <em>Покупка:</em>
+                        <span>Тариф "Старт"</span>
                     </div>
                     <div class="purchases-history__table-item-data">
                         <em>Наименование:</em>

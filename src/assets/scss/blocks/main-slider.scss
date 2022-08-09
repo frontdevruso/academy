@@ -265,10 +265,22 @@
                         opacity: 1;
                     }
 
-                    svg { margin: 2px 0 0 10px }
+                    svg {
+                        width: 41px;
+                        margin: 0 0 0 10px;
+
+                        use {
+                            transition: .6s ease;
+                            transform: translateX(-17px)
+                        }
+                    }
 
                     &:hover {
-                        svg { transform: translateX(20px) }
+                        svg { 
+                            use {
+                                transform: translateX(0)
+                            }
+                        }
                     }
                 }
             }
